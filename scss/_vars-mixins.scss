@@ -1,0 +1,243 @@
+// March 27, 2020
+//It's a custom css grid inspired by Bootstrap 4 breakpoints
+// all blocks columns are based on 1/12fr
+$black: #000;
+$white: #fff;
+$almost-black: #333;
+$almost-white: #f7f7f7;
+$black-transparent: rgba(0, 0, 0, .2);
+$white-transparent: rgba(255, 255, 255, .6);
+
+$gray-lightest: #eeefee;
+$gray-mid: #6C6C6C;
+$gray-c: #ccc;
+
+$pink-saturated: #9a22a8;
+$tender-pink: #cfb5d4;
+$tender-pink-transp: rgba(207, 181, 212, .8);
+
+
+$blue-vio-tender: #99abdd;
+$blue-mid: #4396d7;
+$blue-vio-lite: #798dc3;
+$blue-vio-darkest: #262f47;
+
+$vio-saturated-transp: rgba(129, 21, 179, .8);
+$vio-saturated: #8115b3;
+$vio-mid: #695289;
+$vio-mid-transp: rgba(105, 82, 137, .8);
+$vio-eggplant: #482a52;
+$vio-dark: #372647;
+
+$blue-darkest: #08122c;
+$blue-dark-dust: #3e5b7c;
+
+$green-lightest: #e8f3e1;
+$green: #7ccf47;
+$green-dark: #0B3601;
+$green-darkest: #072601;
+
+
+
+//////////////////
+// $sidebar-md: 200px;
+// $sidebar-lg: 220px;
+// $sidebar-xl: 250px;
+
+
+@mixin no-border-bottom {
+	border-bottom: none;
+	&:hover{
+		border-bottom: none;
+	}
+}
+
+@mixin underline {
+	display: inline;
+	transition: all .1s ease-in;
+	border-bottom: 1px solid;
+	text-decoration: none;
+	&:hover {
+		border-bottom: 1px solid transparent;
+		text-decoration: none;
+	}
+}
+
+@mixin txt-shadow {
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+}
+
+@mixin hoverbg {
+	position: relative;
+	&:hover {
+		color: $white;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: -5px;
+		right: -8px;
+		bottom: -5px;
+		left: -8px;
+		z-index: -1;
+		transform: skewX(-1deg) skewY(-1deg);
+		transition: background .1s ease-in;
+		opacity: .5;
+	}
+	&:hover:after {
+		background: $tender-pink-transp;
+	}
+}
+
+
+
+
+///////////////
+// G R I D ////
+///////////////
+
+@mixin xxs-only {
+	@media only screen and (max-width: 400px) {
+		@content;
+	}
+}
+
+@mixin xs {
+	@media only screen and (min-width: 500px) {
+		@content;
+	}
+}
+
+@mixin up-to-sm {
+	@media only screen and (max-width: 575px) {
+		@content;
+	}
+}
+
+@mixin sm-only {
+	@media only screen and (min-width: 576px) and (max-width: 749px) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media only screen and (min-width: 576px) {
+		@content;
+	}
+}
+
+@mixin up-to-md {
+	@media only screen and (max-width: 749px) {
+		@content;
+	}
+}
+
+@mixin md-only {
+	@media only screen and (min-width: 750px) and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media only screen and (min-width: 750px) {
+		@content;
+	}
+}
+
+@mixin up-to-lg {
+	@media only screen and (max-width: 991px) {
+		@content;
+	}
+}
+
+@mixin lg-only {
+	@media only screen and (min-width: 992px) and (max-width: 1199px) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media only screen and (min-width: 992px) {
+		@content;
+	}
+}
+
+@mixin up-to-xl {
+	@media only screen and (max-width: 1199px) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media only screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin xxl {
+	@media only screen and (min-width: 2200px) {
+		@content;
+	}
+}
+@mixin print {
+	@media print {
+		@content;
+	}
+}
+
+@mixin content-width {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	min-width: 300px;
+	padding: 0 15px;//
+	@include xs {
+		max-width: 500px;
+	}
+	@include sm {
+		max-width: 540px;
+	}
+	@include md {
+		max-width: 720px;
+	}
+	@include lg {
+		max-width: 960px;
+	}
+	@include xl {
+		max-width: 1140px;
+	}
+}
+
+
+//old ~2018-19
+	
+	// @mixin desktop
+// 	@media only screen and (min-width: 1125px)
+// 		@content
+
+// @mixin big-tablet
+// 	@media only screen and (max-width: 1124px) and (min-width: 860px)
+// 		@content
+
+// @mixin tablet
+// 	@media only screen and (max-width: 859px) and (min-width: 640px)
+// 		@content
+
+// @mixin all-tablets
+// 	@media only screen and (max-width: 1124px) and (min-width: 640px)
+// 		@content
+
+// @mixin big-mobile
+// 	@media only screen and (max-width: 639px) and (min-width: 500px)
+// 		@content
+
+// @mixin mobile
+// 	@media only screen and (max-width: 639px)
+// 		@content
+// /////////////////////////////////////
+// @mixin tablet-mobile
+// 	@media only screen and (max-width: 1124px)
+// 		@content
+// @mixin print
+// 	@media print
+// 		@content

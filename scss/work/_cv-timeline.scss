@@ -1,0 +1,99 @@
+@import "vars-mixins";
+// font-family: 'Open Sans', sans-serif;
+// font-family: 'Zilla Slab', serif;
+
+.cv-timeline {
+	background: #333;
+	& .grid-main {
+		background: $white;
+	}
+
+	&__content {
+		padding: 50px 0 150px;
+	}
+	// font-family: 'Open Sans', sans-serif;
+	// font-weight: 300;//400
+
+// h1, h2, h3 {
+// 	font-family: 'Zilla Slab', serif;
+// 	font-weight: 600;//700
+// }
+
+&__item {
+	outline: 1px solid red;
+	background: $almost-white;
+	position: relative;
+	margin-bottom: 50px;
+}
+&__item-content {
+	padding: 30px 20px;
+	
+}
+
+&__year {
+	background: violet;
+	padding: 5px 15px;
+	font-size: 150%;
+	text-align: left;
+	white-space: nowrap;
+	@include md {
+	// 	display: none;
+		font-size: 140%;
+		outline: 1px dotted;
+		background: none;
+		width: 150px;
+		// width: $sidebar-md;
+		position: absolute;
+		left: -180px;
+		// left: calc(-#{$sidebar-md} - 30px);
+		top: 0;
+		text-align: right;
+	}
+	@include lg {
+		font-size: 150%;
+		width: 180px;
+		left: -210px;
+		// width: $sidebar-lg;
+		// left: calc(-#{$sidebar-lg} - 30px);
+	}
+	@include xl {
+		// width: $sidebar-xl;
+		// left: calc(-#{$sidebar-xl} - 30px);
+	}
+	// &_side {//hidden up-to-md with a whole sidebar
+	// 	color: #333;
+	// 	margin-bottom: 40px;//
+	// 	@include md {
+	// 		display: block;
+	// 	}
+	// }
+}
+
+&__sidebar {
+	background: violet;
+}
+&__side-menu {
+	margin-bottom: 50px;
+}
+
+
+}//cv-timeline
+
+
+
+.gauge {
+	width: 20px;
+	height: 300px;
+	background: $blue-mid;
+	padding: 4px 2px;
+	position: fixed;
+	&__progress {
+		width: calc(100% - 4px);
+		height: 0;
+		background: $tender-pink;
+		position: absolute;
+		bottom: 4px;
+		left: 2px;
+		// z-index: 20;
+	}
+}

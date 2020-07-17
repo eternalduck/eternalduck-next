@@ -1,0 +1,142 @@
+@import "vars-mixins";
+
+// nav between portfolio pages is below
+
+.single-work {
+	margin: 0 auto 30px;
+	&_site {
+		background: $blue-vio-darkest;
+	}
+	&_ux {
+		background: $vio-dark;
+	}
+	&__content
+		a {
+			color: $white;
+		}
+		h1 {
+			color: $almost-white;
+		}
+	&__header {
+		text-align: center;
+	}
+	&__keywords {
+		font-size: 110%;
+		display: block;
+		margin: 10px 0 20px;
+		color: $blue-vio-tender;
+	}
+	&__link {
+		margin: 0 auto 20px;
+	}
+	&__descr {
+		width: 80%;
+		max-width: 650px;
+		margin: 0 auto 30px;
+		text-align: center;
+		color: $almost-white;
+		overflow: hidden;
+		transition: opacity .2s ease-in;
+	}
+	&__img-holder {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-around;
+		margin: 40px auto 50px;
+	}
+	&__img-item {
+		&_tabl {
+			flex: 0 0 45%;
+		}
+		&_mob {
+			flex: 0 0 35%;
+		}
+		@include md {
+			flex: 0 0 250px;
+			&_tabl {
+				flex: 0 0 250px;
+			}
+			&_mob {
+				flex: 0 0 200px;
+			}
+		}
+		@include lg {
+			flex: 0 0 400px;
+			&_tabl {
+				flex: 0 0 400px;
+			}
+			&_mob {
+				flex: 0 0 320px;
+			}
+		}
+		&_mob {
+			text-align: center;
+		}
+	}//img-item
+	&__img-wrap {
+		display: block;
+		img {
+			transition: opacity .2s ease-in;
+			&:hover {
+				opacity: .9;
+			}
+		}
+	}//img-wrap
+	&__img-title {
+		min-height: 35px;
+		font-size: 100%;
+		font-weight: 500;
+		color: $white;
+		text-align: center;
+		margin-bottom: 15px;
+		@include lg {
+			font-size: 115%;
+			font-weight: 600;
+		}
+	}//img-title
+	&__img {
+		max-width: 100%;
+		display: inline-block;
+		box-shadow: 4px 4px 11px 2px $almost-black;
+	}
+	&__main-img {
+		display: block;
+		max-width: 100%;
+		margin: 0 auto 80px;
+		box-shadow: 4px 4px 11px 2px $almost-black;
+	}
+}//single-work
+
+//nav between portfolio pages
+.work-nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	margin: 0 0 40px;
+	&__link {
+		display: inline-block;
+		position: relative;
+		color: $blue-vio-tender;
+		@include no-border-bottom;
+		& i {
+			position: absolute;
+			top: 5px;
+		}
+		&_prev {
+			padding-left: 20px;
+			text-align: left;
+			& i {
+				left: 0;
+			}
+		}
+		&_next {
+			padding-right: 20px;
+			text-align: right;
+			margin-left: auto;
+			& i {
+				right: 0;
+				// font-size: 80%;
+			}
+		}
+	}
+}//work-nav

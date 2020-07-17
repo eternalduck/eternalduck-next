@@ -1,0 +1,31 @@
+{
+	"presets": [
+		[
+			"next/babel",
+			{
+				// "preset-env": {},
+				// "transform-runtime": {},
+				// "styled-jsx": {},
+				// "class-properties": {},
+
+					"polyfill-es-shims": {
+					"method": "usage-global",
+					"targets": {
+						"ie": 10,
+						"firefox": 65
+					}
+				}
+			}
+		]
+	],
+	"plugins": [
+		// "@babel/plugin-proposal-do-expressions",
+		// ["polyfill-es-shims", {
+		// 	"method": "usage-global",
+		// 	"targets": {
+		// 		"ie": 10,
+		// 		"firefox": 65
+		// 	}
+		// }]
+	]
+}

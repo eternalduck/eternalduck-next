@@ -1,0 +1,11 @@
+@import "vars-mixins";
+
+
+.art-page {
+	background: $green-darkest;
+	color: $white;
+	&__item {//differs from work-item_
+		outline: 2px solid yellow;
+		padding: 50px;
+	}
+}
