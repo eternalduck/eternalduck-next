@@ -1,3 +1,9 @@
+// https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/
+// rem for fonts?
+// rem for breakpoints?
+// em for paddings?
+
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Slab:wght@600;700&display=swap");
 @import "debug";
 @import "utils/reset";
@@ -6,7 +12,7 @@
 // @import "page404";
 @import "header-footer";
 // @import "utils/ie-tweaks";
-// @import "utils/fa-icons";
+@import "utils/fa-icons";
 @import "/libs/fancybox3/jquery.fancybox.min.css";
 
 
@@ -17,14 +23,16 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	// font-family: 'Courier', serif;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Courier', serif;
+	// font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 1.5;
+	background: #333;//TMP!
+	color: #fff;//TMP!
 }
 h1, h2, h3, h4 {
-	font-family: 'Roboto Slab', serif;
+	// font-family: 'Roboto Slab', serif;
 	font-weight: 600;
 }
 h1 {

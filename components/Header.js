@@ -1,14 +1,14 @@
-// import React from "react"
-import MenuItems from "./MenuItems"
+import Menu from "./menu"
 //TODO: menu_light | menu_dark
-const Header = () => (
-	// render(
+
+const Header = ({headerMenuClass}) => {
+	return (
+
 	<header>
-		<nav className="menu menu_header menu_light">
-			<MenuItems/>
-		</nav>
+		<Menu headerMenuClass={`menu_header ${headerMenuClass}`}/>
 	</header>
-	// )
-)
+
+	)
+}
 
 export default Header

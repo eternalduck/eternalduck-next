@@ -3,9 +3,11 @@
 		[
 			"next/babel",
 			{
-				// "preset-env": {},
-				// "transform-runtime": {},
-				// "styled-jsx": {},
+				// "styled-jsx": {
+					//"plugins": [
+					//"styled-jsx-plugin-sass"
+					//]
+			//},
 				// "class-properties": {},
 
 					"polyfill-es-shims": {

@@ -6,7 +6,9 @@ const path = require('path')
 
 module.exports = ({
 	// distDir: 'build',
-	compress: false,
+	optimization: {
+		minimize: false//fail
+	},
 	// cssModules: true,
 	// cssLoaderOptions: {
 	// 	importLoaders: 1,
@@ -15,10 +17,10 @@ module.exports = ({
 
 
 	webpack: (config) => {
-		config.optimization.minimize = false;
+		// config.optimization.minimize = false;//fail
 		config.module.rules.push(
 			{
-				test: /\.(png|jpg|gif|svg|pdf|eot|ttf|woff|woff2)$/,
+				test: /\.(json|png|jpg|gif|svg|pdf|eot|ttf|woff|woff2)$/,
 				use: {
 					loader: 'url-loader',
 					options: {

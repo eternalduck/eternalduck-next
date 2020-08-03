@@ -1,22 +1,22 @@
-// import React from "react"
-import MenuItems from "./MenuItems"
-import Back2Top from "./Back2Top"
-import FooterEssentials from "./FooterEssentials"
+import Menu from "./menu"
+import Back2Top from "./back2Top"
+import FooterEssentials from "./footerEssentials"
 
 
-const Footer = () => (
-	// render(
+const Footer = ({footerMenuClass}) => {
+	return (
+
 	<>
 		<footer>
+			<Menu footerMenuClass={`menu_footer ${footerMenuClass}`}/>
+
 			<Back2Top/>
-			<nav className="menu menu_footer MENUCLASS">
-				<MenuItems/>
-			</nav>
 		</footer>
 		<FooterEssentials/>
 
 	</>
-	// )
-)
+
+	)
+}
 
 export default Footer

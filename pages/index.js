@@ -1,30 +1,30 @@
 import Head from "next/head"
-// import React from "react"
-import Header from "../components/Header"
-import FooterEssentials from "../components/FooterEssentials"
-//preloader
+import Header from "../components/header"
+import FooterEssentials from "../components/footerEssentials"
+//add preloader
+// import {test} from './data/test'
 
-
-export default function Home() {
+export default function Index({
+	// menuClass
+}) {
 	
-	const test = a => b => a + b 
-	const test1 = a => a * a
-	let res = test(2, 5)
+	// const test = a => b => a + b 
+	// const test1 = a => a * a
+	// let res = test(2, 5)
 
 	return (
 		<>
 			<Head>
 				<title>eternalduck</title>
-				{/*<link rel="icon" href="/favicon.ico" />*/}
 			</Head>
 
-				 {/*preloader*/}
+				 {/*add preloader*/}
 				<div className="index-page grid-container">
 					<div className="grid-content">
-						<Header/>
-						{console.info(
-							res
-						)}
+						<Header headerMenuClass="menu_light"/>
+						
+
+						
 					</div>
 				</div>
 				<FooterEssentials/>
@@ -33,4 +33,6 @@ export default function Home() {
 
 		</>
 	)
-}
+}//Index
+
+
