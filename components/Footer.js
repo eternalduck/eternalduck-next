@@ -1,7 +1,7 @@
 import Menu from "./menu"
-import Back2Top from "./back2Top"
 import FooterEssentials from "./footerEssentials"
-
+import styled from "styled-components"
+import {vars, media, mixinRedBg} from "../scss/_vars-mixins.js"
 
 const Footer = ({footerMenuClass}) => {
 	return (
@@ -9,8 +9,6 @@ const Footer = ({footerMenuClass}) => {
 	<>
 		<footer>
 			<Menu footerMenuClass={`menu_footer ${footerMenuClass}`}/>
-
-			<Back2Top/>
 		</footer>
 		<FooterEssentials/>
 
@@ -20,3 +18,10 @@ const Footer = ({footerMenuClass}) => {
 }
 
 export default Footer
+
+const ZZZ  = styled.div`
+	background: red;
+
+`;
+
+// + header-footer css - how to split?

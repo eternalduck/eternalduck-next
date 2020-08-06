@@ -95,149 +95,175 @@ $green-darkest: #072601;
 ///////////////
 // G R I D ////
 ///////////////
+$breakOnPoints: (
+	//min-width
+	print: 'print',
+	// XS: '500px',
+	SM: '576px',
+	MD: '750px',
+	LG: '992px',
+	XL: '1200px',
 
-@mixin xxs-only {
-	@media only screen and (max-width: 400px) {
-		@content;
-	}
-}
+);
 
-@mixin xs {
-	@media only screen and (min-width: 500px) {
-		@content;
-	}
-}
+$breakUpToPoints: (
+	//max-width
+	XXSonly: '400px',
+	upToSM: '575px',
+	upToMD: '749px',
+	upToLG: '991px',
+	upToXL: '1199px',
 
-@mixin up-to-sm {
-	@media only screen and (max-width: 575px) {
-		@content;
-	}
-}
+);
+$breakOnlyPoints: (
+// smOnly: '(min-width: 576px) and (max-width: 749px)',
+// mdOnly: '(min-width: 750px) and (max-width: 991px)',
+// lgOnly: '(min-width: 992px) and (max-width: 1199px)',
+);
 
-@mixin sm-only {
-	@media only screen and (min-width: 576px) and (max-width: 749px) {
+@mixin breakOn($breakpoint) {
+	@media screen and (min-width: #{map-get($breakOnPoints, $breakpoint)}) {
 		@content;
 	}
 }
+@mixin breakUpTo($breakpoint) {
+	@media screen and (max-width: #{map-get($breakUpToPoints, $breakpoint)}) {
+		@content;
+	}
+}
+// // Example usage
+// html {
+// 	background-color: lime;
 
-@mixin sm {
-	@media only screen and (min-width: 576px) {
-		@content;
-	}
-}
-
-@mixin up-to-md {
-	@media only screen and (max-width: 749px) {
-		@content;
-	}
-}
-
-@mixin md-only {
-	@media only screen and (min-width: 750px) and (max-width: 991px) {
-		@content;
-	}
-}
-
-@mixin md {
-	@media only screen and (min-width: 750px) {
-		@content;
-	}
-}
-
-@mixin up-to-lg {
-	@media only screen and (max-width: 991px) {
-		@content;
-	}
-}
-
-@mixin lg-only {
-	@media only screen and (min-width: 992px) and (max-width: 1199px) {
-		@content;
-	}
-}
-
-@mixin lg {
-	@media only screen and (min-width: 992px) {
-		@content;
-	}
-}
-
-@mixin up-to-xl {
-	@media only screen and (max-width: 1199px) {
-		@content;
-	}
-}
-
-@mixin xl {
-	@media only screen and (min-width: 1200px) {
-		@content;
-	}
-}
-
-@mixin xxl {
-	@media only screen and (min-width: 2200px) {
-		@content;
-	}
-}
-@mixin print {
-	@media print {
-		@content;
-	}
-}
+// 	@include respond-to('sm') {
+// 		background-color: aqua;
+// 	};
+// }
 
 @mixin content-width {
 	margin: 0 auto;
 	width: 100%;
-	max-width: 400px;
+	max-width: 500px;
 	min-width: 300px;
 	padding: 0 15px;//
-	@include xs {
-		max-width: 500px;
-	}
-	@include sm {
+	@include breakOn("sm") {
 		max-width: 540px;
 	}
-	@include md {
+	@include breakOn("md") {
 		max-width: 720px;
 	}
-	@include lg {
+	@include breakOn("lg") {
 		max-width: 960px;
 	}
-	@include xl {
+	@include breakOn("xl") {
 		max-width: 1140px;
 	}
 }
 
 
-//old ~2018-19
-	
-	// @mixin desktop
-// 	@media only screen and (min-width: 1125px)
-// 		@content
 
-// @mixin big-tablet
-// 	@media only screen and (max-width: 1124px) and (min-width: 860px)
-// 		@content
 
-// @mixin tablet
-// 	@media only screen and (max-width: 859px) and (min-width: 640px)
-// 		@content
 
-// @mixin all-tablets
-// 	@media only screen and (max-width: 1124px) and (min-width: 640px)
-// 		@content
 
-// @mixin big-mobile
-// 	@media only screen and (max-width: 639px) and (min-width: 500px)
-// 		@content
 
-// @mixin mobile
-// 	@media only screen and (max-width: 639px)
-// 		@content
-// /////////////////////////////////////
-// @mixin tablet-mobile
-// 	@media only screen and (max-width: 1124px)
-// 		@content
-// @mixin print
-// 	@media print
-// 		@content
+
+
+
+
+// //===Smallest Mobile - XXS: max-width: 400px
+// @mixin xxs-only {
+// 	@media only screen and (max-width: 400px) {
+// 		@content;
+// 	}
+// }
+
+// //===WTF, not used: Default Mobile - XS: min-width: 500
+// @mixin xs {
+// 	@media only screen and (min-width: 500px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin up-to-sm {
+// 	@media only screen and (max-width: 575px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin sm-only {
+// 	@media only screen and (min-width: 576px) and (max-width: 749px) {
+// 		@content;
+// 	}
+// }
+
+// //===Big Mobile - SM: min-width: 576
+// @mixin sm {
+// 	@media only screen and (min-width: 576px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin up-to-md {
+// 	@media only screen and (max-width: 749px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin md-only {
+// 	@media only screen and (min-width: 750px) and (max-width: 991px) {
+// 		@content;
+// 	}
+// }
+
+// //=== Tablet - MD: min-width: 750 (was 768 in bootstrap)
+// @mixin md {
+// 	@media only screen and (min-width: 750px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin up-to-lg {
+// 	@media only screen and (max-width: 991px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin lg-only {
+// 	@media only screen and (min-width: 992px) and (max-width: 1199px) {
+// 		@content;
+// 	}
+// }
+
+// //=== Small Desk - LG: min-width: 992
+// @mixin lg {
+// 	@media only screen and (min-width: 992px) {
+// 		@content;
+// 	}
+// }
+
+// @mixin up-to-xl {
+// 	@media only screen and (max-width: 1199px) {
+// 		@content;
+// 	}
+// }
+
+// //=== Desk - XL: min-width: 1200
+// @mixin xl {
+// 	@media only screen and (min-width: 1200px) {
+// 		@content;
+// 	}
+// }
+
+// //=== Largest Desk - XXL: min-width: 2200
+// @mixin xxl {
+// 	@media only screen and (min-width: 2200px) {
+// 		@content;
+// 	}
+// }
+// @mixin print {
+// 	@media print {
+// 		@content;
+// 	}
+// }
+
+

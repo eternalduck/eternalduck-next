@@ -14,49 +14,50 @@ body:before {
 	right: 10px;
 	font-size: 20px;
 	z-index: 9990;
+	@include content-width;
 }
 
 body:before {
-	content: "xs before 575px";
+	content: "XS before 500px";
 	color: cyan;
 }
-@include xxs-only {
+@include breakUpTo("XXSonly") {
 	body:before {
 		content: "xxs-only - max-width: 400px";
 		color: orange;
 	}
 }
 
-@include sm {
+@include breakOn("SM") {
 	body:before {
-		content: "sm - min-width: 576px";
+		content: "SM - min-width: 576px";
 		color: fuchsia;
 	}
 }
-@include md {
+@include breakOn("MD") {
 	body:before {
-		content: "md - min-width: 750px";
+		content: "MD - min-width: 750px";
 		color: blue;
 	}
 
 }
-@include lg {
+@include breakOn("LG") {
 	body:before {
-		content: "lg - min-width: 992px";
+		content: "LG - min-width: 992px";
 		color: lime;
 	}
 
 }
-@include xl {
+@include breakOn("XL") {
 	body:before {
-		content: "xl - min-width: 1200px";
+		content: "XL - min-width: 1200px";
 		color: red;
 	}
 
 }
-@include xxl {
+@include breakOn("XXL") {
 	body:before {
-		content: "xxl - min-width: 2200px";
+		content: "XXL - min-width: 2200px";
 		color: magenta;
 	}
 

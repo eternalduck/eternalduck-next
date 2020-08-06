@@ -1,5 +1,6 @@
+import styled from "styled-components"
+import {vars, media, mixinRedBg} from "../scss/_vars-mixins.js"
 import Menu from "./menu"
-//TODO: menu_light | menu_dark
 
 const Header = ({headerMenuClass}) => {
 	return (
@@ -12,3 +13,10 @@ const Header = ({headerMenuClass}) => {
 }
 
 export default Header
+
+const ZZZ  = styled.div`
+	background: red;
+
+`;
+
+// + header-footer css - how to split?

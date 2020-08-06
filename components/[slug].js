@@ -1,17 +1,20 @@
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import Link from "next/link"
+import { useRouter } from "next/router"
+import styled from "styled-components"
 import Layout from "../../components/layout"
 
 
 const Post = ({
+	slug,
 	content,
-	slug
+	// ...other
 }) => {
 	const router = useRouter()
-	// if (!router.isFallback && !content?.slug) {
-	//	// console.log("error 404")
-	// 	return <ErrorPage statusCode={404} />
-	// }
+	const { slug } = router.query
+	if (!router.isFallback && !slug) {
+		console.log("error 404")
+		// return <ErrorPage statusCode={404} />
+	}
 
 	return (
 		<>
@@ -24,7 +27,13 @@ const Post = ({
 			headerMenuClass="menu_light"
 			footerMenuClass="menu_light"
 		>
-		<div class="single-work__header">
+
+		{router.isFallback ? (
+          <PostTitle>Loading...</PostTitle>
+        ) : (
+          <>
+		<p>Post: {slug}</p>
+		{/* <div class="single-work__header">
 			<h1 class="txt-shadow">{content.title}</h1>
 			<p class="single-work__keywords keywords">
 				content.keywords
@@ -33,20 +42,23 @@ const Post = ({
 			<p class="single-work__link">
 				<a href={content.url} target="_blank">Visit the site</a>
 			</p>
-			{/* <p class="single-work__link">
+			<p class="single-work__link">
 				<a href={content.url} target="_blank">{content.txt2}</a>
-			</p> */}
+			</p>
 		</div>
 
 		<div class="single-work__descr">
 			<p>{content.descrEn}</p>
 		</div>
-		{/* <div class="single-work__descr">
+		<div class="single-work__descr">
 			<p>{content.descrEn}</p>
-		</div> */}
-		<img class="single-work__main-img" src={content.img} />
+		</div>
+		<img class="single-work__main-img" src={content.img} /> */}
 
 		{/* TODO: nav for next\prev [slug] */}
+
+			</>
+        )} {/* router */}
 
 		</Layout>
 	</>

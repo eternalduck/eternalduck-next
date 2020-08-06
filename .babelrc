@@ -21,13 +21,16 @@
 		]
 	],
 	"plugins": [
+		//make readable classes
+		["babel-plugin-styled-components",
+			{
+				"fileName": false,
+				// "ssr": false,
+				// "preprocess": false
+			}
+		]
+
 		// "@babel/plugin-proposal-do-expressions",
-		// ["polyfill-es-shims", {
-		// 	"method": "usage-global",
-		// 	"targets": {
-		// 		"ie": 10,
-		// 		"firefox": 65
-		// 	}
-		// }]
+
 	]
 }

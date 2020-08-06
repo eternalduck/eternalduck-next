@@ -3,17 +3,19 @@
 // rem for breakpoints?
 // em for paddings?
 
+// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Slab:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700;900&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Slab:wght@600;700&display=swap");
 @import "debug";
 @import "utils/reset";
-@import "vars-mixins";
-@import "grid";
+@import "utils/fa-icons";
+// @import "utils/ie-tweaks";
+// @import "vars-mixins";
+// @import "/libs/fancybox3/jquery.fancybox.min.css";
+
+// @import "grid";
 // @import "page404";
 @import "header-footer";
-// @import "utils/ie-tweaks";
-@import "utils/fa-icons";
-@import "/libs/fancybox3/jquery.fancybox.min.css";
 
 
 // font-family: 'Open Sans', sans-serif;
@@ -23,7 +25,8 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	font-family: 'Courier', serif;
+	font-family: 'Inconsolata', monospace;
+	// font-family: 'Courier', serif;
 	// font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
@@ -32,8 +35,9 @@ body {
 	color: #fff;//TMP!
 }
 h1, h2, h3, h4 {
+	font-family: 'Inconsolata', monospace;
 	// font-family: 'Roboto Slab', serif;
-	font-weight: 600;
+	font-weight: 700;
 }
 h1 {
 	font-size: 230%;
@@ -43,43 +47,43 @@ h2 {
 	font-size: 190%;
 	margin-bottom: 18px;
 }
-h3 {
-	font-size: 160%;
-	margin-bottom: 16px;
-}
-h4 {
-	font-size: 130%;
-	margin-bottom: 14px;
-}
-p {
-	font-size: 100%;
-	margin: 0 0 8px;
-}
-a {
-	@include underline;
-}
-.md-up-hidden {
-	@include md {
-		display: none;
-	}
-}
-.float-right {
-	float: right;
-}
-.float-left {
-	float: left;
-}
+// h3 {
+// 	font-size: 160%;
+// 	margin-bottom: 16px;
+// }
+// h4 {
+// 	font-size: 130%;
+// 	margin-bottom: 14px;
+// }
+// p {
+// 	font-size: 100%;
+// 	margin: 0 0 8px;
+// }
+// a {
+// 	@include underline;
+// }
+// .md-up-hidden {
+// 	@include md {
+// 		display: none;
+// 	}
+// }
+// .float-right {
+// 	float: right;
+// }
+// .float-left {
+// 	float: left;
+// }
 
 
-.underline {@include underline;}
+// .underline {@include underline;}
 
 // used in menu & nav; for 1-line items only
-.hoverbg {
-	@include hoverbg;
-}
-.txt-shadow {
-	@include txt-shadow;
-}
+// .hoverbg {
+// 	@include hoverbg;
+// }
+// .txt-shadow {
+// 	@include txt-shadow;
+// }
 
 // .shadow {
 // 	transition: text-shadow .2s ease-in;
@@ -104,226 +108,226 @@ a {
 // }
 
 //remove, convert all to grids!
-.content-width {
-	@include content-width;
-}
+// .content-width {
+// 	@include content-width;
+// }
 
 //================
 //common elements
 //================
 
 
-.preloader {
-	background: $blue-dark-dust;
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	visibility: visible;
-	transition: all .4s ease-out .2s;
-	z-index: 99999;
-	.loaded & {
-		visibility: hidden;
-		opacity: 0;
-		z-index: -1;
-	}
-	&__spinner {
-		width: 100px;
-		height: 100px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-top: -40px;
-		margin-left: -40px;
-	}
-	&__bounce1,
-	&__bounce2 {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		border-radius: 50%;
-		top: 0;
-		left: 0;
-		animation: bounce 1.5s infinite ease-in-out;
-	}
-	&__bounce1 {
-		background-color: $blue-mid;
-		opacity: .6;
-	}
-	&__bounce2 {
-		animation-delay: -0.8s;
-		background-color: $vio-saturated;
-		opacity: .5;
-	}
-}
-@keyframes bounce {
-	0%, 100% {
-		transform: scale(0.0);
-	}
-	50% {
-		transform: scale(1.0);
-	}
-}
+// .preloader {
+// 	background: $blue-dark-dust;
+// 	position: fixed;
+// 	top: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	right: 0;
+// 	visibility: visible;
+// 	transition: all .4s ease-out .2s;
+// 	z-index: 99999;
+// 	.loaded & {
+// 		visibility: hidden;
+// 		opacity: 0;
+// 		z-index: -1;
+// 	}
+// 	&__spinner {
+// 		width: 100px;
+// 		height: 100px;
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		margin-top: -40px;
+// 		margin-left: -40px;
+// 	}
+// 	&__bounce1,
+// 	&__bounce2 {
+// 		width: 100%;
+// 		height: 100%;
+// 		position: absolute;
+// 		border-radius: 50%;
+// 		top: 0;
+// 		left: 0;
+// 		animation: bounce 1.5s infinite ease-in-out;
+// 	}
+// 	&__bounce1 {
+// 		background-color: $blue-mid;
+// 		opacity: .6;
+// 	}
+// 	&__bounce2 {
+// 		animation-delay: -0.8s;
+// 		background-color: $vio-saturated;
+// 		opacity: .5;
+// 	}
+// }
+// @keyframes bounce {
+// 	0%, 100% {
+// 		transform: scale(0.0);
+// 	}
+// 	50% {
+// 		transform: scale(1.0);
+// 	}
+// }
 
-.progress {
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 12px;
-	background: transparent;
-	z-index: 999;
-	&.initialized {
-		background: $vio-eggplant;
-		border-bottom: 5px solid $almost-black;
-	}
-	&__bar {
-		width: 0;
-		height: 100%;
-		background: $pink-saturated;
-	}
-}
+// .progress {
+// 	position: fixed;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 12px;
+// 	background: transparent;
+// 	z-index: 999;
+// 	&.initialized {
+// 		background: $vio-eggplant;
+// 		border-bottom: 5px solid $almost-black;
+// 	}
+// 	&__bar {
+// 		width: 0;
+// 		height: 100%;
+// 		background: $pink-saturated;
+// 	}
+// }
 
 
-.back2top {
-	position: fixed;
-	right: 10px;
-	bottom: 10px;
-	display: block;
-	text-align: center;
-	color: $white;
-	line-height: 0.4;
-	cursor: pointer;
-	font-size: 150%;
-	z-index: 99;
-		&:hover {
-		opacity: .8;
-		animation: jump 1s infinite linear;
-	}
+// .back2top {
+// 	position: fixed;
+// 	right: 10px;
+// 	bottom: 10px;
+// 	display: block;
+// 	text-align: center;
+// 	color: $white;
+// 	line-height: 0.4;
+// 	cursor: pointer;
+// 	font-size: 150%;
+// 	z-index: 99;
+// 		&:hover {
+// 		opacity: .8;
+// 		animation: jump 1s infinite linear;
+// 	}
 
-	@keyframes jump {
-		0%, 100% {
-			transform: translateY(0);
-		}
-		50% {
-			transform: translateY(-10px);
-		}
-	}
-	@include md {
-		font-size: 200%;
-	}
-	@include xl {
-		font-size: 230%;
-	}
-}
-.lang {
-	&__container {
-		// outline: 1px solid red;
-		position: relative;
-		width: 80%;
-		margin: 0 auto;
-		padding-top: 50px;
-		border-top: 1px solid $white-transparent;
-		&_cv {
-			width: 100%;
-			border-bottom: 1px solid $black-transparent;
-			&.flash-border {
-				animation: flash-border .8s linear .1s 1;
-			}
-		}
-	}
-	&__toggle {
-		line-height: 1;
-		color: $white;
-		position: absolute;
-		top: 15px;
-		left: 50%;
-		margin-left: -105px;
-		cursor: pointer;
-		opacity: .6;
-		transition: opacity .2s ease-in;
-		&:hover {
-			opacity: 1;
-		}
-		&_cv {
-			top: -10px;
-			color: $black;
-		}
-		&_bottom {
-			top: auto;
-			bottom: 15px;
-			display: none;
-		}
-		& span {
-			font-size: 22px;
-		}
-		& .far {
-			font-size: 16px;
-		}
-		&.expand {
-			& .fa-minus-square {
-				display: none;
-			}
-		}
-		&.collapse {
-			& .fa-plus-square {
-				display: none;
-			}
-		}
-	}//toggle
-	&__content {
-		// outline: 1px dashed red;
-		width: 100%;
-		margin-bottom: 70px;
-		height: 0;
-		overflow: hidden;
-		opacity: 0;
-		transition: opacity .2s ease-in;
-		&_cv {
-			margin-bottom: 0;
-		}
-		&.expanded {
-			margin-bottom: 70px;
-			height: auto;
-			overflow: auto;
-			border-radius: 30px;
-			opacity: 1;
-			animation: flash .8s 1;
-			&+.lang__toggle_bottom {
-				display: block;
-			}
-		}
-	}
+// 	@keyframes jump {
+// 		0%, 100% {
+// 			transform: translateY(0);
+// 		}
+// 		50% {
+// 			transform: translateY(-10px);
+// 		}
+// 	}
+// 	@include md {
+// 		font-size: 200%;
+// 	}
+// 	@include xl {
+// 		font-size: 230%;
+// 	}
+// }
+// .lang {
+// 	&__container {
+// 		// outline: 1px solid red;
+// 		position: relative;
+// 		width: 80%;
+// 		margin: 0 auto;
+// 		padding-top: 50px;
+// 		border-top: 1px solid $white-transparent;
+// 		&_cv {
+// 			width: 100%;
+// 			border-bottom: 1px solid $black-transparent;
+// 			&.flash-border {
+// 				animation: flash-border .8s linear .1s 1;
+// 			}
+// 		}
+// 	}
+// 	&__toggle {
+// 		line-height: 1;
+// 		color: $white;
+// 		position: absolute;
+// 		top: 15px;
+// 		left: 50%;
+// 		margin-left: -105px;
+// 		cursor: pointer;
+// 		opacity: .6;
+// 		transition: opacity .2s ease-in;
+// 		&:hover {
+// 			opacity: 1;
+// 		}
+// 		&_cv {
+// 			top: -10px;
+// 			color: $black;
+// 		}
+// 		&_bottom {
+// 			top: auto;
+// 			bottom: 15px;
+// 			display: none;
+// 		}
+// 		& span {
+// 			font-size: 22px;
+// 		}
+// 		& .far {
+// 			font-size: 16px;
+// 		}
+// 		&.expand {
+// 			& .fa-minus-square {
+// 				display: none;
+// 			}
+// 		}
+// 		&.collapse {
+// 			& .fa-plus-square {
+// 				display: none;
+// 			}
+// 		}
+// 	}//toggle
+// 	&__content {
+// 		// outline: 1px dashed red;
+// 		width: 100%;
+// 		margin-bottom: 70px;
+// 		height: 0;
+// 		overflow: hidden;
+// 		opacity: 0;
+// 		transition: opacity .2s ease-in;
+// 		&_cv {
+// 			margin-bottom: 0;
+// 		}
+// 		&.expanded {
+// 			margin-bottom: 70px;
+// 			height: auto;
+// 			overflow: auto;
+// 			border-radius: 30px;
+// 			opacity: 1;
+// 			animation: flash .8s 1;
+// 			&+.lang__toggle_bottom {
+// 				display: block;
+// 			}
+// 		}
+// 	}
 
-}//lang
+// }//lang
 
-@keyframes flash {
-	0% {
-		background: $gray-lightest;
-	}
-	50% {
-		background: $green-lightest;
-	}
-	100% {
-		background: $gray-lightest;
-	}
-}
-@keyframes flash-border {
-	0% {
-		border-bottom: 1px solid $black-transparent;
-	}
-	50% {
-		border-bottom: 1px solid $green;
-	}
-	100% {
-		border-bottom: 1px solid $black-transparent;
-	}
-}
+// @keyframes flash {
+// 	0% {
+// 		background: $gray-lightest;
+// 	}
+// 	50% {
+// 		background: $green-lightest;
+// 	}
+// 	100% {
+// 		background: $gray-lightest;
+// 	}
+// }
+// @keyframes flash-border {
+// 	0% {
+// 		border-bottom: 1px solid $black-transparent;
+// 	}
+// 	50% {
+// 		border-bottom: 1px solid $green;
+// 	}
+// 	100% {
+// 		border-bottom: 1px solid $black-transparent;
+// 	}
+// }
 
-.index-page {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: $vio-mid;
-	background: $vio-mid url("/images/table02.png") center/cover no-repeat;
-}
+// .index-page {
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100%;
+// 	background: $vio-mid;
+// 	background: $vio-mid url("/images/table02.png") center/cover no-repeat;
+// }

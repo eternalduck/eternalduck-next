@@ -10,11 +10,11 @@ export const menuItems =
 		"url": "/work/sites",
 		"id": "sites"
 	},
-	// {
-	// 	"txt": "ux",
-	// 	"url": "/work/ux",
-	// 	"id": "ux"
-	// },
+	{
+		"txt": "ux",
+		"url": "/work/ux",
+		"id": "ux"
+	},
 	// {
 	// 	"txt": "art",
 	// 	"url": "/work/art",

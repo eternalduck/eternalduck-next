@@ -3,13 +3,24 @@
 // all blocks columns are based on 1/12fr
 @import "vars-mixins";
 
-//=== Mobile-first ===================
 .grid-container {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 15px 1fr 15px;
 	grid-template-rows: 1fr;
 	grid-template-areas: ". content .";
+	@include breakOn("SM") {
+		grid-template-columns: 1fr 540px 1fr;
+	}
+	@include breakOn("MD") {
+		grid-template-columns: 1fr 720px 1fr;
+	}
+	@include breakOn("LG") {
+		grid-template-columns: 1fr 960px 1fr;
+	}
+	@include breakOn("XL") {
+		grid-template-columns: 1fr 1140px 1fr;
+	}
 }
 
 .grid-content {
@@ -24,24 +35,24 @@
 	grid-template-rows: 1fr;
 	grid-template-columns: 15px 1fr 15px;
 	grid-template-areas: ". main .";
-	@include sm {
+	@include breakOn("SM") {
 		grid-template-columns: 1fr 540px 1fr;
 	}
-	@include md {
+	@include breakOn("MD") {
 		grid-template-areas: "sidebar main .";
 		grid-template-columns: 2.3fr 9.5fr 0.2fr;
 	}
-	@include lg {
+	@include breakOn("LG") {
 		grid-template-columns: 3fr 8fr 1fr;
 	}
-	@include xl {
+	@include breakOn("XL") {
 		grid-template-columns: 3fr minmax(850px, 900px) 1fr;
 	}
 
 }
 
 .grid-sidebar {
-	@include up-to-md {
+	@include breakUpTo("upToMD") {
 		display: none;
 	}
 	grid-area: sidebar;
@@ -53,45 +64,9 @@
 	grid-area: main;
 	padding-right: 15px;
 	padding-left: 15px;
-	@include sm {
+	@include breakOn("SM") {
 		padding-right: 30px;
 		padding-left: 30px;
 	}
 }
 
-
-
-
-
-
-//===Big Mobile - SM: min-width: 576 ===
-@include sm {
-	.grid-container {
-		grid-template-columns: 1fr 540px 1fr;
-	}
-}
-
-//=== Tablet - MD: min-width: 750 (was 768 in bootstrap) ===================
-@include md {
-	.grid-container {
-		grid-template-columns: 1fr 720px 1fr;
-	}
-}
-
-
-//=== Small Desk - LG: min-width: 992 ===
-@include lg {
-	.grid-container {
-		grid-template-columns: 1fr 960px 1fr;
-	}
-}
-
-//=== Desk - XL: min-width: 1200 ===
-@include xl {
-	.grid-container {
-		grid-template-columns: 1fr 1140px 1fr;
-	}
-}
-
-//=== Largest Desk - XXL: min-width: 2200 ===
-//.grid-container is still 1140px

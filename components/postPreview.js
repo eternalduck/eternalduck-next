@@ -1,22 +1,25 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import styled from "styled-components"
 
-const PostPreview = ({content, slug}) => {
+
+const PostPreview = ({slug, content}) => {
+	// console.info(slug)
 	return (
 	<div className="work-item work-item_sites">
 		<div className="work-item__inner sites-page__item_inner">
 			<div className="work-item__header work-item__header_sites">
 				<h4 className="work-item__title">
-				{/* <Link as={`/work/sites/${slug}`} href="/work/sites/[slug]">
-					<a className="hover:underline">{content.title}</a>
-				</Link> */}
-					<a href={content.slug}>
+				{/* <Link href="/work/sites/[slug]" as={`/work/sites/${slug}`}> */}
+					<a>{slug} - {content.title}</a>
+				{/* </Link> */}
+					{/* <a href={slug}>
 						{content.title}
-					</a>
+					</a> */}
 				</h4>
 			</div>
-			<div className="work-item__img-wrap work-item__img-wrap_sites">
-				<a href={content.slug}>
+			{/* <div className="work-item__img-wrap work-item__img-wrap_sites">
+				<a href={slug}>
 					<img src={content.imgThumb} className="work-item__img" alt=""/>
 				</a>
 			</div>
@@ -24,7 +27,7 @@ const PostPreview = ({content, slug}) => {
 				<span className="work-item__keywords">
 					{content.keywords}
 				</span>
-			</div>
+			</div> */}
 		</div>
 	</div>
 	
