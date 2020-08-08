@@ -1,10 +1,14 @@
 import Head from "next/head"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import Header from "../components/header"
+import Preloader from "../components/preloader"
+
+// import {vars, media, contentWidth} from "../scss/_vars-mixins.js"
 
 
 
-
+// console.log(({theme}) => theme.tenderPink);
 
 export default function Index({
 	// menuClass
@@ -20,14 +24,19 @@ export default function Index({
 		<Head>
 			<title>eternalduck</title>
 		</Head>
-			{/*add preloader*/}
-			<Layout 
+		<Preloader/>
+		<IndexPage>
+			{/* <ContentWidth> */}
+				<Header headerMenuClass="menu_light"/>
+			{/* </ContentWidth> */}
+		</IndexPage>
+			{/* <Layout 
 				isFooter={false}
 				pageClass="index-page grid-container"
 				headerMenuClass="menu_light"
 			>
 				<p>index page</p>
-			</Layout>
+			</Layout> */}
 			
 	</>
 
@@ -35,17 +44,18 @@ export default function Index({
 }//Index
 
 
-// .index-page {
-// 	position: absolute;
-// 	width: 100%;
-// 	height: 100%;
-// 	background: $vio-mid;
-// 	background: $vio-mid url("/public/images/table02.png") center/cover no-repeat;
-// }
+// const yy  = styled(Header)`
+// 	${({theme})=>theme.mixinContentWidth}
+// `;
 
 
-const indexPage  = styled.div`
-	background: red;
+const IndexPage  = styled.div`
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("images/table02.png") center/cover no-repeat;
+	// background: ${({theme}) => theme.vars.tenderPink};
+	// ${({theme}) => theme.mixinTestBg}
 
 `;
 

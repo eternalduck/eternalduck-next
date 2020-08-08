@@ -4,8 +4,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev -p 4000",
-		"build": "next build",
-		"export": "next build && next export"
+		"build": "next build && next export"
 	},
 	"browserslist": [
 		">0.2%",
@@ -15,6 +14,7 @@
 	"dependencies": {
 		"@zeit/next-sass": "^1.0.1",
 		"next": "9.4.4",
+		"next-compose-plugins": "^2.2.0",
 		"node-sass": "^4.14.1",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
@@ -24,6 +24,7 @@
 	},
 	"devDependencies": {
 		"babel-plugin-polyfill-es-shims": "0.0.3",
-		"babel-plugin-styled-components": "^1.11.1"
+		"babel-plugin-styled-components": "^1.11.1",
+		"html-webpack-plugin": "^4.3.0"
 	}
 }

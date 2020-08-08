@@ -3,12 +3,41 @@ import { useRouter } from "next/router"
 import styled from "styled-components"
 import Layout from "../../components/layout"
 
+// export async function getStaticPaths() {
+//   const response = await fetch(
+//     'https://jsonplaceholder.typicode.com/posts?_page=1'
+//   )
+//   const postList = await response.json()
+//   return {
+//     paths: postList.map((post) => {
+//       return {
+//         params: {
+//           id: `${post.id}`,
+//         },
+//       }
+//     }),
+//     fallback: false,
+//   }
+// }
 
-const Post = ({
+// export async function getStaticProps({ params }) {
+//   // fetch single post detail
+//   const response = await fetch(
+//     `https://jsonplaceholder.typicode.com/posts/${params.id}`
+//   )
+//   const post = await response.json()
+//   return {
+//     props: post,
+//   }
+// }
+
+
+
+export default function Post({
 	slug,
 	content,
 	// ...other
-}) => {
+}) {
 	const router = useRouter()
 	const { slug } = router.query
 	if (!router.isFallback && !slug) {
@@ -65,5 +94,3 @@ const Post = ({
 	)
 
 }
-
-export default Post

@@ -1,46 +1,30 @@
-import "../scss/main.scss"
+import "../scss/global.scss"
 // import "../scss/work.scss"
+// import {menuItems} from './data/menuItems'
 
-import { ThemeProvider } from "styled-components"
+import {ThemeProvider} from "styled-components"
+// import {vars, media} from "../scss/_vars-mixins.js"
+import * as varsMixinsMedia from "../scss/_vars-mixins.js"
 
-// use $tenderPink var like this: 
-// ${({ var }) => var.tenderPink}
-// const theme = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!../scss/_vars-mixins.scss');
-
-import {vars} from "../scss/_vars-mixins.js"//TMP, how to pass it everywhere?
 
 
 export default function MyApp({ Component, pageProps }) {
 
-	// console.info(theme)
 	return (
-		<ThemeProvider theme={vars}>{/*how to use theme??*/}
+		<ThemeProvider theme={{...varsMixinsMedia}}>{/*how to use theme??*/}
 			<Component {...pageProps}/>
 		</ThemeProvider>
 	)
 }
 
 
-
-// export default class MyApp extends App {
-//   render() {
-//     const { Component, pageProps } = this.props
-//     return (
-//       <ThemeProvider theme={theme}>
-//         <Component {...pageProps} />
-//       </ThemeProvider>
-//     )
-//   }
-// }
-
-
-
-
-
-
-
-// old default
-// This default export is required in a new `pages/_app.js` file.
-// export default function MyApp({ Component, pageProps }) {
-// 	return <Component {...pageProps} />
-// }
+// ????
+export async function getStaticPaths() {
+  return {
+    paths: [
+      { params: { id: '1' } },//params must match the parameters used in the page name:
+	  { params: { id: '2' } }
+    ],
+    fallback: false // true mode of getStaticPaths is not supported when using next export.
+  };
+}

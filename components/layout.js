@@ -1,8 +1,9 @@
+// import {ThemeProvider} from "styled-components"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import FooterEssentials from "../components/footerEssentials"
 import styled from "styled-components"
-import {vars, media} from "../scss/_vars-mixins.js"
+// import {vars, media} from "../scss/_vars-mixins.js"
 
 import Preloader from "../components/preloader"
 import Progressbar from "../components/progressbar"
@@ -20,25 +21,23 @@ export default function Layout({
 
 	return (
 
-	
 	<>
-	<Preloader/>
-	<Progressbar/>
-	<GoUp/>
-	<GridContainer className={pageClass}>
-		<GridContent>
-			<Header headerMenuClass={headerMenuClass}/>
-				{children}
-			{isFooter ? 
-			<Footer footerMenuClass={footerMenuClass}/> 
-			: <FooterEssentials/>
-			}
+		<Preloader/>
+		<Progressbar/>
+		<GoUp/>
+		<GridContainer className={pageClass}>
+			<GridContent>
+				<Header headerMenuClass={headerMenuClass}/>
+					{children}
+				{isFooter ? 
+				<Footer footerMenuClass={footerMenuClass}/> 
+				: <FooterEssentials/>
+				}
 
-			{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
-		</GridContent>
-	</GridContainer>
-	
-	</>
+				{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
+			</GridContent>
+		</GridContainer>
+		</>
 
 	)
 }
@@ -48,20 +47,21 @@ export default function Layout({
 // style
 const GridContainer = styled.div`
 	width: 100%;
+	// min-height: 100vh;
 	display: grid;
 	grid-template-columns: 15px 1fr 15px;
 	grid-template-rows: 1fr;
 	grid-template-areas: ". content .";
-	${media.sm`
+	${({ theme }) => theme.media.sm`
 		grid-template-columns: 1fr 540px 1fr;
 	`}
-	${media.md`
+	${({ theme }) => theme.media.md`
 		grid-template-columns: 1fr 720px 1fr;
 	`}
-	${media.lg`
+	${({ theme }) => theme.media.lg`
 		grid-template-columns: 1fr 960px 1fr;
 	`}
-	${media.xl`
+	${({ theme }) => theme.media.xl`
 		grid-template-columns: 1fr 1140px 1fr;
 	`}
 
@@ -69,6 +69,7 @@ const GridContainer = styled.div`
 const GridContent = styled.div`
 	grid-area: content;
 	width: 100%;
+	${({theme}) => theme.mixinTestBg}
 `;
 
 

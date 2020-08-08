@@ -47,21 +47,21 @@ export const vars = {
 ////////////////
 
 //Grid Breakpoints
-export const breakpoints = {
-	// XS: 'min-width: 500px',//no need if no xxs used?
-	// XXSonly: 'max-width: 400px',
-	// SMonly: '(min-width: 576px) and (max-width: 749px)',
-	// MDonly: '(min-width: 750px) and (max-width: 991px)',
-	// LGonly: '(min-width: 992px) and (max-width: 1199px)',
-	// XXL: 'min-width: 2200px'//not necessary
-	upToSM: 'max-width: 575px',
-	upToMD: 'max-width: 749px',
-	upToLG: 'max-width: 991px',
-	upToXL: 'max-width: 1199px',
+const breakpoints = {
+	// xs: 'min-width: 500px',//no need if no xxs used?
+	// xxsOnly: 'max-width: 400px',
+	// smOnly: '(min-width: 576px) and (max-width: 749px)',
+	// mdOnly: '(min-width: 750px) and (max-width: 991px)',
+	// lgOnly: '(min-width: 992px) and (max-width: 1199px)',
+	// xxl: 'min-width: 2200px'//not necessary
+	upToSm: 'max-width: 575px',
+	upToMd: 'max-width: 749px',
+	upToLg: 'max-width: 991px',
+	upToXl: 'max-width: 1399px',
 	sm: 'min-width: 576px',
 	md: 'min-width: 750px',
 	lg: 'min-width: 992px',
-	xl: 'min-width: 1200px',
+	xl: 'min-width: 1400px',
 };
 export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
 	accumulator[label] = (...args) => css`
@@ -72,9 +72,91 @@ export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
 }, {});
 
 
-export const mixinRedBg = () => {
+export const mixinContentWidth = () => {
 	return `
-		background: red;
-		border: 2px solid blue;
-		:hover {background: pink;}
+		margin: 0 auto;
+		width: 100%;
+		max-width: 500px;
+		min-width: 300px;
+		padding: 0 15px;
+		@media (${breakpoints.sm}) {
+			max-width: 540px;
+		}
+		@media (${breakpoints.md}) {
+			max-width: 720px;
+		}
+		@media (${breakpoints.lg}) {
+			max-width: 960px;
+		}
+		@media (${breakpoints.xl}) {
+			max-width: 1140px;
+		}
 `}
+
+export const mixinTestBg = () => {
+	return `
+		background: green;
+		@media (${breakpoints.sm}) {
+			background: red;
+		}
+		@media (${breakpoints.lg}) {
+			background: orange;
+		}
+		@media (${breakpoints.xl}) {
+			background: yellow;
+		}
+`}
+
+
+
+//////////////////
+// $sidebar-md: 200px;
+// $sidebar-lg: 220px;
+// $sidebar-xl: 250px;
+
+
+// @mixin no-border-bottom {
+// 	border-bottom: none;
+// 	&:hover{
+// 		border-bottom: none;
+// 	}
+// }
+
+// @mixin underline {
+// 	display: inline;
+// 	transition: all .1s ease-in;
+// 	border-bottom: 1px solid;
+// 	text-decoration: none;
+// 	&:hover {
+// 		border-bottom: 1px solid transparent;
+// 		text-decoration: none;
+// 	}
+// }
+
+// @mixin txt-shadow {
+// 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+// }
+
+// @mixin hoverbg {
+// 	position: relative;
+// 	&:hover {
+// 		color: $white;
+// 	}
+// 	&:after {
+// 		content: "";
+// 		position: absolute;
+// 		top: -5px;
+// 		right: -8px;
+// 		bottom: -5px;
+// 		left: -8px;
+// 		z-index: -1;
+// 		transform: skewX(-1deg) skewY(-1deg);
+// 		transition: background .1s ease-in;
+// 		opacity: .5;
+// 	}
+// 	&:hover:after {
+// 		background: $tender-pink-transp;
+// 	}
+// }
+
+

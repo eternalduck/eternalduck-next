@@ -5,7 +5,7 @@ import Menu from "./menu"
 const Header = ({headerMenuClass}) => {
 	return (
 
-	<header>
+	<header className="content-width">{/* tmp class */}
 		<Menu headerMenuClass={`menu_header ${headerMenuClass}`}/>
 	</header>
 
