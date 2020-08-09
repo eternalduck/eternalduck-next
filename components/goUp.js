@@ -1,10 +1,10 @@
-import styled from "styled-components"
-import {vars, media} from "../scss/_vars-mixins.js"
+import styled, {css, keyframes} from "styled-components"
+import {media} from "../scss/_vars-mixins"
 import {Script} from "vm";
 
 // + script, see on bottom
 
-const GoUp = () => {
+export default function GoUp(){
 	return (
 		<CssGoUp>
 			<i className="fas fa-chevron-up"></i>
@@ -12,8 +12,18 @@ const GoUp = () => {
 	)
 }
 
-export default GoUp
+const animation = keyframes`
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-10px);
+	}
+`
 
+const animationJump = css`
+	${animation} 1s infinite linear;
+`
 
 const CssGoUp  = styled.div`
 	position: fixed;
@@ -28,25 +38,17 @@ const CssGoUp  = styled.div`
 	z-index: 99;
 	&:hover {
 		opacity: .8;
-		animation: jump 1s infinite linear;
+		animation: ${animationJump};
 	}
 
-	@keyframes jump {
-		0%, 100% {
-			transform: translateY(0);
-		}
-		50% {
-			transform: translateY(-10px);
-		}
-	}
-	${({ theme }) => theme.media.md`
+	${media.md`
 		font-size: 200%;
 	`}
-	${({ theme }) => theme.media.xl`
+	${media.xl`
 		font-size: 230%;
 	`}
 
-`;
+`
 
 
 // $("#back2top").click(function(){

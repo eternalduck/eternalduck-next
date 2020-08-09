@@ -1,8 +1,11 @@
-import { css } from 'styled-components';
+// 4 Aug, 2020
 
-////////////////
+import { css } from 'styled-components';
+// TODO: import scss breakpoints & vars?
+
+
+// same as in vars-mixins.scss
 // VARS
-////////////////
 export const vars = {
 	"black": "#000;",
 	"white": "#fff;",
@@ -46,7 +49,10 @@ export const vars = {
 // MIXINS
 ////////////////
 
-//Grid Breakpoints
+
+// keep actual with vars-mixins.scss!!!
+
+// G R I D
 const breakpoints = {
 	// xs: 'min-width: 500px',//no need if no xxs used?
 	// xxsOnly: 'max-width: 400px',
@@ -71,13 +77,14 @@ export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
 	return accumulator;
 }, {});
 
+// end grid
 
 export const mixinContentWidth = () => {
 	return `
 		margin: 0 auto;
 		width: 100%;
-		max-width: 500px;
 		min-width: 300px;
+		max-width: 500px;
 		padding: 0 15px;
 		@media (${breakpoints.sm}) {
 			max-width: 540px;
@@ -93,6 +100,9 @@ export const mixinContentWidth = () => {
 		}
 `}
 
+
+
+// TMP
 export const mixinTestBg = () => {
 	return `
 		background: green;
@@ -106,8 +116,6 @@ export const mixinTestBg = () => {
 			background: yellow;
 		}
 `}
-
-
 
 //////////////////
 // $sidebar-md: 200px;

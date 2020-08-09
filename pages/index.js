@@ -48,7 +48,7 @@ export default function Index({
 // 	${({theme})=>theme.mixinContentWidth}
 // `;
 
-
+// TODO: remove class from Header.js, import mixinContentWidth here
 const IndexPage  = styled.div`
 	position: absolute;
 	width: 100%;

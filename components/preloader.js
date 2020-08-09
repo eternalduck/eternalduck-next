@@ -1,11 +1,11 @@
-import styled from "styled-components"
-import {vars} from "../scss/_vars-mixins.js"
+import styled, {css, keyframes} from "styled-components"
+import {vars} from "../scss/_vars-mixins"
 
 // $(window).on("load", function(){
 // 	$("body").addClass("loaded");
 // });
 
-const Preloader = () => {
+export default function Preloader(){
 	return (
 
 	<CssPreloader>
@@ -17,6 +17,19 @@ const Preloader = () => {
 
 	)
 }
+
+const animation = keyframes`
+	0%, 100% {
+		transform: scale(0.0);
+	}
+	50% {
+		transform: scale(1.0);
+	}
+`
+
+const animationBounce = css`
+	${animation} 1.5s infinite ease-in-out;
+`
 
 const CssPreloader = styled.div`
 	background: ${vars.blueDarkDust};
@@ -50,7 +63,7 @@ const CssPreloader = styled.div`
 		border-radius: 50%;
 		top: 0;
 		left: 0;
-		animation: bounce 1.5s infinite ease-in-out;
+		animation: ${animationBounce};
 	}
 	& .circle-1 {
 		background-color: ${vars.blueMid};
@@ -61,17 +74,7 @@ const CssPreloader = styled.div`
 		background-color: ${vars.vioSaturated};
 		opacity: .5;
 	}
-	@keyframes bounce {
-		0%, 100% {
-			transform: scale(0.0);
-		}
-		50% {
-			transform: scale(1.0);
-		}
-	}
+	
 
 
-`;
-
-
-export default Preloader
+`

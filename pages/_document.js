@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-
-// how to optimize loading, chunks & styles
+// TODO: how to optimize loading, chunks & styles
 //https://medium.com/@antoniogallo.it/creating-an-optimized-big-static-page-website-with-next-js-dc53e5d7f941
 
 
@@ -26,8 +25,8 @@ class CustomDocument extends Document {
 			`}}></style> */}
 		</Head>
 		<body className="loaded">{/* add script for preloader, see in its file */}
-		<Main />
-		<NextScript />
+			<Main />
+			<NextScript />
 		</body>
 	</Html>
 

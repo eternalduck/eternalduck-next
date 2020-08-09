@@ -1,11 +1,11 @@
 import styled from "styled-components"
-import {vars, media, mixinRedBg} from "../scss/_vars-mixins.js"
 import Menu from "./menu"
+import {vars, media} from "../scss/_vars-mixins"
 
 const Header = ({headerMenuClass}) => {
 	return (
-
-	<header className="content-width">{/* tmp class */}
+// TODO: remove class, import mixinContentWidth in index
+	<header className="content-width">
 		<Menu headerMenuClass={`menu_header ${headerMenuClass}`}/>
 	</header>
 

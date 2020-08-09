@@ -1,4 +1,35 @@
-@import "vars-mixins-OLD";
+@import "vars-mixins-old";
+
+// former global mixins
+@mixin no-border-bottom {
+	border-bottom: none;
+	&:hover{
+		border-bottom: none;
+	}
+}
+
+@mixin hoverbg {
+	position: relative;
+	&:hover {
+		color: $white;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: -5px;
+		right: -8px;
+		bottom: -5px;
+		left: -8px;
+		z-index: -1;
+		transform: skewX(-1deg) skewY(-1deg);
+		transition: background .1s ease-in;
+		opacity: .5;
+	}
+	&:hover:after {
+		background: $tender-pink-transp;
+	}
+}
+// end mixins
 
 .menu {
 	&__item {

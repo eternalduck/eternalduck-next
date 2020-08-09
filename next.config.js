@@ -29,8 +29,8 @@ module.exports = withPlugins(
 	) {
 		return {
 			'/': { page: '/' },
-			'/work/sites/': { page: '/work/sites/' },
-			'/work/ux/': { page: '/work/ux/'},
+			'/work/sites/': { page: '/work/sites' },
+			'/work/ux/': { page: '/work/ux'},
 			// '/work/art': { page: '/work/art'},
 			// '/work/timeline': { page: '/work/timeline'},
 			// '/work/cv': { page: '/work/cv'},

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from "styled-components"
+import {vars, media} from "../scss/_vars-mixins"
 
 
 const PostPreview = ({slug, content}) => {

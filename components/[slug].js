@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { useRouter } from "next/router"
 import styled from "styled-components"
+import {vars, media} from "../scss/_vars-mixins"
+
 import Layout from "../../components/layout"
 
 // export async function getStaticPaths() {

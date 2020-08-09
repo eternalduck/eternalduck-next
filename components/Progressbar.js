@@ -3,15 +3,13 @@ import {vars} from "../scss/_vars-mixins.js"
 
 // + script, see on bottom!
 
-const Progressbar = () => {
+export default function Progressbar(){
 	return(
 		<CssProgressbar>
 			<div className="gauge"></div>
 		</CssProgressbar>
 	)
 }
-
-export default Progressbar
 
 const CssProgressbar  = styled.div`
 	position: fixed;

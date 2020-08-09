@@ -1,6 +1,8 @@
 // import React from 'react'
 import Head from "next/head"
 import styled from "styled-components"
+import {vars, media} from "../../../scss/_vars-mixins"
+
 import Layout from "../../../components/layout"
 import PostPreview from "../../../components/postPreview"
 import {sitesList} from "../../../components/data/sitesList"

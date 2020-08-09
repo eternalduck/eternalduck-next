@@ -3,7 +3,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import FooterEssentials from "../components/footerEssentials"
 import styled from "styled-components"
-// import {vars, media} from "../scss/_vars-mixins.js"
+import {vars, media} from "../scss/_vars-mixins"
 
 import Preloader from "../components/preloader"
 import Progressbar from "../components/progressbar"
@@ -52,25 +52,77 @@ const GridContainer = styled.div`
 	grid-template-columns: 15px 1fr 15px;
 	grid-template-rows: 1fr;
 	grid-template-areas: ". content .";
-	${({ theme }) => theme.media.sm`
+	${media.sm`
 		grid-template-columns: 1fr 540px 1fr;
+		/* background: red; */
 	`}
-	${({ theme }) => theme.media.md`
+	${media.md`
 		grid-template-columns: 1fr 720px 1fr;
+		/* background: green; */
 	`}
-	${({ theme }) => theme.media.lg`
+	${media.lg`
 		grid-template-columns: 1fr 960px 1fr;
+		/* background: orange; */
 	`}
-	${({ theme }) => theme.media.xl`
+	${media.xl`
 		grid-template-columns: 1fr 1140px 1fr;
+		/* background: yellow; */
 	`}
 
 `;
 const GridContent = styled.div`
 	grid-area: content;
 	width: 100%;
-	${({theme}) => theme.mixinTestBg}
+	/* ${({theme}) => theme.mixinTestBg} */
+	/* ${mixinTestBg} */
 `;
 
 
 // end style
+
+
+
+
+// TODO: create <LayoutSidebar>
+
+// .grid-with-sidebar {
+// 	outline: 1px dashed green;
+// 	width: 100%;
+// 	display: grid;
+// 	grid-template-rows: 1fr;
+// 	grid-template-columns: 15px 1fr 15px;
+// 	grid-template-areas: ". main .";
+// 	@include breakOn("SM") {
+// 		grid-template-columns: 1fr 540px 1fr;
+// 	}
+// 	@include breakOn("MD") {
+// 		grid-template-areas: "sidebar main .";
+// 		grid-template-columns: 2.3fr 9.5fr 0.2fr;
+// 	}
+// 	@include breakOn("LG") {
+// 		grid-template-columns: 3fr 8fr 1fr;
+// 	}
+// 	@include breakOn("XL") {
+// 		grid-template-columns: 3fr minmax(850px, 900px) 1fr;
+// 	}
+
+// }
+
+// .grid-sidebar {
+// 	@include breakUpTo("upToMD") {
+// 		display: none;
+// 	}
+// 	grid-area: sidebar;
+// 	padding-right: 15px;
+// 	padding-left: 15px;
+// }
+// .grid-main {
+// 	outline: 1px dotted red;
+// 	grid-area: main;
+// 	padding-right: 15px;
+// 	padding-left: 15px;
+// 	@include breakOn("SM") {
+// 		padding-right: 30px;
+// 		padding-left: 30px;
+// 	}
+// }

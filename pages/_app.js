@@ -1,10 +1,8 @@
-import "../scss/global.scss"
-// import "../scss/work.scss"
-// import {menuItems} from './data/menuItems'
-
 import {ThemeProvider} from "styled-components"
-// import {vars, media} from "../scss/_vars-mixins.js"
-import * as varsMixinsMedia from "../scss/_vars-mixins.js"
+import "../scss/global.scss"//TMP
+// import "../scss/work.scss"
+import GlobalStyles from "../scss/globalStyle"
+import * as varsMixinsMedia from "../scss/_vars-mixins"
 
 
 
@@ -13,6 +11,7 @@ export default function MyApp({ Component, pageProps }) {
 	return (
 		<ThemeProvider theme={{...varsMixinsMedia}}>{/*how to use theme??*/}
 			<Component {...pageProps}/>
+			<GlobalStyles/>
 		</ThemeProvider>
 	)
 }

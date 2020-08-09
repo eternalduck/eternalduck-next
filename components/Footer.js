@@ -1,7 +1,7 @@
 import Menu from "./menu"
 import FooterEssentials from "./footerEssentials"
 import styled from "styled-components"
-import {vars, media, mixinRedBg} from "../scss/_vars-mixins.js"
+import {vars, media} from "../scss/_vars-mixins"
 
 const Footer = ({footerMenuClass}) => {
 	return (
