@@ -7,40 +7,40 @@ import { css } from 'styled-components';
 // same as in vars-mixins.scss
 // VARS
 export const vars = {
-	"black": "#000;",
-	"white": "#fff;",
-	"almostBlack": "#333;",
-	"almostWhite": "#f7f7f7;",
-	"blackTransparent": "rgba(0, 0, 0, .2);",
-	"whiteTransparent": "rgba(255, 255, 255, .6);",
+	"black": "#000",
+	"white": "#fff",
+	"almostBlack": "#333",
+	"almostWhite": "#f7f7f7",
+	"blackTransparent": "rgba(0, 0, 0, .2)",
+	"whiteTransparent": "rgba(255, 255, 255, .6)",
 
-	"grayLightest": "#eeefee;",
-	"grayMid": "#6C6C6C;",
-	"grayC": "#ccc;",
+	"grayLightest": "#eeefee",
+	"grayMid": "#6C6C6C",
+	"grayC": "#ccc",
 
-	"pinkSaturated": "#9a22a8;",
-	"tenderPink": "#cfb5d4;",
-	"tenderPinkTransp": "rgba(207, 181, 212, .8);",
+	"pinkSaturated": "#9a22a8",
+	"tenderPink": "#cfb5d4",
+	"tenderPinkTransp": "rgba(207, 181, 212, .8)",
 
-	"blueVioTender": "#99abdd;",
-	"blueMid": "#4396d7;",
-	"blueVioLite": "#798dc3;",
-	"blueVioDarkest": "#262f47;",
+	"blueVioTender": "#99abdd",
+	"blueMid": "#4396d7",
+	"blueVioLite": "#798dc3",
+	"blueVioDarkest": "#262f47",
 
-	"vioSaturatedTransp": "rgba(129, 21, 179, .8);",
-	"vioSaturated": "#8115b3;",
-	"vioMid": "#695289;",
-	"vioMidTransp": "rgba(105, 82, 137, .8);",
-	"vioEggplant": "#482a52;",
-	"vioDark": "#372647;",
+	"vioSaturatedTransp": "rgba(129, 21, 179, .8)",
+	"vioSaturated": "#8115b3",
+	"vioMid": "#695289",
+	"vioMidTransp": "rgba(105, 82, 137, .8)",
+	"vioEggplant": "#482a52",
+	"vioDark": "#372647",
 
-	"blueDarkest": "#08122c;",
-	"blueDarkDust": "#3e5b7c;",
+	"blueDarkest": "#08122c",
+	"blueDarkDust": "#3e5b7c",
 
-	"greenLightest": "#e8f3e1;",
-	"green": "#7ccf47;",
-	"greenDark": "#0B3601;",
-	"greenDarkest": "#072601;",
+	"greenLightest": "#e8f3e1",
+	"green": "#7ccf47",
+	"greenDark": "#0B3601",
+	"greenDarkest": "#072601",
 
 
 }
@@ -117,54 +117,55 @@ export const mixinTestBg = () => {
 		}
 `}
 
-//////////////////
-// $sidebar-md: 200px;
-// $sidebar-lg: 220px;
-// $sidebar-xl: 250px;
+
+export const mixinNoBorderBottom = () => {
+	return `
+		border-bottom: none;
+		&:hover{
+			border-bottom: none;
+		}
+`}
+
+export const mixinHoverBg = () => {
+	return `
+		position: relative;
+		&:hover {
+			color: ${vars.white};
+		}
+		&:after {
+			content: "";
+			position: absolute;
+			top: -5px;
+			right: -8px;
+			bottom: -5px;
+			left: -8px;
+			z-index: -1;
+			transform: skewX(-1deg) skewY(-1deg);
+			transition: background .1s ease-in;
+			opacity: .5;
+		}
+		&:hover:after {
+			background: ${vars.tenderPinkTransp};
+		}
+`}
 
 
-// @mixin no-border-bottom {
-// 	border-bottom: none;
-// 	&:hover{
-// 		border-bottom: none;
-// 	}
-// }
+export const mixinUnderline = () => {
+	return `
+		display: inline;
+		transition: all .1s ease-in;
+		border-bottom: 1px solid;
+		text-decoration: none;
+		&:hover {
+			border-bottom: 1px solid transparent;
+			text-decoration: none;
+		}
+`}
 
-// @mixin underline {
-// 	display: inline;
-// 	transition: all .1s ease-in;
-// 	border-bottom: 1px solid;
-// 	text-decoration: none;
-// 	&:hover {
-// 		border-bottom: 1px solid transparent;
-// 		text-decoration: none;
-// 	}
-// }
+export const mixinTxtShadow = () => {
+	return `
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+`}
 
-// @mixin txt-shadow {
-// 	text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
-// }
-
-// @mixin hoverbg {
-// 	position: relative;
-// 	&:hover {
-// 		color: $white;
-// 	}
-// 	&:after {
-// 		content: "";
-// 		position: absolute;
-// 		top: -5px;
-// 		right: -8px;
-// 		bottom: -5px;
-// 		left: -8px;
-// 		z-index: -1;
-// 		transform: skewX(-1deg) skewY(-1deg);
-// 		transition: background .1s ease-in;
-// 		opacity: .5;
-// 	}
-// 	&:hover:after {
-// 		background: $tender-pink-transp;
-// 	}
-// }
 
 

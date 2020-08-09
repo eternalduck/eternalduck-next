@@ -25,8 +25,8 @@
 		["babel-plugin-styled-components",
 			{
 				"fileName": false,
-				// "ssr": false,
-				// "preprocess": false
+				"ssr": true,
+				"preprocess": false
 			}
 		]
 

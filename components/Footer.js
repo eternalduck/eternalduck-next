@@ -3,13 +3,13 @@ import FooterEssentials from "./footerEssentials"
 import styled from "styled-components"
 import {vars, media} from "../scss/_vars-mixins"
 
-const Footer = ({footerMenuClass}) => {
+export default function Footer({footerMenuClass}){
 	return (
 
 	<>
-		<footer>
-			<Menu footerMenuClass={`menu_footer ${footerMenuClass}`}/>
-		</footer>
+		<CssFooter>
+			<Menu footerMenuClass={footerMenuClass}/>
+		</CssFooter>
 		<FooterEssentials/>
 
 	</>
@@ -17,11 +17,17 @@ const Footer = ({footerMenuClass}) => {
 	)
 }
 
-export default Footer
+const CssFooter  = styled.div`
+	/* grid-area: footer; */
+	padding: 25px 0 15px;
+	
+	& .menu {
+		text-align: center;
+		.menu__item {
+			font-size: 18px;
+		}
+	}
 
-const ZZZ  = styled.div`
-	background: red;
-
-`;
+`
 
 // + header-footer css - how to split?

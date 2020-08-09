@@ -1,22 +1,33 @@
 import styled from "styled-components"
 import Menu from "./menu"
-import {vars, media} from "../scss/_vars-mixins"
+import {vars, media, mixinContentWidth} from "../scss/_vars-mixins"
 
 const Header = ({headerMenuClass}) => {
 	return (
-// TODO: remove class, import mixinContentWidth in index
-	<header className="content-width">
-		<Menu headerMenuClass={`menu_header ${headerMenuClass}`}/>
-	</header>
+	<CssHeader>
+		<Menu headerMenuClass={headerMenuClass}/>
+	</CssHeader>
 
 	)
 }
 
 export default Header
 
-const ZZZ  = styled.div`
-	background: red;
+const CssHeader  = styled.div`
+	padding: 20px 0 0;
+	${media.lg`
+		padding: 20px 0;
+	`}
+	${mixinContentWidth}
 
-`;
+	/* & .menu {
+		margin-bottom: 30px !important;
+		.menu__item {
+			font-size: 26px;
+		}
+	} */
+
+
+`
 
 // + header-footer css - how to split?

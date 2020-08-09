@@ -1,6 +1,8 @@
 import Head from "next/head"
 import styled from "styled-components"
-import Layout from "../components/layout"
+import {vars, media, mixinContentWidth} from "../scss/_vars-mixins"
+
+// import Layout from "../components/layout"
 import Header from "../components/header"
 import Preloader from "../components/preloader"
 
@@ -27,7 +29,7 @@ export default function Index({
 		<Preloader/>
 		<IndexPage>
 			{/* <ContentWidth> */}
-				<Header headerMenuClass="menu_light"/>
+				<Header headerMenuClass="light"/>
 			{/* </ContentWidth> */}
 		</IndexPage>
 			{/* <Layout 
@@ -43,19 +45,12 @@ export default function Index({
 	)
 }//Index
 
-
-// const yy  = styled(Header)`
-// 	${({theme})=>theme.mixinContentWidth}
-// `;
-
 // TODO: remove class from Header.js, import mixinContentWidth here
 const IndexPage  = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: url("images/table02.png") center/cover no-repeat;
-	// background: ${({theme}) => theme.vars.tenderPink};
-	// ${({theme}) => theme.mixinTestBg}
+	background: ${vars.vioMid} url("images/table02.png") center/cover no-repeat;
 
 `;
 

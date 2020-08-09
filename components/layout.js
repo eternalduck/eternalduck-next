@@ -85,6 +85,13 @@ const GridContent = styled.div`
 
 // TODO: create <LayoutSidebar>
 
+//////////////////
+// $sidebar-md: 200px;
+// $sidebar-lg: 220px;
+// $sidebar-xl: 250px;
+
+
+
 // .grid-with-sidebar {
 // 	outline: 1px dashed green;
 // 	width: 100%;

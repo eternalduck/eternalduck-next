@@ -1,36 +1,3 @@
-@import "vars-mixins-old";
-
-// former global mixins
-@mixin no-border-bottom {
-	border-bottom: none;
-	&:hover{
-		border-bottom: none;
-	}
-}
-
-@mixin hoverbg {
-	position: relative;
-	&:hover {
-		color: $white;
-	}
-	&:after {
-		content: "";
-		position: absolute;
-		top: -5px;
-		right: -8px;
-		bottom: -5px;
-		left: -8px;
-		z-index: -1;
-		transform: skewX(-1deg) skewY(-1deg);
-		transition: background .1s ease-in;
-		opacity: .5;
-	}
-	&:hover:after {
-		background: $tender-pink-transp;
-	}
-}
-// end mixins
-
 .menu {
 	&__item {
 		position: relative;
@@ -38,8 +5,8 @@
 		padding-bottom: 5px;
 		font-weight: 600;
 		z-index: 5;
-		@include no-border-bottom;
-		@include hoverbg;
+		// @include no-border-bottom;
+		// @include hoverbg;
 //page-specific settings
 		.index-page &:first-child {
 			display: none;
@@ -88,29 +55,28 @@
 		}
 	}
 // end colors
-	&_header {
-		margin-bottom: 30px !important;
-		.menu__item {
-			font-size: 26px;
-		}
-	}
-	&_footer {
-		text-align: center;
-		.menu__item {
-			font-size: 18px;
-		}
-	}
+	// &_header {
+	// 	margin-bottom: 30px !important;
+	// 	.menu__item {
+	// 		font-size: 26px;
+	// 	}
+	// }
+	// &_footer {
+	// 	text-align: center;
+	// 	.menu__item {
+	// 		font-size: 18px;
+	// 	}
+	// }
 }//menu
 
-header {
-	// grid-area: header;
-	padding: 20px 0 0;
-	@include breakOn("lg") {
-		padding: 20px 0;
-	}
-}
+// header {
+// 	padding: 20px 0 0;
+// 	// @include breakOn("lg") {
+// 		padding: 20px 0;
+// 	}
+// }
 
-footer {
-	grid-area: footer;
-	padding: 25px 0 15px;
-}
+// footer {
+// 	grid-area: footer;
+// 	padding: 25px 0 15px;
+// }

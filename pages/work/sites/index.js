@@ -82,8 +82,8 @@ export default function Sites({
 		<Layout 
 			isFooter={true}
 			pageClass="work-page work-page_sites"
-			headerMenuClass="menu_light"
-			footerMenuClass="menu_light"
+			headerMenuClass="light"
+			footerMenuClass="light"
 		>
 
 			{/* {test()} */}
