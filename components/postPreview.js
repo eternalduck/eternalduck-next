@@ -20,9 +20,9 @@ const PostPreview = ({slug, content}) => {
 				</h4>
 			</div>
 			{/* <div className="work-item__img-wrap work-item__img-wrap_sites">
-				<a href={slug}>
+				<a href={slug}> */}
 					<img src={content.imgThumb} className="work-item__img" alt=""/>
-				</a>
+				{/* </a>
 			</div>
 			<div className="work-item__footer">
 				<span className="work-item__keywords">

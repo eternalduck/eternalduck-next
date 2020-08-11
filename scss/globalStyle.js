@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
 
 html {
 	scroll-behavior: smooth;
+	background: initial;
 }
 body {
 	font-family: 'Inconsolata', monospace;
@@ -29,6 +30,7 @@ body {
 	line-height: 1.5;
 	background: #333;/* TMP! */
 	color: #fff;/* TMP! */
+	&.loaded #__next div {display: block}/* anti-fouc!! */
 		
 }
 h1, h2, h3, h4 {

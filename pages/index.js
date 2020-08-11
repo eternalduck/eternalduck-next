@@ -46,6 +46,7 @@ export default function Index({
 }//Index
 
 // TODO: remove class from Header.js, import mixinContentWidth here
+// bg FAIL!
 const IndexPage  = styled.div`
 	position: absolute;
 	width: 100%;

@@ -7,7 +7,7 @@ import {vars, media, mixinNoBorderBottom, mixinHoverBg} from "../scss/_vars-mixi
 const Menu = ({headerMenuClass, footerMenuClass}) => {
 	return (
 
-	<CssMenu 
+	<nav 
 		className={
 			headerMenuClass ? `${headerMenuClass}` 
 			: `${footerMenuClass}`
@@ -16,17 +16,18 @@ const Menu = ({headerMenuClass, footerMenuClass}) => {
 		{menuItems.map(item => (
 			<Link href={item.url} key={item.id}>
 				<a id={item.id}
-					dangerouslySetInnerHTML={{ __html: item.txt}}></a>
+					dangerouslySetInnerHTML={{ __html: item.txt}}
+				></a>
 			</Link>
 		))}
-	</CssMenu>
+	</nav>
 
 	)
 }
 
-
-const CssMenu  = styled.nav`
-	a {
+//attach style to Link
+const MenuItem  = styled(Link)`
+	/* a { */
 		/* position: relative; */
 		margin: 0 30px 0 0;
 		padding-bottom: 5px;
@@ -40,8 +41,14 @@ const CssMenu  = styled.nav`
 			.dark a {
 				color: ${vars.almostBlack};
 			}
+		
+		/* a {
+			color: ${headerMenuClass => headerMenuClass === "light" ? "#fff" : "#333"}
+		} */
+
+
 		/* end colors */
-		/* TODO: page-specific settings */
+		/* TODO: page-specific settings, make by js? */
 		/* .index-page &:first-child {
 			display: none;
 		}
@@ -68,9 +75,10 @@ const CssMenu  = styled.nav`
 			}
 		} */
 		/* end page-specific settings */
-	}/* a */
-	
-	/* ${(CssHeader)} & {
+	/* } */  /* end item */
+
+
+	/* .header & {
 		margin-bottom: 30px !important;
 		& a {
 			font-size: 26px;

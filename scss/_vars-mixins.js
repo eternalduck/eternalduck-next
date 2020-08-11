@@ -79,6 +79,23 @@ export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
 
 // end grid
 
+
+// TMP
+export const mixinTestBg = () => {
+	return `
+		background: green;
+		@media (${breakpoints.sm}) {
+			background: red;
+		}
+		@media (${breakpoints.lg}) {
+			background: orange;
+		}
+		@media (${breakpoints.xl}) {
+			background: yellow;
+		}
+`}
+
+
 export const mixinContentWidth = () => {
 	return `
 		margin: 0 auto;
@@ -102,20 +119,7 @@ export const mixinContentWidth = () => {
 
 
 
-// TMP
-export const mixinTestBg = () => {
-	return `
-		background: green;
-		@media (${breakpoints.sm}) {
-			background: red;
-		}
-		@media (${breakpoints.lg}) {
-			background: orange;
-		}
-		@media (${breakpoints.xl}) {
-			background: yellow;
-		}
-`}
+
 
 
 export const mixinNoBorderBottom = () => {

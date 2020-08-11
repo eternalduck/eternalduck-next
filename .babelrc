@@ -26,7 +26,10 @@
 			{
 				"fileName": false,
 				"ssr": true,
-				"preprocess": false
+				// "preprocess": false,//??
+				// "minify": false,
+				// "transpileTemplateLiterals": false,
+
 			}
 		]
 
