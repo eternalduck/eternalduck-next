@@ -3,20 +3,7 @@ import FooterEssentials from "./footerEssentials"
 import styled from "styled-components"
 import {vars, media} from "../scss/_vars-mixins"
 
-export default function Footer({footerMenuClass}){
-	return (
-
-	<>
-		<CssFooter>
-			<Menu footerMenuClass={footerMenuClass}/>
-		</CssFooter>
-		<FooterEssentials/>
-
-	</>
-
-	)
-}
-
+// style
 const CssFooter  = styled.div`
 	/* grid-area: footer; */
 	padding: 25px 0 15px;
@@ -29,5 +16,24 @@ const CssFooter  = styled.div`
 	}
 
 `
-
 // + header-footer css - how to split?
+
+// end style
+
+export default function Footer({footerMenuClass}){
+
+	const now = new Date()
+
+	return (
+
+	<>
+		<CssFooter>
+			<Menu footerMenuClass={footerMenuClass}/>
+			<p>{now.getFullYear()}</p>
+		</CssFooter>
+		<FooterEssentials/>
+
+	</>
+
+	)
+}

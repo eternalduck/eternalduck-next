@@ -112,7 +112,7 @@ export const sitesList = [
 		"url2": "behance.net/gallery/70731049/sajt-dlja-stupinskogo-himicheskogo-zavoda",
 		"txt2": "Behance",
 		"keywords": "2017, bitrix, html",
-		"descrEn": "Well-known Russian chemical factory that produces detergents & other household substances. All HTML & part of the frontend JS are mine.",
+		"descrEn": "Well-known Russian chemical factory that produces detergents & other home care products. I was responsible for all HTML coding and visual part of JS too.",
 		"descrRu": "",
 		"navPrevTxt": "Commercial Offers System",
 		"navPrev": "35-commercial-offers.html",

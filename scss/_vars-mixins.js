@@ -1,8 +1,5 @@
 // 4 Aug, 2020
-
 import { css } from 'styled-components';
-// TODO: import scss breakpoints & vars?
-
 
 // same as in vars-mixins.scss
 // VARS
@@ -48,10 +45,7 @@ export const vars = {
 ////////////////
 // MIXINS
 ////////////////
-
-
-// keep actual with vars-mixins.scss!!!
-
+// keep _debug.scss actual with this!
 // G R I D
 const breakpoints = {
 	// xs: 'min-width: 500px',//no need if no xxs used?

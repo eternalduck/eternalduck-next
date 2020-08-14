@@ -2,10 +2,11 @@
 import {createGlobalStyle} from "styled-components"
 import {vars, media} from "./_vars-mixins"
 
-// import * as varsMixinsMedia from "./_vars-mixins"
+// ADD MATERIAL UI??
+// https://itnext.io/building-a-static-blog-site-with-markdown-and-next-js-702c515389b3
 
 
-//example
+// ZB
 //div {
 //	${({theme}) => theme.mixinTestBg}// 1
 //	${mixinTestBg}// 2
@@ -30,7 +31,6 @@ body {
 	line-height: 1.5;
 	background: #333;/* TMP! */
 	color: #fff;/* TMP! */
-	&.loaded #__next div {display: block}/* anti-fouc!! */
 		
 }
 h1, h2, h3, h4 {

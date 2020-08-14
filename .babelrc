@@ -13,7 +13,7 @@
 					"polyfill-es-shims": {
 					"method": "usage-global",
 					"targets": {
-						"ie": 10,
+						"ie": 9,
 						"firefox": 65
 					}
 				}

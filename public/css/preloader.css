@@ -1,3 +1,9 @@
+/* + inline anti-fouc in _document.js */
+/* html {background: #372647}
+body #__next div {visibility: hidden}
+body.loaded #__next div {visibility: visible} */
+
+
 .CssPreloader {
 	background: #3e5b7c;
 	position: fixed;

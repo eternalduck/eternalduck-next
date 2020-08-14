@@ -9,8 +9,19 @@ import Preloader from "../components/preloader"
 // import {vars, media, contentWidth} from "../scss/_vars-mixins.js"
 
 
+// style
+// TODO: remove class from Header.js, import mixinContentWidth here
+// bg FAIL!
+const IndexPage  = styled.div`
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: ${vars.vioMid} url("images/table02.png") center/cover no-repeat;
 
+`;
+// ZB
 // console.log(({theme}) => theme.tenderPink);
+// end style
 
 export default function Index({
 	// menuClass
@@ -45,18 +56,8 @@ export default function Index({
 	)
 }//Index
 
-// TODO: remove class from Header.js, import mixinContentWidth here
-// bg FAIL!
-const IndexPage  = styled.div`
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: ${vars.vioMid} url("images/table02.png") center/cover no-repeat;
 
-`;
-
-//example
-
+// ZB
 // Using .attrs, we attach the .small class to every <Button />
 // const Button = styled.button.attrs(props => ({
 //   className: "small",

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {vars, media} from "../scss/_vars-mixins"
 
 
-const PostPreview = ({slug, content}) => {
+export default function PostPreview({slug, content}){
 	// console.info(slug)
 	return (
 	<div className="work-item work-item_sites">
@@ -34,5 +34,3 @@ const PostPreview = ({slug, content}) => {
 	
 	)
 }
-
-export default PostPreview

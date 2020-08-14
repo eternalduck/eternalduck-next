@@ -2,17 +2,7 @@ import styled from "styled-components"
 import Menu from "./menu"
 import {vars, media, mixinContentWidth} from "../scss/_vars-mixins"
 
-const Header = ({headerMenuClass}) => {
-	return (
-	<CssHeader>
-		<Menu headerMenuClass={headerMenuClass}/>
-	</CssHeader>
-
-	)
-}
-
-export default Header
-
+// style
 const CssHeader  = styled.div`
 	padding: 20px 0 0;
 	${media.lg`
@@ -29,5 +19,17 @@ const CssHeader  = styled.div`
 
 
 `
-
 // + header-footer css - how to split?
+
+// end style
+
+const Header = ({headerMenuClass}) => {
+	return (
+	<CssHeader>
+		<Menu headerMenuClass={headerMenuClass}/>
+	</CssHeader>
+
+	)
+}
+
+export default Header

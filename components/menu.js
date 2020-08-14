@@ -3,28 +3,7 @@ import {menuItems} from './data/menuItems'
 import styled from "styled-components"
 import {vars, media, mixinNoBorderBottom, mixinHoverBg} from "../scss/_vars-mixins"
 
-
-const Menu = ({headerMenuClass, footerMenuClass}) => {
-	return (
-
-	<nav 
-		className={
-			headerMenuClass ? `${headerMenuClass}` 
-			: `${footerMenuClass}`
-		}
-	>
-		{menuItems.map(item => (
-			<Link href={item.url} key={item.id}>
-				<a id={item.id}
-					dangerouslySetInnerHTML={{ __html: item.txt}}
-				></a>
-			</Link>
-		))}
-	</nav>
-
-	)
-}
-
+// style
 //attach style to Link
 const MenuItem  = styled(Link)`
 	/* a { */
@@ -97,6 +76,28 @@ const MenuItem  = styled(Link)`
 /* end for sidebar */
 
 `
+// end style
 
+
+const Menu = ({headerMenuClass, footerMenuClass}) => {
+	return (
+
+	<nav 
+		className={
+			headerMenuClass ? `${headerMenuClass}` 
+			: `${footerMenuClass}`
+		}
+	>
+		{menuItems.map(item => (
+			<Link href={item.url} key={item.id}>
+				<a id={item.id}
+					dangerouslySetInnerHTML={{ __html: item.txt}}
+				></a>
+			</Link>
+		))}
+	</nav>
+
+	)
+}
 
 export default Menu

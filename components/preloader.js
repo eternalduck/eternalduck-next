@@ -20,7 +20,7 @@ export default function Preloader(){
 }
 
 
-// TMP disabled, added to _document.js 
+// TMP disabled, added pure style to _document.js 
 // <link href="scss/preloader-TMP.css" rel="stylesheet"/>
 
 // const animation = keyframes`

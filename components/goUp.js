@@ -1,17 +1,7 @@
 import styled, {css, keyframes} from "styled-components"
 import {media} from "../scss/_vars-mixins"
-import {Script} from "vm";
 
-// + script, see on bottom
-
-export default function GoUp(){
-	return (
-		<CssGoUp>
-			<i className="fas fa-chevron-up"></i>
-		</CssGoUp>
-	)
-}
-
+// style
 const animation = keyframes`
 	0%, 100% {
 		transform: translateY(0);
@@ -49,9 +39,18 @@ const CssGoUp  = styled.div`
 	`}
 
 `
+// end style
 
+export default function GoUp(){
+	const scrollUp = () => {
+		setTimeout(function(){
+			window.scrollTo(0, 0); 
+		}, 100); 
+	}
 
-// $("#back2top").click(function(){
-// 	$("html, body").animate({ scrollTop: 0 }, 300);
-// 	return false;
-// })
+	return (
+		<CssGoUp onClick={scrollUp}>
+			<i className="fas fa-chevron-up"></i>
+		</CssGoUp>
+	)
+}

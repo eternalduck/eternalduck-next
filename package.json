@@ -25,6 +25,8 @@
 	"devDependencies": {
 		"babel-plugin-polyfill-es-shims": "0.0.3",
 		"babel-plugin-styled-components": "^1.11.1",
+		"eslint": "^7.6.0",
+		"eslint-plugin-react": "^7.20.6",
 		"html-webpack-plugin": "^4.3.0"
 	}
 }
