@@ -3,20 +3,21 @@ import "../scss/global.scss"//TMP
 // import "../scss/work.scss"
 import GlobalStyles from "../scss/globalStyle"
 import * as varsMixinsMedia from "../scss/_vars-mixins"
-// import Preloader from "../components/preloader"
+import Preloader from "../components/preloader"
 
 
 export default function MyApp({ Component, pageProps }) {
 
 	//preloader & anti-fouc
-	if (process.browser) {
-		document.body.classList.add("loaded")
-	}
+	// if (process.browser) {
+	// 	document.body.classList.add("loaded")
+	// }
 
 	return (
 		<>
 		{/* <ThemeProvider theme={{...varsMixinsMedia}}>how to use theme?? */}
 			
+			<Preloader/>
 			<Component {...pageProps}/>
 			<GlobalStyles/>
 		{/* </ThemeProvider> */}

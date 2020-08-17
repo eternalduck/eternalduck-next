@@ -1,8 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+// import Preloader from "../components/preloader"
 // TODO: how to optimize loading, chunks & styles
 //https://medium.com/@antoniogallo.it/creating-an-optimized-big-static-page-website-with-next-js-dc53e5d7f941
 
-import Preloader from "../components/preloader"
 
 class CustomDocument extends Document {
 //   static async getInitialProps(ctx) {
@@ -26,8 +26,8 @@ class CustomDocument extends Document {
 				<link href="/css/preloader.css" rel="stylesheet"/>
 				{/* end TMP */}
 			</Head>
-			<body>{/* add script for preloader, see in its file */}
-				<Preloader/>
+			<body>
+				{/* <Preloader/> */}
 				<Main />
 				<NextScript />
 			</body>
