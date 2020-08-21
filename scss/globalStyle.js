@@ -79,6 +79,16 @@ p {
 	}
 }/* content-width */
 
+/* gradient links as on css-tricks */
+a {
+	background: linear-gradient(90deg,#ff8a00,#e52e71);
+	/* -webkit-background-clip: text; */
+	background-clip: text;
+	/* -webkit-text-fill-color: transparent; */
+	-webkit-text-fill-color: transparent;
+
+}
+
 
 /* a {
 	@include underline;

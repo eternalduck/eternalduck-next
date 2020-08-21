@@ -34,6 +34,7 @@ export const vars = {
 	"blueDarkest": "#08122c",
 	"blueDarkDust": "#3e5b7c",
 
+	"greenAWESOME": "#0F3F29",
 	"greenLightest": "#e8f3e1",
 	"green": "#7ccf47",
 	"greenDark": "#0B3601",

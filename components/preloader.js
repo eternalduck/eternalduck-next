@@ -3,91 +3,64 @@ import {vars} from "../scss/_vars-mixins"
 
 
 // style
-// const animationLeftFrames = keyframes`
+// const glitch = keyframes`
 // 	0%, 100% {
 // 		transform: translateX(0);
 // 	}
 // 	25% {
-// 		transform: translateX(-50px);
+// 		transform: translateX(-5px);
 // 	}
 // 	75% {
-// 		transform: translateX(50px);
+// 		transform: translateX(5px);
 // 	}
 // `
 
-// const animationLeft = css`
-// 	${animationLeftFrames} 0.5s infinite ease-in-out;
-// `
-// const animationRightFrames = keyframes`
-// 	0%, 100% {
-// 		transform: translateX(0);
-// 	}
-// 	25% {
-// 		transform: translateX(50px);
-// 	}
-// 	75% {
-// 		transform: translateX(-50px);
-// 	}
+// const animationGlitch = css`
+// 	${glitch} 0.2s infinite ease-in-out;
 // `
 
-// const animationRight = css`
-// 	${animationRightFrames} 0.5s infinite ease-in-out;
-// `
-
-// const CssPreloaderTest = styled.section`
-// 	background: #000;
+// const CssPreloader = styled.section`
+// 	background: ${vars.blueDarkDust};
+// 	display: grid;
+// 	grid-template: 1fr / 1fr;
+// 	place-items: center center;
 // 	position: fixed;
-// 	width: 100%;
-// 	height: 100%;
+// 	top: 0;
+// 	bottom: 0;
+// 	left: 0;
+// 	right: 0;
+// 	visibility: visible;
+// 	transition: all .4s ease-out .2s;
+// 	z-index: 99999;
 // 	body.loaded & {
 // 		visibility: hidden;
 // 		opacity: 0;
 // 		z-index: -1;
-//  	}
+// 	}
 // `
 
-// const Block = styled.span`
-// 	display: block;
+// const TxtWrap = styled.section`
+// 	/* outline: 1px dashed; */
+// 	position: relative;
+// 	width: 50%;
+// 	text-align: center;
+// `
+// const Txt = styled.p`
 // 	position: absolute;
-// 	top: 50%;
-// 	left: 50%;
-// 	&.red {
-// 		background: #a40000;
-// 		height: 80%;
-// 		width: 80%;
-// 		animation: ${animationLeft};
-// 		z-index: 1;
-// 		margin-top: -40%;
-// 		margin-left: -40%;
-// 	}
+// 	width: 100%;
+// 	top: 0;
+// 	left: 0;
+// 	font-size: 50px;
+// 	font-family: 'Press Start 2P', cursive;
 // 	&.blue {
-// 		background: #0004a4;
-// 		height: 70%;
-// 		width: 70%;
+// 		color: #0004a4;
 // 		z-index: 10;
-// 		margin-top: -35%;
-// 		margin-left: -35%;
-// 		animation: ${animationRight};
+// 		/* animation: ${animationGlitch}; */
 // 	}
-// 	&.cyan {
-// 		background: #00d6d3;
-// 		height: 60%;
-// 		width: 60%;
-// 		z-index: 20;
-// 		margin-top: -30%;
-// 		margin-left: -30%;
-// 		animation: ${animationLeft};
-
-// 	}
-// 	&.vio {
-// 		background: #a407d1;
-// 		height: 50%;
-// 		width: 50%;
-// 		z-index: 30;
-// 		margin-top: -25%;
-// 		margin-left: -25%;
-// 		animation: ${animationRight};
-
+// 	&.red {
+// 		animation: ${animationGlitch};
+// 		color: #a40000;
+// 		z-index: 1;
 // 	}
 // `
 // end style
@@ -101,21 +74,29 @@ export default function Preloader(){
 
 	return (
 
-		// <CssPreloader>
-			<section className="CssPreloader">
-			<span className="spinner">
-				<span className="circle-1"></span>
-				<span className="circle-2"></span>
-			</span>
-			</section>
-		// </CssPreloader>
+		// // <CssPreloader>
+		// 	<section className="CssPreloader">
+		// 	<span className="spinner">
+		// 		<span className="circle-1"></span>
+		// 		<span className="circle-2"></span>
+		// 	</span>
+		// 	</section>
+		// // </CssPreloader>
 
-		// <CssPreloaderTest>
-		// 	<Block className="red"/>
-		// 	<Block className="blue"/>
-		// 	<Block className="cyan"/>
-		// 	<Block className="vio"/>
-		// </CssPreloaderTest>
+
+		<section className="CssPreloader">
+			<section className="TxtWrap">
+			<p className="Txt red">loading...</p>
+			<p className="Txt blue">loading...</p>
+			</section>			
+		</section>
+
+		// <CssPreloader>
+		// 	<TxtWrap>
+		// 	<Txt className="red">loading...</Txt>
+		// 	<Txt className="blue">loading...</Txt>
+		// 	</TxtWrap>			
+		// </CssPreloader>
 
 	)
 }
