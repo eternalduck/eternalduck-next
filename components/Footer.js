@@ -4,7 +4,7 @@ import styled from "styled-components"
 import {vars, media} from "../scss/_vars-mixins"
 
 // style
-const CssFooter  = styled.div`
+const CssFooter  = styled.footer`
 	/* grid-area: footer; */
 	padding: 25px 0 15px;
 	
@@ -26,14 +26,12 @@ export default function Footer({footerMenuClass}){
 
 	return (
 
-	<>
 		<CssFooter>
 			<Menu footerMenuClass={footerMenuClass}/>
 			<p>{now.getFullYear()}</p>
-		</CssFooter>
 		<FooterEssentials/>
+		</CssFooter>
 
-	</>
 
 	)
 }

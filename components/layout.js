@@ -2,7 +2,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import FooterEssentials from "../components/footerEssentials"
 import styled from "styled-components"
-import {vars, media} from "../scss/_vars-mixins"
+import {vars, media, mixinTestBg} from "../scss/_vars-mixins"
 
 // import Preloader from "../components/preloader"
 import Progressbar from "../components/progressbar"
@@ -33,13 +33,13 @@ const GridContainer = styled.div`
 		/* background: yellow; */
 	`}
 
-`;
+`
 const GridContent = styled.div`
 	grid-area: content;
 	width: 100%;
 	/* ${({theme}) => theme.mixinTestBg} */
 	/* ${mixinTestBg} */
-`;
+`
 // end style
 
 export default function Layout({

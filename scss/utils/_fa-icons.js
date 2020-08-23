@@ -1,4 +1,9 @@
+import {createGlobalStyle} from "styled-components"
+
+const IconsGlobalStyles = createGlobalStyle`
+
 @font-face {
+  font-display: fallback;/* disable flickering */
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;
   font-weight: 400;
@@ -12,6 +17,7 @@
 }
 
 @font-face {
+  font-display: fallback;
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 400;
@@ -25,6 +31,7 @@
 }
 
 @font-face {
+  font-display: fallback;
   font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 900;
@@ -66,7 +73,7 @@
 }
 
 /* ====ICONS===== */
-//get new icons from ref _all.css in /libs/fontawesome-5.6.3
+/* //get new icons from ref _all.css in /libs/fontawesome-5.6.3 */
 
 .fa-chevron-down:before {
   content: "\f078";
@@ -104,3 +111,6 @@
   content: "\f146";
 }
 
+`
+
+export default IconsGlobalStyles

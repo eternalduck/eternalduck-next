@@ -49,20 +49,20 @@ export const vars = {
 // keep _debug.scss actual with this!
 // G R I D
 const breakpoints = {
-	// xs: 'min-width: 500px',//no need if no xxs used?
-	// xxsOnly: 'max-width: 400px',
 	// smOnly: '(min-width: 576px) and (max-width: 749px)',
 	// mdOnly: '(min-width: 750px) and (max-width: 991px)',
 	// lgOnly: '(min-width: 992px) and (max-width: 1199px)',
-	// xxl: 'min-width: 2200px'//not necessary
+	xxsOnly: 'max-width: 400px',
 	upToSm: 'max-width: 575px',
 	upToMd: 'max-width: 749px',
 	upToLg: 'max-width: 991px',
 	upToXl: 'max-width: 1399px',
+	// xs: 'min-width: 500px',
 	sm: 'min-width: 576px',
 	md: 'min-width: 750px',
 	lg: 'min-width: 992px',
 	xl: 'min-width: 1400px',
+	xxl: 'min-width: 2200px'
 };
 export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
 	accumulator[label] = (...args) => css`
@@ -72,23 +72,29 @@ export const media = Object.keys(breakpoints).reduce((accumulator, label) => {
 	return accumulator;
 }, {});
 
+// ZB
+// ${media.sm`
+// 	color: fuchsia;
+// `}
+
 // end grid
 
 
 // TMP
 export const mixinTestBg = () => {
 	return `
-		background: green;
+		background: green !important;
 		@media (${breakpoints.sm}) {
-			background: red;
+			background: red !important;
 		}
 		@media (${breakpoints.lg}) {
-			background: orange;
+			background: orange !important;
 		}
 		@media (${breakpoints.xl}) {
-			background: yellow;
+			background: yellow !important;
 		}
 `}
+// end TMP
 
 
 export const mixinContentWidth = () => {
@@ -111,10 +117,6 @@ export const mixinContentWidth = () => {
 			max-width: 1140px;
 		}
 `}
-
-
-
-
 
 
 export const mixinNoBorderBottom = () => {

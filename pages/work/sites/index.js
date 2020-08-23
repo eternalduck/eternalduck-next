@@ -1,7 +1,7 @@
 // import React from 'react'
 import Head from "next/head"
 import styled from "styled-components"
-import {vars, media} from "../../../scss/_vars-mixins"
+import {vars, media, mixinTestBg} from "../../../scss/_vars-mixins"
 
 import Layout from "../../../components/layout"
 import PostPreview from "../../../components/postPreview"
@@ -14,7 +14,9 @@ import {sitesList} from "../../../components/data/sitesList"// convert to MD? np
 
 // style
 const ZZZ  = styled.div`
-	background: red;
+	width: 100%;
+	height: 200px;
+	${mixinTestBg}
 
 `;
 // end style
@@ -47,7 +49,7 @@ export default function Sites({
 		>
 
 			{/* {test()} */}
-			
+			{/* <ZZZ/> */}
 			<h1>Sites</h1>
 			<p>here are sites items</p>
 			<div className="work-page__content">

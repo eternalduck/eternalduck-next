@@ -1,10 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-// import Preloader from "../components/preloader"
+
 // TODO: how to optimize loading, chunks & styles
 //https://medium.com/@antoniogallo.it/creating-an-optimized-big-static-page-website-with-next-js-dc53e5d7f941
 
 
-class CustomDocument extends Document {
+export default class CustomDocument extends Document {
 //   static async getInitialProps(ctx) {
 //     const initialProps = await Document.getInitialProps(ctx)
 //     return { ...initialProps }
@@ -19,15 +19,17 @@ class CustomDocument extends Document {
 				{/* TMP */}
 				{<style dangerouslySetInnerHTML={{__html: `
 					/*anti-fouc*/
-					html {background: #372647}
+					html {background: #333}
 					body #__next div {visibility: hidden}
 					body.loaded #__next div {visibility: visible}
 				`}}></style>}
-				<link href="/css/preloader.css" rel="stylesheet"/>
 				{/* end TMP */}
+				
+				{/* <link href="libs/fancybox3/jquery.fancybox.min.css" rel="stylesheet"/> */}
+				{/* <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Slab:wght@600;700&display=swap" rel="stylesheet"/> */}
+				<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
 			</Head>
 			<body>
-				{/* <Preloader/> */}
 				<Main />
 				<NextScript />
 			</body>
@@ -36,5 +38,3 @@ class CustomDocument extends Document {
 		)
 	}
 }
-
-export default CustomDocument

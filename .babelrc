@@ -3,19 +3,12 @@
 		[
 			"next/babel",
 			{
-				// "styled-jsx": {
-					//"plugins": [
-					//"styled-jsx-plugin-sass"
-					//]
-			//},
-				// "class-properties": {},
-
-					"polyfill-es-shims": {
-					"method": "usage-global",
-					"targets": {
-						"ie": 9,
-						"firefox": 65
-					}
+				"polyfill-es-shims": {
+				"method": "usage-global",
+				"targets": {
+					"ie": 9,
+					"firefox": 65
+				}
 				}
 			}
 		]
@@ -24,16 +17,12 @@
 		//make readable classes
 		["babel-plugin-styled-components",
 			{
+				"displayName": true,
 				"fileName": false,
 				"ssr": true,
-				// "preprocess": false,//??
+				"transpileTemplateLiterals": true,
 				// "minify": false,
-				// "transpileTemplateLiterals": false,
-
 			}
 		]
-
-		// "@babel/plugin-proposal-do-expressions",
-
 	]
 }

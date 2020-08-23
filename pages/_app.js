@@ -1,9 +1,8 @@
 // import {ThemeProvider} from "styled-components"
-import "../scss/global.scss"//TMP
-// import "../scss/work.scss"
 import GlobalStyles from "../scss/globalStyle"
-import * as varsMixinsMedia from "../scss/_vars-mixins"
+
 import Preloader from "../components/preloader"
+
 
 
 export default function MyApp({ Component, pageProps }) {
@@ -16,10 +15,9 @@ export default function MyApp({ Component, pageProps }) {
 	return (
 		<>
 		{/* <ThemeProvider theme={{...varsMixinsMedia}}>how to use theme?? */}
-			
+			<GlobalStyles/>
 			<Preloader/>
 			<Component {...pageProps}/>
-			<GlobalStyles/>
 		{/* </ThemeProvider> */}
 		</>
 	)

@@ -20,7 +20,8 @@
 		"react-dom": "16.13.1",
 		"react-gtm-module": "^2.0.10",
 		"react-html-comment": "^2.0.3",
-		"styled-components": "^5.1.1"
+		"styled-components": "^5.1.1",
+		"styled-reset": "^4.2.2"
 	},
 	"devDependencies": {
 		"babel-plugin-polyfill-es-shims": "0.0.3",

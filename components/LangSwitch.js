@@ -1,28 +1,50 @@
-// https://css-tricks.com/building-a-scalable-css-architecture-with-bem-and-utility-classes/
-// rem for fonts?
-// rem for breakpoints?
-// em for paddings?
+import styled, {css, keyframes} from "styled-components"
+import {vars} from "../scss/_vars-mixins"
 
-// @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Roboto+Slab:wght@600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700;900&display=swap");
-// @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;600;700;900&family=Press+Start+2P&display=swap");
+export default function LangSwitch(){
+// // Lang content toggle
+// $(".lang__toggle").click(function() {
+// 	$(".lang__toggle").toggleClass("expand collapse");
+// 	let ruContent = $(this).parent(".lang__container").find(".lang__content");
+// 	ruContent.toggleClass("expanded");
 
-@import "utils/debug";
-@import "utils/reset";
-@import "utils/fa-icons";
-// @import "utils/ie-tweaks";
+// });
 
-// @import "/libs/fancybox3/jquery.fancybox.min.css";
+// // Scroll top on cv page when bottom lang__toggle clicked
+// $(".lang__toggle_bottom.scrtop").click(function() {
+// 	$(window).scrollTop(0);
+// 	$(".lang__container").addClass("flash-border");
+// });
+	return (
+
+	<div class="lang__container lang__container_cv">
+		
+		<div class="lang__toggle lang__toggle_cv expand">
+			<i class="far fa-plus-square"></i>
+			<i class="far fa-minus-square"></i>
+			<span>Russian Version</span>
+		</div>
+		
+		<div class="lang__content lang__content_cv">
+			{/* @@include("cv-ru.html") */}
+		</div>
+
+
+		@@include("../../modules/lang-toggle/ru-toggle.html", {
+			"toggleClass": "lang__toggle_cv lang__toggle_bottom scrtop expand"
+		})
+	</div>
+
+
+	)
+
+}
 
 
 
-//add to real font-face to disable flickering - where?
-// @font-face {
-// 	font-display: fallback;
-// }
+// style
 
-
-////////////////////////////
+//////////////////////////
 // TODO: Lang switch
 
 // .lang {
@@ -129,3 +151,6 @@
 // 	}
 // }
 
+
+
+// end style

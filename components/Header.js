@@ -3,7 +3,7 @@ import Menu from "./menu"
 import {vars, media, mixinContentWidth} from "../scss/_vars-mixins"
 
 // style
-const CssHeader  = styled.div`
+const CssHeader  = styled.header`
 	padding: 20px 0 0;
 	${media.lg`
 		padding: 20px 0;

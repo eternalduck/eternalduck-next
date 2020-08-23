@@ -8,7 +8,7 @@ import {vars, media, mixinNoBorderBottom, mixinHoverBg} from "../scss/_vars-mixi
 const MenuItem  = styled(Link)`
 	/* a { */
 		/* position: relative; */
-		margin: 0 30px 0 0;
+		margin: 0 30px 50px 0;
 		padding-bottom: 5px;
 		font-weight: 600;
 		${mixinNoBorderBottom}
@@ -90,7 +90,7 @@ const Menu = ({headerMenuClass, footerMenuClass}) => {
 	>
 		{menuItems.map(item => (
 			<Link href={item.url} key={item.id}>
-				<a id={item.id}
+				<a id={item.id} 
 					dangerouslySetInnerHTML={{ __html: item.txt}}
 				></a>
 			</Link>
