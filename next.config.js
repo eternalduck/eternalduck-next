@@ -23,14 +23,15 @@ module.exports = withPlugins(
 	],
 	{
 // routing for static export
+	exportTrailingSlash: true,//required for exportPathMap
 	 exportPathMap: async function (//what about all dynamic posts???
 		defaultPathMap,
 		{ dev, dir, outDir, distDir, buildId }
 	) {
-		return {
+		return {//use obj to generate all posts urls
 			'/': { page: '/' },
-			'/work/sites/': { page: '/work/sites' },
-			'/work/ux/': { page: '/work/ux'},
+			'/work/sites/': { page: '/work/sites/' },
+			'/work/ux/': { page: '/work/ux/'},
 			// '/work/art': { page: '/work/art'},
 			// '/work/timeline': { page: '/work/timeline'},
 			// '/work/cv': { page: '/work/cv'},
@@ -38,7 +39,7 @@ module.exports = withPlugins(
 		
 		}
 	},//exportPathMap
-	exportTrailingSlash: true,//required for exportPathMap
+
 // end routing
 
 	// optimization: {

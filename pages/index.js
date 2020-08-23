@@ -16,7 +16,7 @@ const IndexPage  = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: ${vars.vioMid} url("images/table02.png") center/cover no-repeat;
+	background: url("images/table02.png") center/cover no-repeat;/* fails at first load */
 
 `;
 // ZB
@@ -39,18 +39,8 @@ export default function Index({
 		</Head>
 		<Preloader/>
 		<IndexPage>
-			{/* <ContentWidth> */}
 				<Header headerMenuClass="light"/>
-			{/* </ContentWidth> */}
 		</IndexPage>
-			{/* <Layout 
-				isFooter={false}
-				pageClass="index-page grid-container"
-				headerMenuClass="menu_light"
-			>
-				<p>index page</p>
-			</Layout> */}
-			
 	</>
 
 	)

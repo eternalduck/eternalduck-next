@@ -96,7 +96,14 @@ export const mixinTestBg = () => {
 `}
 // end TMP
 
+// gradient txt as on css-tricks
+export const mixinTxtGradient = () => {
+	return `
+		background: linear-gradient(90deg,#43006B,#006A37);
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
 
+`}
 export const mixinContentWidth = () => {
 	return `
 		margin: 0 auto;
@@ -127,6 +134,7 @@ export const mixinNoBorderBottom = () => {
 		}
 `}
 
+
 export const mixinHoverBg = () => {
 	return `
 		position: relative;
@@ -140,10 +148,10 @@ export const mixinHoverBg = () => {
 			right: -8px;
 			bottom: -5px;
 			left: -8px;
-			z-index: -1;
 			transform: skewX(-1deg) skewY(-1deg);
 			transition: background .1s ease-in;
 			opacity: .5;
+			/* z-index: -1;*/
 		}
 		&:hover:after {
 			background: ${vars.tenderPinkTransp};

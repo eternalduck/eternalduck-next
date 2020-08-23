@@ -1,6 +1,5 @@
 // import {ThemeProvider} from "styled-components"
 import GlobalStyles from "../scss/globalStyle"
-
 import Preloader from "../components/preloader"
 
 

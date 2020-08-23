@@ -17,17 +17,17 @@ export const menuItems =
 	},
 	// {
 	// 	"txt": "art",
-	// 	"url": "/work/art",
+	// 	"url": "/work/art/",
 	// 	"id": "art"
 	// },
 	// {
 	// 	"txt": "timeline",
-	// 	"url": "/work/timeline",
+	// 	"url": "/work/timeline/",
 	// 	"id": "timeline"
 	// },
-	// {
-	// 	"txt": "cv",
-	// 	"url": "/work/cv",
-	// 	"id": "cv"
-	// }
+	{
+		"txt": "cv",
+		"url": "/work/cv/",
+		"id": "cv"
+	}
 ]

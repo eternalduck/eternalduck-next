@@ -3,91 +3,17 @@ import {menuItems} from './data/menuItems'
 import styled from "styled-components"
 import {vars, media, mixinNoBorderBottom, mixinHoverBg} from "../scss/_vars-mixins"
 
-// style
-//attach style to Link
-const MenuItem  = styled(Link)`
-	/* a { */
-		/* position: relative; */
-		margin: 0 30px 50px 0;
-		padding-bottom: 5px;
-		font-weight: 600;
-		${mixinNoBorderBottom}
-		${mixinHoverBg}
-		/* colors */ /* FAIL */
-			.light a {
-				color: #fff;/* ${vars.white}; */
-			}
-			.dark a {
-				color: ${vars.almostBlack};
-			}
-		
-		/* a {
-			color: ${headerMenuClass => headerMenuClass === "light" ? "#fff" : "#333"}
-		} */
-
-
-		/* end colors */
-		/* TODO: page-specific settings, make by js? */
-		/* .index-page &:first-child {
-			display: none;
-		}
-		.work-page_sites &#sites,
-		.work-page_ux &#ux,
-		.art-page &#art,
-		.cv-timeline &#timeline,
-		.cv-page &#cv {
-			cursor: default;
-			pointer-events: none;
-			&:after {
-				background: $tender-pink-transp;
-			}
-		}
-		.single-work_site &#sites,
-		.single-work_ux &#ux,
-		.single-work_art &#art {
-			cursor: pointer;
-			&:after {
-				background: $vio-saturated-transp;
-			}
-			&:hover:after {
-				background: $tender-pink-transp;
-			}
-		} */
-		/* end page-specific settings */
-	/* } */  /* end item */
-
-
-	/* .header & {
-		margin-bottom: 30px !important;
-		& a {
-			font-size: 26px;
-		}
-	} */
-
-/* TODO: for sidebar */
-	/* &_items-vertical {
-		display: flex;
-		flex-direction: column;
-		&__item {
-			outline: 1px dotted;
-			flex: 1;
-		}
-	} */
-/* end for sidebar */
-
-`
-// end style
-
-
-const Menu = ({headerMenuClass, footerMenuClass}) => {
+export default function Menu({headerMenuClass, footerMenuClass}){
+	console.log(headerMenuClass)
 	return (
 
-	<nav 
+	<Nav 
 		className={
 			headerMenuClass ? `${headerMenuClass}` 
 			: `${footerMenuClass}`
 		}
 	>
+	{/* TODO: add current item class */}
 		{menuItems.map(item => (
 			<Link href={item.url} key={item.id}>
 				<a id={item.id} 
@@ -95,9 +21,74 @@ const Menu = ({headerMenuClass, footerMenuClass}) => {
 				></a>
 			</Link>
 		))}
-	</nav>
+	</Nav>
 
 	)
 }
 
-export default Menu
+// style
+const Nav  = styled.nav`
+	footer & {
+		font-size: 1.5rem;
+		text-align: center;
+	}
+	& a {
+		position: relative;
+		margin: 0 30px 50px 0;
+		padding-bottom: 5px;
+		font-weight: 600;
+		font-size: 2rem;
+		${mixinHoverBg}
+		color: ${props => props.className === "light" 
+			? vars.white
+			: vars.almostBlack
+		}
+
+
+	}/* a */
+	div[class*=IndexPage] & a:first-child {/* TMP, make better */
+		display: none;
+	}
+`
+
+
+// /* TODO: page-specific settings, make by js? */
+// .index-page &:first-child {
+// 	display: none;
+// }
+// .work-page_sites &#sites,
+// .work-page_ux &#ux,
+// .art-page &#art,
+// .cv-timeline &#timeline,
+// .cv-page &#cv {
+// 	cursor: default;
+// 	pointer-events: none;
+// 	&:after {
+// 		background: $tender-pink-transp;
+// 	}
+// }
+// .single-work_site &#sites,
+// .single-work_ux &#ux,
+// .single-work_art &#art {
+// 	cursor: pointer;
+// 	&:after {
+// 		background: $vio-saturated-transp;
+// 	}
+// 	&:hover:after {
+// 		background: $tender-pink-transp;
+// 	}
+// }
+// /* end page-specific settings */
+
+// /* TODO: for sidebar */
+// 	&_items-vertical {
+// 		display: flex;
+// 		flex-direction: column;
+// 		&__item {
+// 			outline: 1px dotted;
+// 			flex: 1;
+// 		}
+// 	}
+// /* end for sidebar */
+
+// end style

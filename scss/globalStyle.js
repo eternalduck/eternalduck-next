@@ -33,17 +33,29 @@ ${IconsGlobalStyles}
 
 html {
 	scroll-behavior: smooth;
-	background: initial;
+	font-size: 14px;
+	${media.md`
+		font-size: 15px;
+	`}
+	${media.lg`
+		font-size: 16px;
+	`}
 }
 body {
+	background: #333;/* TMP! */
 	font-family: 'Inconsolata', monospace;
 	/* font-family: 'Open Sans', sans-serif;
 	font-family: 'Courier', serif; */
-	font-weight: 300;
-	font-size: 16px;
-	line-height: 1.5;
-	background: #333;/* TMP! */
 	color: #fff;/* TMP! */
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 1.5;
+	${media.md`
+		font-size: 15px;
+	`}
+	${media.lg`
+		font-size: 16px;
+	`}
 }
 h1, h2, h3, h4 {
 	font-family: 'Inconsolata', monospace;
@@ -70,20 +82,14 @@ p {
 	font-size: 1rem;
 	margin: 0 0 0.5rem;
 }
+a, a:hover {
+	text-decoration: none;
+}
 /* Global Classes */
 
 
-/* gradient links as on css-tricks */
-a {
-	background: linear-gradient(90deg,#9559BA,#006A37);/* #43006B */
-	/* -webkit-background-clip: text; */
-	background-clip: text;
-	/* -webkit-text-fill-color: transparent; */
-	-webkit-text-fill-color: transparent;
 
-}
 
-/* more, see below */
 
 /* end Global Classes */
 

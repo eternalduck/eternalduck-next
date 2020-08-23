@@ -11,24 +11,24 @@ export default function PostPreview({slug, content}){
 		<div className="work-item__inner sites-page__item_inner">
 			<div className="work-item__header work-item__header_sites">
 				<h4 className="work-item__title">
-				{/* <Link href="/work/sites/[slug]" as={`/work/sites/${slug}`}> */}
+				<Link href="/work/sites/[slug]" as={`/work/sites/${slug}`}>
 					<a>{slug} - {content.title}</a>
-				{/* </Link> */}
-					{/* <a href={slug}>
+				</Link>
+					<a href={slug}>
 						{content.title}
-					</a> */}
+					</a>
 				</h4>
 			</div>
-			{/* <div className="work-item__img-wrap work-item__img-wrap_sites">
-				<a href={slug}> */}
+			<div className="work-item__img-wrap work-item__img-wrap_sites">
+				<a href={slug}>
 					<img src={content.imgThumb} className="work-item__img" alt=""/>
-				{/* </a>
+				</a>
 			</div>
 			<div className="work-item__footer">
 				<span className="work-item__keywords">
 					{content.keywords}
 				</span>
-			</div> */}
+			</div>
 		</div>
 	</div>
 	

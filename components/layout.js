@@ -11,6 +11,7 @@ import GoUp from "./goUp"// take script from ppls to fade it in on scroll
 // style
 const GridContainer = styled.div`
 	width: 100%;
+	
 	/* min-height: 100vh; */
 	display: grid;
 	grid-template-columns: 15px 1fr 15px;
