@@ -155,10 +155,6 @@ body.loaded .CssPreloader {
 // 	}
 // `
 
-// const animationGlitch = css`
-// 	${glitch} 0.2s infinite ease-in-out;
-// `
-
 // const CssPreloader = styled.section`
 // 	background: ${vars.blueDarkDust};
 // 	display: grid;
@@ -195,10 +191,10 @@ body.loaded .CssPreloader {
 // 	&.one {
 // 		color: #0004a4;
 // 		z-index: 10;
-// 		/* animation: ${animationGlitch}; */
+// 		/* animation: ${glitch} 0.2s infinite ease-in-out; */
 // 	}
 // 	&.two {
-// 		animation: ${animationGlitch};
+// 		animation: ${glitch} 0.2s infinite ease-in-out;
 // 		color: #a40000;
 // 		z-index: 1;
 // 	}
@@ -217,10 +213,6 @@ body.loaded .CssPreloader {
 // 	50% {
 // 		transform: scale(1.0);
 // 	}
-// `
-
-// const animationBounce = css`
-// 	${animation} 1.5s infinite ease-in-out;
 // `
 
 // // not div to escape anti-fouc display:none for divs
@@ -258,7 +250,7 @@ body.loaded .CssPreloader {
 // 		border-radius: 50%;
 // 		top: 0;
 // 		left: 0;
-// 		animation: ${animationBounce};
+// 		animation: ${animation} 1.5s infinite ease-in-out;;
 // 	}
 // 	& .circle-1 {
 // 		background-color: ${vars.blueMid};

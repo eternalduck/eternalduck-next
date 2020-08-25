@@ -1,22 +1,29 @@
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 import {menuItems} from './data/menuItems'
 import styled from "styled-components"
-import {vars, media, mixinNoBorderBottom, mixinHoverBg} from "../scss/_vars-mixins"
+import {vars, mixinHoverBg} from "../scss/_vars-mixins"
 
-export default function Menu({headerMenuClass, footerMenuClass}){
-	console.log(headerMenuClass)
+export default function Menu({
+		// headerColor, 
+		// footerColor,
+		menuColor
+	}){
+
+	const router = useRouter()
+
 	return (
 
-	<Nav 
-		className={
-			headerMenuClass ? `${headerMenuClass}` 
-			: `${footerMenuClass}`
-		}
+	<Nav menuColor={menuColor}//headerColor={headerColor} footerColor={footerColor}
+		// className={
+		// 	headerMenuClass ? `${headerMenuClass}` 
+		// 	: `${footerMenuClass}`
+		// }
 	>
-	{/* TODO: add current item class */}
 		{menuItems.map(item => (
 			<Link href={item.url} key={item.id}>
 				<a id={item.id} 
+					className={router.pathname == item.url ? "current" : ""}
 					dangerouslySetInnerHTML={{ __html: item.txt}}
 				></a>
 			</Link>
@@ -28,45 +35,40 @@ export default function Menu({headerMenuClass, footerMenuClass}){
 
 // style
 const Nav  = styled.nav`
-	footer & {
-		font-size: 1.5rem;
-		text-align: center;
-	}
 	& a {
 		position: relative;
 		margin: 0 30px 50px 0;
 		padding-bottom: 5px;
 		font-weight: 600;
 		font-size: 2rem;
+		z-index: 1;
 		${mixinHoverBg}
-		color: ${props => props.className === "light" 
+		color: ${props => props.menuColor};
+		/* color: ${props => props.color === "light" 
 			? vars.white
 			: vars.almostBlack
+		}; */
+		&.current {
+			cursor: default;
+			pointer-events: none;
+			&:after, &:hover:after {
+				background: ${vars.tenderPinkTransp};
+			}
+
 		}
-
-
-	}/* a */
-	div[class*=IndexPage] & a:first-child {/* TMP, make better */
-		display: none;
 	}
+	/* // TMP, make better */
+	/* div[class*=IndexPage] & a:first-child {
+		display: none;
+	} */
+	/* footer & {
+		font-size: 1.5rem;
+		text-align: center;
+	} */
 `
 
 
-// /* TODO: page-specific settings, make by js? */
-// .index-page &:first-child {
-// 	display: none;
-// }
-// .work-page_sites &#sites,
-// .work-page_ux &#ux,
-// .art-page &#art,
-// .cv-timeline &#timeline,
-// .cv-page &#cv {
-// 	cursor: default;
-// 	pointer-events: none;
-// 	&:after {
-// 		background: $tender-pink-transp;
-// 	}
-// }
+// /* TODO: inner pages-specific settings */
 // .single-work_site &#sites,
 // .single-work_ux &#ux,
 // .single-work_art &#art {

@@ -7,27 +7,27 @@ export const menuItems =
 	},
 	{
 		"txt": "sites",
-		"url": "/work/sites/",
+		"url": "/work/sites",
 		"id": "sites"
 	},
 	{
 		"txt": "ux",
-		"url": "/work/ux/",
+		"url": "/work/ux",
 		"id": "ux"
+	},
+	{
+		"txt": "cv",
+		"url": "/work/cv",
+		"id": "cv"
 	},
 	// {
 	// 	"txt": "art",
-	// 	"url": "/work/art/",
+	// 	"url": "/work/art",
 	// 	"id": "art"
 	// },
 	// {
 	// 	"txt": "timeline",
-	// 	"url": "/work/timeline/",
+	// 	"url": "/work/timeline",
 	// 	"id": "timeline"
 	// },
-	{
-		"txt": "cv",
-		"url": "/work/cv/",
-		"id": "cv"
-	}
 ]

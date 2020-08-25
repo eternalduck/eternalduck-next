@@ -2,10 +2,10 @@ import styled from "styled-components"
 import Menu from "./menu"
 import {media, mixinContentWidth} from "../scss/_vars-mixins"
 
-export default function Header ({headerMenuClass}){
+export default function Header ({menuColor}){
 	return (
 	<CssHeader>
-		<Menu headerMenuClass={headerMenuClass}/>
+		<Menu menuColor={menuColor}/>
 	</CssHeader>
 
 	)
@@ -19,6 +19,9 @@ const CssHeader  = styled.header`
 	${media.lg`
 		padding: 20px 0;
 	`}
+	/* & nav a {
+		color: ${props => props.headerColor};
+	} */
 
 `
 

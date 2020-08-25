@@ -11,10 +11,6 @@ const animation = keyframes`
 	}
 `
 
-const animationJump = css`
-	${animation} 1s infinite linear;
-`
-
 const CssGoUp  = styled.div`
 	position: fixed;
 	right: 10px;
@@ -28,7 +24,7 @@ const CssGoUp  = styled.div`
 	z-index: 99;
 	&:hover {
 		opacity: .8;
-		animation: ${animationJump};
+		animation: ${animation} 1s infinite linear;
 	}
 
 	${media.md`

@@ -1,29 +1,18 @@
 // import React from 'react'
 import Head from "next/head"
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 import {vars, media, mixinTestBg} from "../../../scss/_vars-mixins"
 
 import Layout from "../../../components/layout"
 import PostPreview from "../../../components/postPreview"
-import {sitesList} from "../../../components/data/sitesList"// convert to MD? npm i @next/mdx @mdx-js/loader 
+import {sites} from "../../../components/data/sites"// convert to MD? npm i @next/mdx @mdx-js/loader 
 
 
+// blog on md https://github.com/tscanlin/next-blog
 
-// blog on md
-// https://github.com/tscanlin/next-blog
 
-// style
-const ZZZ  = styled.div`
-	width: 100%;
-	height: 200px;
-	${mixinTestBg}
-
-`;
-// end style
 
 export default function Sites({
-		// pageClass,
-		// menuClass,
 		// content,
 		// slug
 	}) {
@@ -40,28 +29,30 @@ export default function Sites({
 		<Head>
 			<title>sites</title>
 		</Head>
-		{/* <body class="work-page work-page_sites"> */}
 		<Layout 
+			background={vars.blueVioDarkest}
 			isFooter={true}
-			pageClass="work-page work-page_sites"
-			headerMenuClass="light"
-			footerMenuClass="light"
+			menuColor={vars.white}
+			// headerColor={vars.white}
+			// footerColor={vars.almostBlack}
 		>
-
-			{/* {test()} */}
-			{/* <ZZZ/> */}
 			<h1>Sites</h1>
 			<p>here are sites items</p>
 			<div className="work-page__content">
-				{sitesList.map(content => (
+				{sites.map(content => (
 					<PostPreview key={content.title} slug={content.slug} content={content}/>
 				))}
 			</div>
-			{/* add go-up */}
 		</Layout>
 		</>
 	)//return
-}//export
+}//Sites
+
+// style
+
+// end style
+
+
 
 // ZB
  {/*<Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -100,17 +91,3 @@ export default function Sites({
 // }
 
 
-// ZB 2
-
-// export async function getStaticProps() {
-//   // fetch list of posts
-//   const response = await fetch(
-//     'https://jsonplaceholder.typicode.com/posts?_page=1'
-//   )
-//   const postList = await response.json()
-//   return {
-//     props: {
-//       postList,
-//     },
-//   }
-// }

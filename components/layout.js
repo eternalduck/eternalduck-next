@@ -8,15 +8,45 @@ import {vars, media, mixinTestBg} from "../scss/_vars-mixins"
 import Progressbar from "../components/progressbar"
 import GoUp from "./goUp"// take script from ppls to fade it in on scroll 
 
+export default function Layout({
+		children,
+		isFooter,
+		// headerColor,
+		// footerColor,
+		menuColor,
+		background,
+	}) {
+
+	return (
+
+	<>
+		<Progressbar/>
+		<GoUp/>
+		<GridContainer background={background}>
+			<GridContent>
+				<Header menuColor={menuColor}/>
+					{children}
+				{isFooter
+					? <Footer menuColor={menuColor}/> 
+					: <FooterEssentials/>
+				}
+
+				{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
+			</GridContent>
+		</GridContainer>
+		</>
+	)
+}
+
+
 // style
 const GridContainer = styled.div`
 	width: 100%;
-	
-	/* min-height: 100vh; */
 	display: grid;
 	grid-template-columns: 15px 1fr 15px;
 	grid-template-rows: 1fr;
 	grid-template-areas: ". content .";
+	background: ${props => props.background};
 	${media.sm`
 		grid-template-columns: 1fr 540px 1fr;
 		/* background: red; */
@@ -38,42 +68,9 @@ const GridContainer = styled.div`
 const GridContent = styled.div`
 	grid-area: content;
 	width: 100%;
-	/* ${({theme}) => theme.mixinTestBg} */
 	/* ${mixinTestBg} */
 `
 // end style
-
-export default function Layout({
-		children,
-		isFooter,
-		pageClass,
-		headerMenuClass,
-		footerMenuClass,
-	}) { 
-
-	return (
-
-	<>
-		{/* <Preloader/> */}
-		<Progressbar/>
-		<GoUp/>
-		<GridContainer className={pageClass}>
-			<GridContent>
-				<Header headerMenuClass={headerMenuClass}/>
-					{children}
-				{isFooter ? 
-				<Footer footerMenuClass={footerMenuClass}/> 
-				: <FooterEssentials/>
-				}
-
-				{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
-			</GridContent>
-		</GridContainer>
-		</>
-
-	)
-}
-
 
 
 // TODO: create <LayoutSidebar>

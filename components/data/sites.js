@@ -1,7 +1,7 @@
 // do we need navPrevTxt, navPrev, navNextTxt, navNext??
 // do we need empty values or just delete them?
 
-export const sitesList = [
+export const sites = [
 	{
 		"title": "Propellers Animation Studio",
 		"slug": "42-propellers-pro",

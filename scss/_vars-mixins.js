@@ -151,7 +151,7 @@ export const mixinHoverBg = () => {
 			transform: skewX(-1deg) skewY(-1deg);
 			transition: background .1s ease-in;
 			opacity: .5;
-			/* z-index: -1;*/
+			z-index: -1;
 		}
 		&:hover:after {
 			background: ${vars.tenderPinkTransp};

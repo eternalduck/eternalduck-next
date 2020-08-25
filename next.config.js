@@ -28,13 +28,13 @@ module.exports = withPlugins(
 		defaultPathMap,
 		{ dev, dir, outDir, distDir, buildId }
 	) {
-		return {//use obj to generate all posts urls
+		return {//use obj to generate all posts urls; some FAIL with trailind slash
 			'/': { page: '/' },
-			'/work/sites/': { page: '/work/sites/' },
-			'/work/ux/': { page: '/work/ux/'},
+			'/work/sites': { page: '/work/sites'},
+			'/work/ux': { page: '/work/ux'},
+			'/work/cv': { page: '/work/cv'},
 			// '/work/art': { page: '/work/art'},
 			// '/work/timeline': { page: '/work/timeline'},
-			// '/work/cv': { page: '/work/cv'},
 			// '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
 		
 		}
@@ -52,15 +52,6 @@ module.exports = withPlugins(
 		// config.optimization.minimizer = [],//fail
 		// minify: false,//fail
 		// config.optimization.minimize = false//fail
-
-
-		// config.plugins.push(//fail
-		// 	new HtmlWebpackPlugin({
-		// 		// optimization: {
-		// 			minimize: false//fail
-		// 		// },
-		// 	})
-        // )
 
 		config.module.rules.push(
 			{
@@ -81,20 +72,10 @@ module.exports = withPlugins(
 			// 		},
 			// 	}
 			// }
-
-// may be extract styles again?
-			// {
-			// 	enforce: 'pre',
-			// 	test: /.scss$/,
-			// 	// loader: 'sass-resources-loader',
-			// 	// options: {
-			// 	// 	resources: ['./scss/_vars-mixins.scss'],
-			// 	// },
-			// },
-		);
+		);//push
 
 		return config;
-	}
+	}//webpack
 	}
 )
 
