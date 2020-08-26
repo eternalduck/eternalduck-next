@@ -96,6 +96,17 @@ export const mixinTestBg = () => {
 `}
 // end TMP
 
+export const mixinFlex = () => {
+	return `
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
+		@media (${breakpoints.xl}) {
+			justify-content: space-between;
+		}
+`}
+
+
 // gradient txt as on css-tricks
 export const mixinTxtGradient = () => {
 	return `

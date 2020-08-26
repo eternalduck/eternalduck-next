@@ -1,9 +1,9 @@
 // import React from 'react'
 import Head from "next/head"
 import styled, {css} from "styled-components"
-import {vars, media, mixinTestBg} from "../../../scss/_vars-mixins"
+import {vars, media, mixinFlex} from "../../../scss/_vars-mixins"
 
-import Layout from "../../../components/layout"
+import Layout, {LayoutSidebar} from "../../../components/layout"
 import PostPreview from "../../../components/postPreview"
 import {sites} from "../../../components/data/sites"// convert to MD? npm i @next/mdx @mdx-js/loader 
 
@@ -29,26 +29,29 @@ export default function Sites({
 		<Head>
 			<title>sites</title>
 		</Head>
-		<Layout 
+		<Layout
+			// contentWidth
 			background={vars.blueVioDarkest}
-			isFooter={true}
-			menuColor={vars.white}
-			// headerColor={vars.white}
-			// footerColor={vars.almostBlack}
+			isFooter
+			headerColor={vars.white}
+			footerColor={vars.white}
 		>
 			<h1>Sites</h1>
 			<p>here are sites items</p>
-			<div className="work-page__content">
+			<Flex>
 				{sites.map(content => (
 					<PostPreview key={content.title} slug={content.slug} content={content}/>
 				))}
-			</div>
+			</Flex>
 		</Layout>
 		</>
 	)//return
 }//Sites
 
 // style
+const Flex = styled.div`
+	${mixinFlex}
+`
 
 // end style
 

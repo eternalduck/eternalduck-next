@@ -1,5 +1,5 @@
 // import styled, {createGlobalStyle, css, keyframes} from "styled-components"
-import {createGlobalStyle} from "styled-components"
+import styled, {createGlobalStyle} from "styled-components"
 import reset from 'styled-reset'
 import {vars, media} from "./_vars-mixins"
 import DebugGlobalStyles from "./utils/_debug"
@@ -24,17 +24,14 @@ rem for paddings? */
 
 // TODO: "utils/ie-tweaks ";
 
-
-
 const GlobalStyles = createGlobalStyle`
 ${reset}
 ${DebugGlobalStyles}
 ${IconsGlobalStyles}
 
 /* .work-sites {background: red;} */
-
-html {
-	scroll-behavior: smooth;
+html {scroll-behavior: smooth;}
+html, body {
 	font-size: 14px;
 	${media.md`
 		font-size: 15px;
@@ -44,20 +41,18 @@ html {
 	`}
 }
 body {
-	background: #333;/* TMP! */
+	/* fail */
+	/* ${props => props.dark
+		? "background: #333; color: #fff;"
+		: `background: #eeefee; color: ${vars.almostBlack};`
+	} */
+	background: #333; color: #fff;/* TMP */
+	& a {color: #fff;}/* TMP */
 	font-family: 'Inconsolata', monospace;
 	/* font-family: 'Open Sans', sans-serif;
 	font-family: 'Courier', serif; */
-	color: #fff;/* TMP! */
 	font-weight: 300;
-	font-size: 14px;
 	line-height: 1.5;
-	${media.md`
-		font-size: 15px;
-	`}
-	${media.lg`
-		font-size: 16px;
-	`}
 }
 h1, h2, h3, h4 {
 	font-family: 'Inconsolata', monospace;

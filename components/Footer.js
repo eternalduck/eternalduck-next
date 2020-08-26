@@ -3,14 +3,16 @@ import FooterEssentials from "./footerEssentials"
 import styled from "styled-components"
 import {vars, media, mixinContentWidth} from "../scss/_vars-mixins"
 
-export default function Footer({menuColor}){
+export default function Footer({
+		footerColor
+	}){
 
 	const now = new Date()
 
 	return (
 
 		<CssFooter>
-			<Menu menuColor={menuColor}/>
+			<Menu footerColor={footerColor}/>
 			<p>{now.getFullYear()}</p>
 		<FooterEssentials/>
 		</CssFooter>
@@ -22,16 +24,12 @@ export default function Footer({menuColor}){
 
 // style
 const CssFooter  = styled.footer`
-	${mixinContentWidth}
+	grid-area: footer;
 	padding: 25px 0 15px;
 	& nav {
 		font-size: 1.5rem;
 		text-align: center;
-		/* & a {
-			color: ${props => props.footerColor};
-		} */
 	}
-	/* grid-area: footer; */
 
 `
 

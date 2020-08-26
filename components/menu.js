@@ -5,20 +5,17 @@ import styled from "styled-components"
 import {vars, mixinHoverBg} from "../scss/_vars-mixins"
 
 export default function Menu({
-		// headerColor, 
-		// footerColor,
-		menuColor
+		headerColor, 
+		footerColor
 	}){
 
 	const router = useRouter()
 
 	return (
 
-	<Nav menuColor={menuColor}//headerColor={headerColor} footerColor={footerColor}
-		// className={
-		// 	headerMenuClass ? `${headerMenuClass}` 
-		// 	: `${footerMenuClass}`
-		// }
+	<Nav 
+		headerColor={headerColor}
+		footerColor={footerColor}
 	>
 		{menuItems.map(item => (
 			<Link href={item.url} key={item.id}>
@@ -43,11 +40,7 @@ const Nav  = styled.nav`
 		font-size: 2rem;
 		z-index: 1;
 		${mixinHoverBg}
-		color: ${props => props.menuColor};
-		/* color: ${props => props.color === "light" 
-			? vars.white
-			: vars.almostBlack
-		}; */
+		color: ${props => props.headerColor || props.footerColor};
 		&.current {
 			cursor: default;
 			pointer-events: none;
