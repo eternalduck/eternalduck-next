@@ -149,8 +149,10 @@ export const mixinNoBorderBottom = () => {
 export const mixinHoverBg = () => {
 	return `
 		position: relative;
+		border-bottom: none;
 		&:hover {
 			color: ${vars.white};
+			border-bottom: none;/* fail - border flashes */
 		}
 		&:after {
 			content: "";

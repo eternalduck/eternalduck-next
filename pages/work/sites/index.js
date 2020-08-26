@@ -1,9 +1,9 @@
 // import React from 'react'
 import Head from "next/head"
-import styled, {css} from "styled-components"
-import {vars, media, mixinFlex} from "../../../scss/_vars-mixins"
+// import styled, {css} from "styled-components"
+import {vars, media} from "../../../scss/_vars-mixins"
 
-import Layout, {LayoutSidebar} from "../../../components/layout"
+import LayoutDefault, {FlexContainer} from "../../../components/layout"
 import PostPreview from "../../../components/postPreview"
 import {sites} from "../../../components/data/sites"// convert to MD? npm i @next/mdx @mdx-js/loader 
 
@@ -29,7 +29,7 @@ export default function Sites({
 		<Head>
 			<title>sites</title>
 		</Head>
-		<Layout
+		<LayoutDefault
 			// contentWidth
 			background={vars.blueVioDarkest}
 			isFooter
@@ -38,23 +38,15 @@ export default function Sites({
 		>
 			<h1>Sites</h1>
 			<p>here are sites items</p>
-			<Flex>
+			<FlexContainer>
 				{sites.map(content => (
 					<PostPreview key={content.title} slug={content.slug} content={content}/>
 				))}
-			</Flex>
-		</Layout>
+			</FlexContainer>
+		</LayoutDefault>
 		</>
 	)//return
 }//Sites
-
-// style
-const Flex = styled.div`
-	${mixinFlex}
-`
-
-// end style
-
 
 
 // ZB

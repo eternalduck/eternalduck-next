@@ -7,21 +7,27 @@ import {vars, media} from "../scss/_vars-mixins"
 export default function PostPreview({slug, content}){
 	// console.info(slug)
 	return (
-	<PostCard>
-		<Link href="/work/sites/[slug]" as={`/work/sites/${slug}`}><a>
-		<CardInner>
-			<CardHeader>
-				<CardTitle>{content.title}</CardTitle>
-			</CardHeader>
-			<Img>
-				<img src={content.imgThumb} className="work-item__img" alt=""/>
-			</Img>
-			<CardFooter>
-				<Keywords>{content.keywords}</Keywords>
-			</CardFooter>
-		</CardInner>
-		</a></Link>
-	</PostCard>
+		<PostCard>
+			<Link
+				href="/work/sites/[slug]"
+				as={`/work/sites/${slug}`}
+			><a>
+				<CardInner>
+					<CardHeader>
+						<CardTitle>{content.title}</CardTitle>
+					</CardHeader>
+					<Img>
+						<img 
+							src={content.imgThumb}
+							alt={content.title}
+						/>
+					</Img>
+					<CardFooter>
+						<Keywords>{content.keywords}</Keywords>
+					</CardFooter>
+				</CardInner>
+			</a></Link>
+		</PostCard>
 	
 	)
 }

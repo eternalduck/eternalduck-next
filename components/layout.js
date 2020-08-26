@@ -1,13 +1,14 @@
+// LayoutDefault, LayoutSidebar, FlexContainer
 import Header from "../components/header"
 import Footer from "../components/footer"
 import FooterEssentials from "../components/footerEssentials"
 import styled from "styled-components"
-import {media} from "../scss/_vars-mixins"
-
+import {media, mixinFlex} from "../scss/_vars-mixins"
 import Progressbar from "../components/progressbar"
 import GoUp from "./goUp"
 
-export default function Layout({
+// 1
+export default function LayoutDefault({
 		children,
 		isFooter,
 		headerColor,
@@ -28,47 +29,12 @@ export default function Layout({
 					? <Footer footerColor={footerColor}/> 
 					: <FooterEssentials/>
 				}
-
 				{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
 			</GridContent>
 		</GridContainer>
 		</>
 	)
-}//default Layout
-
-export function LayoutSidebar({
-		children,
-		background,
-		isFooter,
-		headerColor,
-		footerColor,
-		contentWidth
-	}) {
-
-	return (
-
-	<>
-		<Progressbar/>
-		<GoUp/>
-		<GridWithSidebar background={background}>
-			<Header headerColor={headerColor} contentWidth={contentWidth}/>
-			<GridSidebar>
-				Sidebar<br/>Content
-			</GridSidebar>
-			<GridMain>
-					{children}
-			</GridMain>
-			{isFooter
-				? <Footer footerColor={footerColor}/>
-				: <FooterEssentials/>
-			}
-
-			{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
-		</GridWithSidebar>
-		</>
-	)
 }
-
 
 // style
 const GridContainer = styled.div`
@@ -94,7 +60,46 @@ const GridContent = styled.div`
 	grid-area: content;
 	width: 100%;
 `
-//with sidebar
+// end style
+// end 1
+
+
+// 2
+export function LayoutSidebar({
+		children,
+		background,
+		isFooter,
+		headerColor,
+		footerColor,
+		contentWidth
+	}) {
+
+	return (
+
+	<>
+		<Progressbar/>
+		<GoUp/>
+		<GridWithSidebar background={background}>
+			<Header headerColor={headerColor} contentWidth={contentWidth}/>
+			<GridSidebar>
+				TMP:<br/>Sidebar<br/>Content<br/>
+				Vertical<br/>Menu here?
+			</GridSidebar>
+			<GridMain>
+				{children}
+			</GridMain>
+			{isFooter
+				? <Footer footerColor={footerColor}/>
+				: <FooterEssentials/>
+			}
+
+			{/* TODO: include gtm tag by https://www.npmjs.com/package/react-gtm-module */}
+		</GridWithSidebar>
+		</>
+	)
+}
+
+// style
 const GridWithSidebar = styled.div`
 	/* & ${Header} { */ /* fail "Referring to other components" */
 	& header {/* TMP */
@@ -145,6 +150,18 @@ const GridMain = styled.div`
 		padding-left: 30px;
 	`}
 `
-
-
 // end style
+// end 2
+
+// 3
+export function FlexContainer({children}) {
+	return (
+		<Flex>{children}</Flex>
+	)
+}
+// style
+const Flex = styled.div`
+	${mixinFlex}
+`
+// end style
+// end 3

@@ -1,7 +1,7 @@
 // import styled, {createGlobalStyle, css, keyframes} from "styled-components"
 import styled, {createGlobalStyle} from "styled-components"
 import reset from 'styled-reset'
-import {vars, media} from "./_vars-mixins"
+import {vars, media, mixinUnderline} from "./_vars-mixins"
 import DebugGlobalStyles from "./utils/_debug"
 import IconsGlobalStyles from "./utils/_fa-icons"
 
@@ -46,7 +46,7 @@ body {
 		? "background: #333; color: #fff;"
 		: `background: #eeefee; color: ${vars.almostBlack};`
 	} */
-	background: #333; color: #fff;/* TMP */
+	background: #333; color: #fff;/* TMP, make dark/light pages theme */
 	& a {color: #fff;}/* TMP */
 	font-family: 'Inconsolata', monospace;
 	/* font-family: 'Open Sans', sans-serif;
@@ -81,6 +81,14 @@ p {
 }
 a, a:hover {
 	text-decoration: none;
+	${mixinUnderline}
+}
+ul {
+	margin: 0 0 1em 2em;
+	list-style-type: disc;/* TMP */
+}
+li {
+	margin-bottom: 0.5em;
 }
 /* Global Classes */
 
