@@ -4,17 +4,30 @@ import Head from "next/head"
 import {vars, media} from "../../../scss/_vars-mixins"
 
 import LayoutDefault, {FlexContainer} from "../../../components/layout"
-import PostPreview from "../../../components/postPreview"
-import {sites} from "../../../components/data/sites"// convert to MD? npm i @next/mdx @mdx-js/loader 
-
+import {sites} from "../../../components/data/sites"// convert to MD? npm i @next/mdx @mdx-js/loader or https://nextjs.org/learn/basics/data-fetching/implement-getstaticprops
+import PostPreview from "../posts/postPreview"
 
 // blog on md https://github.com/tscanlin/next-blog
 
 
+// const loader = () => {
+// 	console.log(`Status, ${sites[0].title}`);
+// }
+ 
+export async function getStaticProps(){
+	// const res = await fetch("https://ebaklak.ru/data/tmp.json")
+	// const sites = await res.json()
+	const data = sites
+	return {
+		props: {data}//page receives `data` as a prop at build time
+	}
+}
+// const sites = null
 
 export default function Sites({
-		// content,
-		// slug
+	data,
+	// content,
+	// slug
 	}) {
 
 
@@ -33,20 +46,29 @@ export default function Sites({
 			// contentWidth
 			background={vars.blueVioDarkest}
 			isFooter
-			headerColor={vars.white}
-			footerColor={vars.white}
+			// headerColor={vars.white}//white by default
+			// footerColor={vars.white}
 		>
 			<h1>Sites</h1>
 			<p>here are sites items</p>
+			{/* <button onClick={loader}>load data</button> */}
 			<FlexContainer>
-				{sites.map(content => (
-					<PostPreview key={content.title} slug={content.slug} content={content}/>
-				))}
+				{data ? 
+					data.map(content => (
+						<PostPreview key={content.title} slug={content.slug} content={content}/>
+					))
+					: null
+				}
+				
 			</FlexContainer>
 		</LayoutDefault>
 		</>
 	)//return
 }//Sites
+
+
+
+
 
 
 // ZB

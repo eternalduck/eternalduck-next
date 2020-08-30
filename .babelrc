@@ -21,7 +21,7 @@
 				"fileName": false,
 				"ssr": true,
 				"transpileTemplateLiterals": true,
-				// "minify": false,
+				"preprocess": false,//experimental feature turned off explicitly
 			}
 		]
 	]

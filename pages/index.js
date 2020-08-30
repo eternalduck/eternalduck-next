@@ -1,8 +1,6 @@
 import Head from "next/head"
 import styled from "styled-components"
 import Header from "../components/header"
-import Preloader from "../components/preloader"
-import {vars} from "../scss/_vars-mixins"
 
 export default function Index() {
 	
@@ -12,9 +10,8 @@ export default function Index() {
 		<Head>
 			<title>eternalduck</title>
 		</Head>
-		<Preloader/>
 		<IndexPage>
-			<Header headerColor={vars.white}/>
+			<Header headerColor={"#fff"} contentWidth/>
 		</IndexPage>
 	</>
 

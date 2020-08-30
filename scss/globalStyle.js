@@ -49,8 +49,9 @@ body {
 	background: #333; color: #fff;/* TMP, make dark/light pages theme */
 	& a {color: #fff;}/* TMP */
 	font-family: 'Inconsolata', monospace;
-	/* font-family: 'Open Sans', sans-serif;
-	font-family: 'Courier', serif; */
+	/* font-family: 'Roboto Slab', serif; */
+	/* font-family: 'Open Sans', sans-serif; */
+	/* font-family: 'Courier', serif; */
 	font-weight: 300;
 	line-height: 1.5;
 }
@@ -81,7 +82,7 @@ p {
 }
 a, a:hover {
 	text-decoration: none;
-	${mixinUnderline}
+	/* ${mixinUnderline} */
 }
 ul {
 	margin: 0 0 1em 2em;

@@ -12,7 +12,7 @@ export default function Footer({
 	return (
 
 		<CssFooter>
-			<Menu footerColor={footerColor}/>
+			<Menu footerColor={footerColor || "#fff"}/>
 			<p>{now.getFullYear()}</p>
 		<FooterEssentials/>
 		</CssFooter>

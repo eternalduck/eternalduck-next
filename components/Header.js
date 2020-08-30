@@ -9,7 +9,7 @@ export default function Header ({
 
 	return (
 		<CssHeader contentWidth={contentWidth}>
-			<Menu headerColor={headerColor}/>
+			<Menu headerColor={headerColor || "#fff"}/>
 		</CssHeader>
 	)
 }

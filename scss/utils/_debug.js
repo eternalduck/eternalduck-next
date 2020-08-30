@@ -16,9 +16,9 @@ header, footer {
 
 body:before {
 	position: fixed;
-	top: 50px;
-	right: 10px;
-	font-size: 20px;
+	top: 5px;
+	right: 5px;
+	font-size: 18px;
 	z-index: 9990;
 	text-align: right;
 	content: "xs before 500px";

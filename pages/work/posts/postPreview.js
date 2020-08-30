@@ -1,10 +1,13 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled from "styled-components"
-import {vars, media} from "../scss/_vars-mixins"
+import {vars, media} from "../../../scss/_vars-mixins"
 
 
-export default function PostPreview({slug, content}){
+export default function PostPreview({
+		content,
+		slug,
+	}){
 	// console.info(slug)
 	return (
 		<PostCard>
@@ -18,7 +21,7 @@ export default function PostPreview({slug, content}){
 					</CardHeader>
 					<Img>
 						<img 
-							src={content.imgThumb}
+							src={content.images[0].thumb}
 							alt={content.title}
 						/>
 					</Img>
@@ -34,7 +37,7 @@ export default function PostPreview({slug, content}){
 
 
 // style
-// TODO: make this card universal for sites & ux width different styles
+// TODO: make this card universal for sites & ux with different styles
 const PostCard = styled.div`
 	background: ${vars.almostWhite};
 	color: ${vars.almostBlack};

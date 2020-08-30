@@ -1,5 +1,5 @@
 import GlobalStyles from "../scss/globalStyle"
-import Preloader from "../components/preloader"
+// import Preloader from "../components/preloader"
 
 
 export default function MyApp({ Component, pageProps }) {
@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }) {
 	return (
 		<>
 			<GlobalStyles/>
-			<Preloader/>
+			{/* <Preloader/> */}
 			<Component {...pageProps}/>
 		</>
 	)
