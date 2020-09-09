@@ -5,7 +5,7 @@ import { ServerStyleSheet } from 'styled-components'
 
 export default class CustomDocument extends Document {
 
-static async getInitialProps(ctx) {
+static async getInitialProps(ctx) {//desprecated, use getServerSideProps or getStaticProps
 	const sheet = new ServerStyleSheet()
 	const originalRenderPage = ctx.renderPage
 

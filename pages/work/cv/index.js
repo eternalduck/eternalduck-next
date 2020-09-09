@@ -4,7 +4,6 @@ import styled, {css} from "styled-components"
 import {vars, media} from "../../../scss/_vars-mixins"
 
 import LayoutDefault, {FlexContainer} from "../../../components/layout"
-import PostPreview from "../../../components/postPreview"
 import {cv} from "../../../components/data/cv"// convert to MD? npm i @next/mdx @mdx-js/loader 
 
 

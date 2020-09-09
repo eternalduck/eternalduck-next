@@ -4,7 +4,7 @@ import Head from "next/head"
 import {vars, media} from "../../../scss/_vars-mixins"
 
 import LayoutDefault, {FlexContainer} from "../../../components/layout"
-import {sites} from "../../../components/data/sites"// convert to MD? npm i @next/mdx @mdx-js/loader or https://nextjs.org/learn/basics/data-fetching/implement-getstaticprops
+import {sitesList} from "../../../components/data/sitesList"// convert to MD? npm i @next/mdx @mdx-js/loader or https://nextjs.org/learn/basics/data-fetching/implement-getstaticprops
 import PostPreview from "../posts/postPreview"
 
 // blog on md https://github.com/tscanlin/next-blog
@@ -13,11 +13,24 @@ import PostPreview from "../posts/postPreview"
 // const loader = () => {
 // 	console.log(`Status, ${sites[0].title}`);
 // }
- 
+// export async function getStaticPaths() {
+	
+// 	return {
+// 		paths: {
+// 			return {
+// 				params: {
+// 					slug: `${post.slug}`,
+// 				},
+// 			}
+// 		},
+// 		fallback: false,
+// 	}
+// }
 export async function getStaticProps(){
 	// const res = await fetch("https://ebaklak.ru/data/tmp.json")
 	// const sites = await res.json()
-	const data = sites
+	const data = sitesList
+	
 	return {
 		props: {data}//page receives `data` as a prop at build time
 	}
@@ -30,6 +43,8 @@ export default function Sites({
 	// slug
 	}) {
 
+	// const test = data.map(s => s.slug)
+	// console.info(test)
 
 // const test = () => {
 // 	let str = ["q", "w", "e"]
@@ -54,8 +69,8 @@ export default function Sites({
 			{/* <button onClick={loader}>load data</button> */}
 			<FlexContainer>
 				{data ? 
-					data.map(content => (
-						<PostPreview key={content.title} slug={content.slug} content={content}/>
+					data.map(post => (
+						<PostPreview key={post.slug} post={post}/>
 					))
 					: null
 				}

@@ -3,77 +3,72 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import styled from "styled-components"
 import {vars, media, mixinTxtShadow, mixinUnderline} from "../../../scss/_vars-mixins"
-import {sites} from "../../../components/data/sites"/* TMP? */
+import {sitesList} from "../../../components/data/sitesList"/* TMP? */
 import LayoutDefault from "../../../components/layout"
 
-export async function getStaticProps(){
-	const data = sites
+
+
+export async function getStaticPaths() {
+	const sites = sitesList
+	// const test = paths.map(s => s.slug)
+	// console.info(test);
+
 	return {
-		props: {data}//page receives `data` as a prop at build time
+		paths: sites.map((post) => {
+			return {
+				params: {
+					slug: `${post.slug}`,
+				},
+			}
+		}),
+		fallback: false,
+	}
+}
+
+export async function getStaticProps({params}){
+	// const data = sitesList
+	return {
+		props: {params}//page receives `data` as a prop at build time
 	}
 }
 
 
-// export async function getStaticPaths() {
-//   const response = await fetch(
-//     'https://jsonplaceholder.typicode.com/posts?_page=1'
-//   )
-//   const postList = await response.json()
-//   return {
-//     paths: postList.map((post) => {
-//       return {
-//         params: {
-//           id: `${post.id}`,
-//         },
-//       }
-//     }),
-//     fallback: false,
-//   }
-// }
-
-// export async function getStaticProps({ params }) {
-//   // fetch single post detail
-//   const response = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${params.id}`
-//   )
-//   const post = await response.json()
-//   return {
-//     props: post,
-//   }
-// }
-
 
 
 export default function Post({
-	data,
+	// post,
 	// content,
 	// slug,
 	// ...other
 	}) {
-		// const router = useRouter()
-		// const { slug } = router.query
-		// if (!router.isFallback && !slug) {
-		// 	console.log("error 404")
-		// 	// return <ErrorPage statusCode={404} />
-		// }
+		const router = useRouter()
+		const { slug } = router.query
+		if (!router.isFallback && !props.slug) {
+			console.log("error 404")
+			return <ErrorPage statusCode={404} />
+		}
 
 	return (
 		<>
+		{/* add page title */}
 		{/* <Head>
-			<title>{data[4].title}</title>
+			<title>{props.title}</title>
 		</Head> */}
-
 		<LayoutDefault
 			background={vars.blueVioDarkest}
 			isFooter
 		>
-			<p>Post: {data[4].slug}</p>
+		{router.isFallback ? (
+			<p>Loading...</p>
+			) : (
+			<>
+			<p>Post: {props.slug}</p>
 			<PostHeader>
-				<Title>{data[4].title}</Title>
+				<Title>{props.title}</Title>
 				<Keywords>
-					{data[4].keywords}
+					{props.keywords}
 				</Keywords>
-				<Url href={data[4].url} target="_blank">
+				<Url href={props.url} target="_blank">
 					Visit the site
 				</Url>
 			</PostHeader>
@@ -81,13 +76,13 @@ export default function Post({
 			{/* TODO: add descrRu toggle */}
 			<Description>
 				<p dangerouslySetInnerHTML={{__html: `
-					${data[4].descrEn}
+					${props.descrEn}
 				`}}></p>
 			</Description>
 
 			{/* TODO: fix fancybox, links included in _document head */}
 			<ImgContainer>
-				{data[4].images.map((img) => 
+				{props.images.map((img) => 
 					<ImgItem>
 						<h4>{img.title}</h4>
 						<a key={img.img} data-fancybox="gallery" data-caption={img.title} href={img.img}>
@@ -102,12 +97,14 @@ export default function Post({
 
 			{/* TODO: auto nav for next\prev [slug], this is TMP */}
 			<Nav>
-				{data[4].nav.map(
+				{props.nav.map(
 					nav => 
 					<Link href={nav.link} as={nav.link}><a>{nav.txt}</a></Link>
 				)}
 			</Nav>
 			
+			</>
+		 )}
 		</LayoutDefault>
 		</>
 	)

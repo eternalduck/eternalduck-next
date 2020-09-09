@@ -4,7 +4,7 @@ import styled, {css} from "styled-components"
 import {vars, media} from "../../../scss/_vars-mixins"
 
 import LayoutDefault, {FlexContainer} from "../../../components/layout"
-import PostPreview from "../../../components/postPreview"
+import PostPreview from "../posts/postPreview"
 import {ux} from "../../../components/data/ux"
 
 export default function Ux({

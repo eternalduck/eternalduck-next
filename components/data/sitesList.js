@@ -1,10 +1,10 @@
 // do we need navPrevTxt, navPrev, navNextTxt, navNext??
 // do we need empty values or just delete them?
 
-export const sites = [
+export const sitesList = [
 	{
+		"slug": "42-propellers",
 		"title": "Propellers Animation Studio",
-		"slug": "42-propellers-pro",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/42-propellers-pro.jpg",
@@ -28,8 +28,8 @@ export const sites = [
 		],
 	},
 	{
+		"slug": "41-torex",
 		"title": "Torex Doors Factory",
-		"slug": "41-torex-doors-factory",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/41-torexdoors.jpg",
@@ -54,8 +54,8 @@ export const sites = [
 		],
 	},
 	{
+		"slug": "40-promet",
 		"title": "Promet Doors Factory",
-		"slug": "40-promet-doors-factory",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/40-prometdoors.jpg",
@@ -80,8 +80,8 @@ export const sites = [
 		],
 	},
 	{
+		"slug": "39-kontur",
 		"title": "Kontur Doors Factory",
-		"slug": "39-kontur-doors-factory",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/39-kontur.jpg",
@@ -106,8 +106,8 @@ export const sites = [
 		],
 	},
 	{
+		"slug": "38-salespilot",
 		"title": "Commercial Offers Landing",
-		"slug": "38-commercial-offers-landing",
 		//group images to array?
 		"images": [
 			{
@@ -145,8 +145,8 @@ export const sites = [
 
 	},
 	{
+		"slug": "37-banks",
 		"title": "Banks Research Landing",
-		"slug": "37-landing-for-banks",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/37-banks.jpg",
@@ -172,8 +172,8 @@ export const sites = [
 
 	},
 	{
+		"slug": "36-cxz",
 		"title": "Stupino Chemical Plant",
-		"slug": "36-chemical-plant",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/36-cxz.jpg",
@@ -199,8 +199,8 @@ export const sites = [
 	},
 
 	{
+		"slug": "35-old-php",
 		"title": "Commercial Offers System",
-		"slug": "35-commercial-offers",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/35-completo-kp.jpg",
@@ -231,8 +231,8 @@ export const sites = [
 		},
 
 	{
+		"slug": "34-noradrugan",
 		"title": "Photographer's Gallery",
-		"slug": "34-photography",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/34-noradrugan.jpg",
@@ -259,8 +259,8 @@ export const sites = [
 
 
 	{
-		"title": "Kids' Education",
 		"slug": "33-kids",
+		"title": "Kids' Education",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/33-postupi.jpg",
@@ -286,8 +286,8 @@ export const sites = [
 	},
 
 	{
-		"title": "1c Accounting Site",
 		"slug": "32-1vip",
+		"title": "1c Accounting Site",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/32-1vip.jpg",
@@ -325,8 +325,8 @@ export const sites = [
 	},
 
 	{
-		"title": "Splat Products",
 		"slug": "31-splat",
+		"title": "Splat Products",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/31-splat.jpg",
@@ -352,8 +352,8 @@ export const sites = [
 	},
 
 	{
+		"slug": "30-ptfm",
 		"title": "Gas Equipment",
-		"slug": "30-gas-eqipment",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/30-ptfm.jpg",
@@ -379,8 +379,8 @@ export const sites = [
 	},
 
 	{
+		"slug": "28-moroni",
 		"title": "Moroni Cleaning",
-		"slug": "28-moroniclean",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/28-moroniclean.jpg",
@@ -407,8 +407,8 @@ export const sites = [
 
 
 	{
-		"title": "Designer's Homepage",
 		"slug": "27-maru",
+		"title": "Designer's Homepage",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/27-maru.jpg",
@@ -434,8 +434,8 @@ export const sites = [
 
 	},
 	{
-		"title": "AnastasiaDate's Blog",
 		"slug": "25-bloganastasiadate",
+		"title": "AnastasiaDate's Blog",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/25-bloganastasiadate.jpg",
@@ -461,8 +461,8 @@ export const sites = [
 	},
 
 	{
-		"title": "Travel Mates Landing",
 		"slug": "24-asiantravelmates",
+		"title": "Travel Mates Landing",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/24-asiantravelmates.jpg",
@@ -488,8 +488,8 @@ export const sites = [
 		],
 	},
 	{
-		"title": "Rally Promo Site",
 		"slug": "23-rallybabes",
+		"title": "Rally Promo Site",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/23-rallybabes.jpg",
@@ -514,8 +514,8 @@ export const sites = [
 	},
 
 	{
+		"slug": "22-partners",
 		"title": "Dating Partners Network",
-		"slug": "22-global-companions",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/22-global-companions.jpg",
@@ -541,8 +541,8 @@ export const sites = [
 	},
 
 	{
-		"title": "Dating Landing",
 		"slug": "13-marryasianbride",
+		"title": "Dating Landing",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/13-marryasianbride.jpg",
@@ -568,8 +568,8 @@ export const sites = [
 
 	},
 	{
-		"title": "Drivers Training Center",
 		"slug": "04-auto2000",
+		"title": "Drivers Training Center",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/04-auto2000.jpg",
@@ -595,8 +595,8 @@ export const sites = [
 	},
 
 	{
+		"slug": "03-clinic",
 		"title": "Medical Center",
-		"slug": "03-clinic-cs",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/03-clinic-cs.jpg",
@@ -622,8 +622,8 @@ export const sites = [
 	},
 
 	{
-		"title": "Furniture Factory",
 		"slug": "02-ronikon",
+		"title": "Furniture Factory",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/02-ronikon.jpg",
@@ -648,8 +648,8 @@ export const sites = [
 		],
 	},
 	{
+		"slug": "01-hospital",
 		"title": "A Hospital",
-		"slug": "01-hospital-cs",
 		"images": [
 			{
 				"thumb": "/images/work/sites/thumbs/01-hospital-cs.jpg",

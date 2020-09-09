@@ -23,22 +23,22 @@ module.exports = withPlugins(
 	],
 	{
 // routing for static export
-	exportTrailingSlash: true,//required for exportPathMap
-	 exportPathMap: async function (//what about all dynamic posts???
-		defaultPathMap,
-		{ dev, dir, outDir, distDir, buildId }
-	) {
-		return {//use obj to generate all posts urls; some FAIL with trailind slash
-			'/': { page: '/' },
-			'/work/sites': { page: '/work/sites'},
-			'/work/ux': { page: '/work/ux'},
-			'/work/cv': { page: '/work/cv'},
-			// '/work/art': { page: '/work/art'},
-			// '/work/timeline': { page: '/work/timeline'},
-			// '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
+	// trailingSlash: true,//required for exportPathMap
+	//  exportPathMap: async function (//deprecated!
+	// 		defaultPathMap,
+	// 		{ dev, dir, outDir, distDir, buildId }
+	// 	) {
+	// 	return {//TODO: use obj to generate all posts urls; some FAIL with trailind slash
+	// 		'/': { page: '/' },
+	// 		'/work/sites': { page: '/work/sites'},
+	// 		'/work/ux': { page: '/work/ux'},
+	// 		'/work/cv': { page: '/work/cv'},
+	// 		// '/work/art': { page: '/work/art'},
+	// 		// '/work/timeline': { page: '/work/timeline'},
+	// 		// '/p/learn-nextjs': { page: '/post', query: { title: 'learn-nextjs' } },
 		
-		}
-	},//exportPathMap
+	// 	}
+	// },//exportPathMap
 
 // end routing
 
