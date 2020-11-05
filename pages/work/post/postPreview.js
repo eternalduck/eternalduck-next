@@ -6,14 +6,13 @@ import {vars, media} from "../../../scss/_vars-mixins"
 
 export default function PostPreview({
 		post,
-		// slug,
 	}){
 	// console.info(slug)
 	return (
 		<PostCard>
 			<Link
-				href="/work/sites/[slug]"
-				as={`/work/sites/${post.slug}`}
+				href="/work/post/[slug]"
+				as={`/work/post/${post.slug}`}
 			><a>
 				<CardInner>
 					<CardHeader>
@@ -21,7 +20,7 @@ export default function PostPreview({
 					</CardHeader>
 					<Img>
 						<img 
-							src={post.images[0].thumb}
+							src={post.thumb}
 							alt={post.title}
 						/>
 					</Img>

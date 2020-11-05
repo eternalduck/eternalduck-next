@@ -3,23 +3,21 @@
 
 export const sitesList = [
 	{
-		"slug": "42-propellers",
-		"title": "Propellers Animation Studio",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/42-propellers-pro.jpg",
-				"img": "/images/work/sites/42-propellers-pro.jpg"
-			}
-		],
-		"url": "propellers.pro",
+		"slug": "43-nikatech",
+		"title": "Nika Tech Family",
+		"thumb": "/images/work/sites/thumbs/43-nikatech.jpg",
+		"images": {
+			"img": "/images/work/sites/43-nikatech.jpg"
+		},
+		"url": "https://nikatech.net",
 		"url2": "",
 		"keywords": "2020, wordpress, responsive, gulp",
 		"descrEn": "A Wordpress site for an animation studio.",
 		"descrRu": "",
 		"nav": [
 			{//prev
-				"txt": "Torex Doors Factory",
-				"link": "41-torex-doors-factory.html"
+				"txt": "Propellers Animation Studio",
+				"link": "42-propellers"
 			},
 			{//next
 				"txt": "",
@@ -28,15 +26,36 @@ export const sitesList = [
 		],
 	},
 	{
-		"slug": "41-torex",
-		"title": "Torex Doors Factory",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/41-torexdoors.jpg",
-				"img": "/images/work/sites/41-torexdoors.jpg"
+		"slug": "42-propellers",
+		"title": "Propellers Animation Studio",
+		"thumb": "/images/work/sites/thumbs/42-propellers-pro.jpg",
+		"images": {
+			"img": "/images/work/sites/42-propellers-pro.jpg"
+		},
+		"url": "https://propellers.pro",
+		"url2": "",
+		"keywords": "2020, wordpress, responsive, gulp",
+		"descrEn": "A Wordpress site for an animation studio.",
+		"descrRu": "",
+		"nav": [
+			{//prev
+				"txt": "Torex Doors Factory",
+				"link": "41-torex-doors-factory"
+			},
+			{//next
+				"txt": "Nika Tech Family",
+				"link": "43-nikatech"
 			}
 		],
-		"url": "torex.ru",
+	},
+	{
+		"slug": "41-torex",
+		"title": "Torex Doors Factory",
+		"thumb": "/images/work/sites/thumbs/41-torexdoors.jpg",
+		"images": {
+			"img": "/images/work/sites/41-torexdoors.jpg"
+		},
+		"url": "https://torex.ru",
 		"url2": "behance.net/gallery/73728351/Cajt-dlja-zavoda-stalnyh-dverej-toreks",
 		"txt2": "Behance",
 		"keywords": "2018, html, javascript, responsive, gulp",
@@ -45,24 +64,22 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Promet Doors Factory",
-				"link": "40-promet-doors-factory.html"
+				"link": "40-promet-doors-factory"
 			},
 			{
 				"txt": "Propellers Studio",
-				"link": "42-propellers-pro.html"
+				"link": "42-propellers-pro"
 			}
 		],
 	},
 	{
 		"slug": "40-promet",
 		"title": "Promet Doors Factory",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/40-prometdoors.jpg",
-				"img": "/images/work/sites/40-prometdoors.jpg"
-			}
-		],
-		"url": "promet-door.ru",
+		"thumb": "/images/work/sites/thumbs/40-prometdoors.jpg",
+		"images": {
+			"img": "/images/work/sites/40-prometdoors.jpg"
+		},
+		"url": "https://promet-door.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2018, html, javascript, responsive, gulp",
@@ -71,24 +88,22 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Kontur Doors Factory",
-				"link": "39-kontur-doors-factory.html"
+				"link": "39-kontur-doors-factory"
 			},
 			{
 				"txt": "Torex Doors Factory",
-				"link": "41-torex-doors-factory.html"
+				"link": "41-torex-doors-factory"
 			}
 		],
 	},
 	{
 		"slug": "39-kontur",
 		"title": "Kontur Doors Factory",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/39-kontur.jpg",
-				"img": "/images/work/sites/39-kontur.jpg"
-			}
-		],
-		"url": "dveri-kontur.ru/",
+		"thumb": "/images/work/sites/thumbs/39-kontur.jpg",
+		"images": {
+			"img": "/images/work/sites/39-kontur.jpg"
+		},
+		"url": "https://dveri-kontur.ru/",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2018, html, javascript, responsive, gulp",
@@ -97,11 +112,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Commercial Offers Landing",
-				"link": "38-commercial-offers-landing.html"
+				"link": "38-commercial-offers-landing"
 			},
 			{
 				"txt": "Promet Doors Factory",
-				"link": "40-promet-doors-factory.html"
+				"link": "40-promet-doors-factory"
 			}
 		],
 	},
@@ -109,37 +124,38 @@ export const sitesList = [
 		"slug": "38-salespilot",
 		"title": "Commercial Offers Landing",
 		//group images to array?
+		"thumb": "/images/work/sites/thumbs/38-kp-land.jpg",
 		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/38-kp-land.jpg",
+			{//TODO make a smaller previews
+				"preview": "/images/work/sites/38-kp-land_desk.jpg",
 				"img": "/images/work/sites/38-kp-land_desk.jpg",
 				"title": "Desktop Version"
 			},
 			{
-				"thumb": "/images/work/sites/preview/38-kp-land_tabl_prev.jpg",
+				"preview": "/images/work/sites/preview/38-kp-land_tabl_prev.jpg",
 				"img": "/images/work/sites/38-kp-land_tabl.jpg",
 				"title": "Tablet Version"
 
 			},
 			{
-				"thumb": "/images/work/sites/preview/38-kp-land_mob_prev.jpg",
+				"preview": "/images/work/sites/preview/38-kp-land_mob_prev.jpg",
 				"img": "/images/work/sites/38-kp-land_mob.jpg",
 				"title": "Mobile Version"
 
 			}
 		],
-		"url": "salespilot.ru",
+		"url": "https://salespilot.ru",
 		"keywords": "2018, html, javascript",
 		"descrEn": "Big landing page for commercial offers system. All three versions are different, many sections are collaped with jQuery UI accordion and some custom code. <br/>Here are desktop, tablet and mobile versions.",
 		"descrRu": "Большой лэндинг для системы создания и управления коммерческими предложениями. Версии для десктопа, планшета и мобильного &mdash; разные, использовано много трансформаций, как с помощью jQuery UI, так и кастомного кода.",
 		"nav": [
 			{
 				"txt": "Landing for Banks Research",
-				"link": "37-landing-for-banks.html"
+				"link": "37-landing-for-banks"
 			},
 			{
 				"txt": "Kontur Doors Factory",
-				"link": "39-kontur-doors-factory.html"
+				"link": "39-kontur-doors-factory"
 			}
 		],
 
@@ -147,13 +163,11 @@ export const sitesList = [
 	{
 		"slug": "37-banks",
 		"title": "Banks Research Landing",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/37-banks.jpg",
-				"img": "/images/work/sites/37-banks.jpg"
-			}
-		],
-		"url": "blog.completo.ru/research-finance",
+		"thumb": "/images/work/sites/thumbs/37-banks.jpg",
+		"images": {
+			"img": "/images/work/sites/37-banks.jpg"
+		},
+		"url": "https://blog.completo.ru/research-finance",
 		"url2": "behance.net/gallery/70731771/posadochnaja-dlja-issledovanija-internet-marketinga-bankov",
 		"txt2": "Behance",
 		"keywords": "2018, html, javascript",
@@ -162,11 +176,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Chemical Plant",
-				"link": "36-chemical-plant.html"
+				"link": "36-chemical-plant"
 			},
 			{
 				"txt": "Commercial Offers Landing",
-				"navNext": "38-commercial-offers-landing.html"
+				"navNext": "38-commercial-offers-landing"
 			}
 		],
 
@@ -174,13 +188,11 @@ export const sitesList = [
 	{
 		"slug": "36-cxz",
 		"title": "Stupino Chemical Plant",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/36-cxz.jpg",
-				"img": "/images/work/sites/36-cxz.jpg"
-			}
-		],
-		"url": "cxz.ru",
+		"thumb": "/images/work/sites/thumbs/36-cxz.jpg",
+		"images": {
+			"img": "/images/work/sites/36-cxz.jpg"
+		},
+		"url": "https://cxz.ru",
 		"url2": "behance.net/gallery/70731049/sajt-dlja-stupinskogo-himicheskogo-zavoda",
 		"txt2": "Behance",
 		"keywords": "2017, bitrix, html",
@@ -189,11 +201,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Commercial Offers System",
-				"link": "35-commercial-offers.html"
+				"link": "35-commercial-offers"
 			},
 			{
 				"txt": "Banks Research Landing",
-				"link": "37-landing-for-banks.html"
+				"link": "37-landing-for-banks"
 			}
 		],
 	},
@@ -201,14 +213,15 @@ export const sitesList = [
 	{
 		"slug": "35-old-php",
 		"title": "Commercial Offers System",
+		"thumb": "/images/work/sites/thumbs/35-completo-kp.jpg",
 		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/35-completo-kp.jpg",
+			{//TODO make a smaller preview
+				"preview": "/images/work/sites/35-completo-kp-01.jpg",
 				"img": "/images/work/sites/35-completo-kp-01.jpg",
 				"title": "Dashboard"
 			},
-			{//TODO make a thumb
-				"thumb": "/images/work/sites/35-completo-kp-02.jpg",
+			{//TODO make a preview
+				"preview": "/images/work/sites/35-completo-kp-02.jpg",
 				"img": "/images/work/sites/35-completo-kp-02.jpg",
 				"title": "Commercial offer creation page",
 			}
@@ -221,11 +234,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Photographer's Gallery",
-				"link": "34-photography.html"
+				"link": "34-photography"
 			},
 			{
 				"txt": "Stupino Chemical Plant",
-				"link": "36-chemical-plant.html"
+				"link": "36-chemical-plant"
 			}
 		],
 		},
@@ -233,13 +246,11 @@ export const sitesList = [
 	{
 		"slug": "34-noradrugan",
 		"title": "Photographer's Gallery",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/34-noradrugan.jpg",
-				"img": "/images/work/sites/34-noradrugan.jpg"
-			}
-		],
-		"url": "noradrugan.com",
+		"thumb": "/images/work/sites/thumbs/34-noradrugan.jpg",
+		"images": {
+			"img": "/images/work/sites/34-noradrugan.jpg"
+		},
+		"url": "https://noradrugan.com",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2016, bootstrap, responsive, wordpress",
@@ -248,11 +259,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Kids' Education",
-				"link": "33-kids.html"
+				"link": "33-kids"
 			},
 			{
 				"txt": "Commercial Offers System",
-				"link": "35-commercial-offers.html"
+				"link": "35-commercial-offers"
 			}
 		],
 	},
@@ -261,13 +272,11 @@ export const sitesList = [
 	{
 		"slug": "33-kids",
 		"title": "Kids' Education",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/33-postupi.jpg",
-				"img": "/images/work/sites/33-postupi.jpg"
-			}
-		],
-		"url": "maxkotkov.ru",
+		"thumb": "/images/work/sites/thumbs/33-postupi.jpg",
+		"images": {
+			"img": "/images/work/sites/33-postupi.jpg"
+		},
+		"url": "https://maxkotkov.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2016, html, parallax, responsive",
@@ -276,11 +285,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "1c Accounting Site",
-				"link": "32-1vip.html"
+				"link": "32-1vip"
 			},
 			{
 				"txt": "Photographer's Gallery",
-				"link": "34-photography.html"
+				"link": "34-photography"
 			}
 		],
 	},
@@ -288,25 +297,26 @@ export const sitesList = [
 	{
 		"slug": "32-1vip",
 		"title": "1c Accounting Site",
+		"thumb": "/images/work/sites/thumbs/32-1vip.jpg",
 		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/32-1vip.jpg",
+			{//TODO make a smaller previews
+				"preview": "/images/work/sites/32-1vip.jpg",
 				"img": "/images/work/sites/32-1vip.jpg",
 				"title": "Frontpage"
 
 			},
 			{
-				"thimb": "/images/work/sites/preview/32-1vip-calc-front_prev.jpg",
+				"preview": "/images/work/sites/preview/32-1vip-calc-front_prev.jpg",
 				"img": "/images/work/sites/32-1vip-calc-front.jpg",
 				"title": "The product calculator"
 			},
 			{
-				"thumb": "/images/work/sites/preview/32-1vip-calc-back_prev.jpg",
+				"preview": "/images/work/sites/preview/32-1vip-calc-back_prev.jpg",
 				"img": "/images/work/sites/32-1vip-calc-back.jpg",
 				"title": "The calculator's backend"
 			}
 		],
-		"url": "1vip.ru",
+		"url": "https://1vip.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2016, bootstrap, javascript, responsive, wordpress",
@@ -315,11 +325,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Splat Products",
-				"link": "31-splat.html"
+				"link": "31-splat"
 			},
 			{
 				"txt": "Kids' Education",
-				"link": "33-kids.html"
+				"link": "33-kids"
 			}
 		],
 	},
@@ -327,13 +337,11 @@ export const sitesList = [
 	{
 		"slug": "31-splat",
 		"title": "Splat Products",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/31-splat.jpg",
-				"img": "/images/work/sites/31-splat.jpg"
-			}
-		],
-		"url": "splat.ru",
+		"thumb": "/images/work/sites/thumbs/31-splat.jpg",
+		"images": {
+			"img": "/images/work/sites/31-splat.jpg"
+		},
+		"url": "https://splat.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2016, bitrix, content management",
@@ -342,11 +350,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Gas Equipment",
-				"link": "30-gas-eqipment.html"
+				"link": "30-gas-eqipment"
 			},
 			{
 				"txt": "1c Accounting Site",
-				"link": "32-1vip.html"
+				"link": "32-1vip"
 			}
 		],
 	},
@@ -354,13 +362,11 @@ export const sitesList = [
 	{
 		"slug": "30-ptfm",
 		"title": "Gas Equipment",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/30-ptfm.jpg",
-				"img": "/images/work/sites/30-ptfm.jpg"
-			}
-		],
-		"url": "ptfm.ru",
+		"thumb": "/images/work/sites/thumbs/30-ptfm.jpg",
+		"images": {
+			"img": "/images/work/sites/30-ptfm.jpg"
+		},
+		"url": "https://ptfm.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2016, bootstrap, catalog, javascript, wordpress",
@@ -369,11 +375,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Moroni Cleaning",
-				"link": "28-moroniclean.html"
+				"link": "28-moroniclean"
 			},
 			{
 				"txt": "Splat Products",
-				"link": "31-splat.html"
+				"link": "31-splat"
 			}
 		],
 	},
@@ -381,13 +387,11 @@ export const sitesList = [
 	{
 		"slug": "28-moroni",
 		"title": "Moroni Cleaning",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/28-moroniclean.jpg",
-				"img": "/images/work/sites/28-moroniclean.jpg"
-			}
-		],
-		"url": "moroniclean.com",
+		"thumb": "/images/work/sites/thumbs/28-moroniclean.jpg",
+		"images": {
+			"img": "/images/work/sites/28-moroniclean.jpg"
+		},
+		"url": "https://moroniclean.com",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2015, html, javascript, responsive",
@@ -396,11 +400,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Designer's Homepage",
-				"link": "27-maru.html"
+				"link": "27-maru"
 			},
 			{
 				"txt": "Gas Equipment",
-				"link": "30-gas-eqipment.html"
+				"link": "30-gas-eqipment"
 			}
 		],
 	},
@@ -409,13 +413,11 @@ export const sitesList = [
 	{
 		"slug": "27-maru",
 		"title": "Designer's Homepage",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/27-maru.jpg",
-				"img": "/images/work/sites/27-maru.jpg"
-			}
-		],
-		"url": "maru.su",
+		"thumb": "/images/work/sites/thumbs/27-maru.jpg",
+		"images": {
+			"img": "/images/work/sites/27-maru.jpg"
+		},
+		"url": "https://maru.su",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2015, responsive, wordpress",
@@ -424,11 +426,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "AnastasiaDate's Blog",
-				"link": "25-bloganastasiadate.html"
+				"link": "25-bloganastasiadate"
 			},
 			{
 				"txt": "Moroni Cleaning",
-				"link": "28-moroniclean.html"
+				"link": "28-moroniclean"
 			}
 		],
 
@@ -436,13 +438,11 @@ export const sitesList = [
 	{
 		"slug": "25-bloganastasiadate",
 		"title": "AnastasiaDate's Blog",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/25-bloganastasiadate.jpg",
-				"img": "/images/work/sites/25-bloganastasiadate.jpg"
-			}
-		],
-		"url": "blog.anastasiadate.com",
+		"thumb": "/images/work/sites/thumbs/25-bloganastasiadate.jpg",
+		"images": {
+			"img": "/images/work/sites/25-bloganastasiadate.jpg"
+		},
+		"url": "https://blog.anastasiadate.com",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2015, blog, wordpress",
@@ -451,11 +451,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Travel Mates Landing",
-				"link": "24-asiantravelmates.html"
+				"link": "24-asiantravelmates"
 			},
 			{
 				"txt": "Designer's Homepage",
-				"link": "27-maru.html"
+				"link": "27-maru"
 			}
 		],
 	},
@@ -463,14 +463,12 @@ export const sitesList = [
 	{
 		"slug": "24-asiantravelmates",
 		"title": "Travel Mates Landing",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/24-asiantravelmates.jpg",
-				"img": "/images/work/sites/24-asiantravelmates.jpg"
-			}
-		],
-		"url": "asiantravelmates.com",
-		"url": "asiantravelmates.com",
+		"thumb": "/images/work/sites/thumbs/24-asiantravelmates.jpg",
+		"images": {
+			"img": "/images/work/sites/24-asiantravelmates.jpg"
+		},
+		"url": "https://asiantravelmates.com",
+		"url": "https://asiantravelmates.com",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2014, html, javascript, landing page, parallax",
@@ -479,23 +477,21 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Rally Promo Site",
-				"link": "23-rallybabes.html"
+				"link": "23-rallybabes"
 			},
 			{
 				"txt": "AnastasiaDate's Blog",
-				"link": "25-bloganastasiadate.html"
+				"link": "25-bloganastasiadate"
 			}
 		],
 	},
 	{
 		"slug": "23-rallybabes",
 		"title": "Rally Promo Site",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/23-rallybabes.jpg",
-				"img": "/images/work/sites/23-rallybabes.jpg"
-			}
-		],
+		"thumb": "/images/work/sites/thumbs/23-rallybabes.jpg",
+		"images": {
+			"img": "/images/work/sites/23-rallybabes.jpg"
+		},
 		"url2": "",
 		"txt2": "",
 		"keywords": "2014, responsive, wordpress",
@@ -504,11 +500,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Dating Partners Network",
-				"link": "22-global-companions.html"
+				"link": "22-global-companions"
 			},
 			{
 				"txt": "Travel Mates Landing",
-				"link": "24-asiantravelmates.html"
+				"link": "24-asiantravelmates"
 			}
 		],
 	},
@@ -516,13 +512,11 @@ export const sitesList = [
 	{
 		"slug": "22-partners",
 		"title": "Dating Partners Network",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/22-global-companions.jpg",
-				"img": "/images/work/sites/22-global-companions.jpg"
-			}
-		],
-		"url": "global-companions.com",
+		"thumb": "/images/work/sites/thumbs/22-global-companions.jpg",
+		"images": {
+			"img": "/images/work/sites/22-global-companions.jpg"
+		},
+		"url": "https://global-companions.com",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2014, bootstrap, html, responsive",
@@ -531,11 +525,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Dating Landing",
-				"link": "13-marryasianbride.html"
+				"link": "13-marryasianbride"
 			},
 			{
 				"txt": "Rally Promo Site",
-				"link": "23-rallybabes.html"
+				"link": "23-rallybabes"
 			}
 		],
 	},
@@ -543,13 +537,11 @@ export const sitesList = [
 	{
 		"slug": "13-marryasianbride",
 		"title": "Dating Landing",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/13-marryasianbride.jpg",
-				"img": "/images/work/sites/13-marryasianbride.jpg"
-			}
-		],
-		"url": "",
+		"thumb": "/images/work/sites/thumbs/13-marryasianbride.jpg",
+		"images": {
+			"img": "/images/work/sites/13-marryasianbride.jpg"
+		},
+		"url": "https://",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2013, html",
@@ -558,11 +550,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Drivers Training Center",
-				"link": "04-auto2000.html"
+				"link": "04-auto2000"
 			},
 			{
 				"txt": "Dating Partners Network",
-				"link": "22-global-companions.html"
+				"link": "22-global-companions"
 			}
 		],
 
@@ -570,13 +562,11 @@ export const sitesList = [
 	{
 		"slug": "04-auto2000",
 		"title": "Drivers Training Center",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/04-auto2000.jpg",
-				"img": "/images/work/sites/04-auto2000.jpg"
-			}
-		],
-		"url": "auto2000.su",
+		"thumb": "/images/work/sites/thumbs/04-auto2000.jpg",
+		"images": {
+			"img": "/images/work/sites/04-auto2000.jpg"
+		},
+		"url": "https://auto2000.su",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2011, content management, drupal",
@@ -585,11 +575,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Medical Center",
-				"link": "03-clinic-cs.html"
+				"link": "03-clinic-cs"
 			},
 			{
 				"txt": "Dating Landing",
-				"link": "13-marryasianbride.html"
+				"link": "13-marryasianbride"
 			}
 		],
 	},
@@ -597,13 +587,11 @@ export const sitesList = [
 	{
 		"slug": "03-clinic",
 		"title": "Medical Center",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/03-clinic-cs.jpg",
-				"img": "/images/work/sites/03-clinic-cs.jpg"
-			}
-		],
-		"url": "clinic-cs.ru",
+		"thumb": "/images/work/sites/thumbs/03-clinic-cs.jpg",
+		"images": {
+			"img": "/images/work/sites/03-clinic-cs.jpg"
+		},
+		"url": "https://clinic-cs.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2011, html, joomla",
@@ -612,11 +600,11 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "Furniture Factory",
-				"link": "02-ronikon.html"
+				"link": "02-ronikon"
 			},
 			{
 				"txt": "Drivers Training Center",
-				"link": "04-auto2000.html"
+				"link": "04-auto2000"
 			}
 		],
 	},
@@ -624,13 +612,11 @@ export const sitesList = [
 	{
 		"slug": "02-ronikon",
 		"title": "Furniture Factory",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/02-ronikon.jpg",
-				"img": "/images/work/sites/02-ronikon.jpg"
-			}
-		],
-		"url": "ronikon.ru",
+		"thumb": "/images/work/sites/thumbs/02-ronikon.jpg",
+		"images": {
+			"img": "/images/work/sites/02-ronikon.jpg"
+		},
+		"url": "https://ronikon.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2010, html, content management",
@@ -639,24 +625,22 @@ export const sitesList = [
 		"nav": [
 			{
 				"txt": "A Hospital",
-				"link": "01-hospital-cs.html"
+				"link": "01-hospital-cs"
 			},
 			{
 				"txt": "Medical Center",
-				"link": "03-clinic-cs.html"
+				"link": "03-clinic-cs"
 			}
 		],
 	},
 	{
 		"slug": "01-hospital",
 		"title": "A Hospital",
-		"images": [
-			{
-				"thumb": "/images/work/sites/thumbs/01-hospital-cs.jpg",
-				"img": "/images/work/sites/01-hospital-cs.jpg"
-			}
-		],
-		"url": "hospital-cs.ru",
+		"thumb": "/images/work/sites/thumbs/01-hospital-cs.jpg",
+		"images": {
+			"img": "/images/work/sites/01-hospital-cs.jpg"
+		},
+		"url": "https://hospital-cs.ru",
 		"url2": "",
 		"txt2": "",
 		"keywords": "2010, content management, joomla",
@@ -669,7 +653,7 @@ export const sitesList = [
 			},
 			{
 				"txt": "Furniture Factory",
-				"link": "02-ronikon.html"
+				"link": "02-ronikon"
 			}
 		],
 	}

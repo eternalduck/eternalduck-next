@@ -1,3 +1,4 @@
+import Head from "next/head"
 import GlobalStyles from "../scss/globalStyle"
 // import Preloader from "../components/preloader"
 
@@ -11,6 +12,9 @@ export default function MyApp({ Component, pageProps }) {
 
 	return (
 		<>
+			<Head>
+				<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			</Head>
 			<GlobalStyles/>
 			{/* <Preloader/> */}
 			<Component {...pageProps}/>

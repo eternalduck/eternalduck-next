@@ -5,7 +5,7 @@ import {vars, media} from "../../../scss/_vars-mixins"
 
 import LayoutDefault, {FlexContainer} from "../../../components/layout"
 import {sitesList} from "../../../components/data/sitesList"// convert to MD? npm i @next/mdx @mdx-js/loader or https://nextjs.org/learn/basics/data-fetching/implement-getstaticprops
-import PostPreview from "../posts/postPreview"
+import PostPreview from "../post/postPreview"
 
 // blog on md https://github.com/tscanlin/next-blog
 
@@ -39,6 +39,7 @@ export async function getStaticProps(){
 
 export default function Sites({
 	data,
+	// post,
 	// content,
 	// slug
 	}) {

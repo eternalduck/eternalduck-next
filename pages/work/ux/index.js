@@ -4,8 +4,8 @@ import styled, {css} from "styled-components"
 import {vars, media} from "../../../scss/_vars-mixins"
 
 import LayoutDefault, {FlexContainer} from "../../../components/layout"
-import PostPreview from "../posts/postPreview"
-import {ux} from "../../../components/data/ux"
+// import PostPreview from "../posts/postPreview"
+import {uxList} from "../../../components/data/ux"
 
 export default function Ux({
 		// content,
@@ -27,9 +27,9 @@ export default function Ux({
 			<h1>ux</h1>
 			<p>here are ux items</p>
 			<FlexContainer>
-				{ux.map(content => (
+				{/* {ux.map(content => (
 					<PostPreview key={content.title} slug={content.slug} content={content} ux/>
-				))}
+				))} */}
 			</FlexContainer>
 		</LayoutDefault>
 		</>

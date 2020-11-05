@@ -1,4 +1,4 @@
-export const ux = [
+export const uxList = [
 	{
 		"title": "Messages in Range App",
 		"slug": "02-msg-in-range-app.html",

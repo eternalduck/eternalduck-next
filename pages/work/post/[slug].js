@@ -3,21 +3,22 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import styled from "styled-components"
 import {vars, media, mixinTxtShadow, mixinUnderline} from "../../../scss/_vars-mixins"
-import {sitesList} from "../../../components/data/sitesList"/* TMP? */
 import LayoutDefault from "../../../components/layout"
+import {sitesList} from "../../../components/data/sitesList"/* TMP? */
 
-
+//TODO how to make this page also work for UX without duplicating it to work/ux?
 
 export async function getStaticPaths() {
-	const sites = sitesList
+	// const sites = sitesList
 	// const test = paths.map(s => s.slug)
 	// console.info(test);
 
 	return {
-		paths: sites.map((post) => {
+		paths: sitesList.map((post) => {
 			return {
 				params: {
 					slug: `${post.slug}`,
+					// post: `${post}`,
 				},
 			}
 		}),
@@ -25,10 +26,15 @@ export async function getStaticPaths() {
 	}
 }
 
-export async function getStaticProps({params}){
-	// const data = sitesList
+export async function getStaticProps(context){
+	const currentPostSlug = context.params.slug
+	const post = sitesList.find(
+		c => c.slug === currentPostSlug
+	)
 	return {
-		props: {params}//page receives `data` as a prop at build time
+		props: {
+			post,
+		}//page receives props at build time
 	}
 }
 
@@ -36,17 +42,18 @@ export async function getStaticProps({params}){
 
 
 export default function Post({
-	// post,
-	// content,
-	// slug,
+	post,
 	// ...other
 	}) {
-		const router = useRouter()
-		const { slug } = router.query
-		if (!router.isFallback && !props.slug) {
-			console.log("error 404")
-			return <ErrorPage statusCode={404} />
-		}
+		// const router = useRouter()
+		// const { slug } = router.query
+		// if (!router.isFallback && !props.slug) {
+		// 	console.log("error 404")
+		// 	return <ErrorPage statusCode={404} />
+		// }
+
+	// console.info(params.slug)
+	console.info(post.images.length)
 
 	return (
 		<>
@@ -58,17 +65,17 @@ export default function Post({
 			background={vars.blueVioDarkest}
 			isFooter
 		>
-		{router.isFallback ? (
+		{/* {router.isFallback ? (
 			<p>Loading...</p>
-			) : (
+			) : ( */}
 			<>
-			<p>Post: {props.slug}</p>
+			<p>Slug(tmp): {post.slug}</p>
 			<PostHeader>
-				<Title>{props.title}</Title>
+				<Title>{post.title}</Title>
 				<Keywords>
-					{props.keywords}
+					{post.keywords}
 				</Keywords>
-				<Url href={props.url} target="_blank">
+				<Url href={post.url} target="_blank">
 					Visit the site
 				</Url>
 			</PostHeader>
@@ -76,40 +83,49 @@ export default function Post({
 			{/* TODO: add descrRu toggle */}
 			<Description>
 				<p dangerouslySetInnerHTML={{__html: `
-					${props.descrEn}
+					${post.descrEn}
 				`}}></p>
 			</Description>
 
-			{/* TODO: fix fancybox, links included in _document head */}
-			<ImgContainer>
-				{props.images.map((img) => 
+			
+
+
+		{/* TODO: if an img is lonely - show full right here, if there're many - invent smth (but fuck fancybox& jquery) */}
+		<ImgContainer>
+			{post.images.length > 1 ?
+				post.images.map((img) => 
 					<ImgItem>
 						<h4>{img.title}</h4>
-						<a key={img.img} data-fancybox="gallery" data-caption={img.title} href={img.img}>
-							<img src={img.thumb} alt=""/>
-						</a>
+						{<a key={img.preview} href={img.img}>
+							<img src={img.preview} alt=""/>
+						</a>}
 					</ImgItem>
+				)
+			: <img src={post.images.img} alt=""/> 
+			}
+		</ImgContainer>
+	
 
-				)}
-			</ImgContainer>
+
 
 			{/*)} */}{/* router */}
 
 			{/* TODO: auto nav for next\prev [slug], this is TMP */}
-			<Nav>
-				{props.nav.map(
+			{/* <Nav>
+				{params.nav.map(
 					nav => 
 					<Link href={nav.link} as={nav.link}><a>{nav.txt}</a></Link>
 				)}
-			</Nav>
+			</Nav> */}
 			
 			</>
-		 )}
+		 {/* )} */}
 		</LayoutDefault>
 		</>
 	)
 
 }
+
 
 // style
 // TODO: make this page universal for sites & ux with different styles
@@ -154,8 +170,12 @@ const ImgContainer = styled.div`
 	flex-flow: row wrap;
 	justify-content: space-around;
 	margin: 40px auto 50px;
+	& img {
+		max-width: 100%;
+		box-shadow: 4px 4px 11px 2px ${vars.almostBlack};
+	}
 `
-
+//TODO: if an img is lonely - show full right here, if there're many - invent smth 
 const ImgItem = styled.div`
 	/* outline: 1px dashed; */
 	flex: 0 0 100%;
@@ -170,7 +190,7 @@ const ImgItem = styled.div`
 	& img {
 		max-width: 100%;
 		box-shadow: 4px 4px 11px 2px ${vars.almostBlack};
-		transition: opacity .2s ease-in;
+		transition: opacity .2s ease-in; */
 		&:hover {
 			opacity: .8;
 		}
